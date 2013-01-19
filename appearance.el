@@ -3,17 +3,19 @@
       color-theme-is-global t
       truncate-partial-width-windows nil)
 
+;; Set the default font and background colors.
+(set-face-background 'default "#1B1B1B")
+(set-face-foreground 'default "#EEEEEE")
+
+;; Set the color for a selected region.
 (set-face-background 'region "#464740")
 
-;; Highlight current line
+;; Highlight the current line. Set the color of that highlighting.
 (global-hl-line-mode 1)
-
-;; Customize background color of lighlighted line
-(set-face-background 'hl-line "#222222")
+(set-face-background 'hl-line "#333333")
 
 ;; Highlight in yasnippet
 (set-face-background 'yas/field-highlight-face "#333399")
-
 (set-face-foreground 'font-lock-warning-face "#ff6666")
 
 ;; org-mode colors
