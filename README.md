@@ -1,8 +1,9 @@
 # My emacs settings
 
-An ever-changing set of emacs settings. Micro-optimizations are super fun.
-These are used in the [Emacs Rocks](http://emacsrocks.com) screencasts.
-You can also see some thoughts behind the settings on my [What the .emacs.d!?](http://whattheemacsd.com)-blog.
+These are my current emacs settings. These settings were initially
+forked from
+[Magnar Sveen's repository](https://github.com/magnars/.emacs.d). The
+rest of this README currently remains unedited from Magnar's copy.
 
 ## Setup
 
