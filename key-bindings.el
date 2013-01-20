@@ -16,7 +16,7 @@
 (global-set-key (kbd "C-x C-m") 'smex)
 
 ;; Expand region (increases selected region by semantic units)
-(global-set-key (if is-mac (kbd "C-@") (kbd "C-'")) 'er/expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; Experimental multiple-cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -24,10 +24,10 @@
 (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
 
 ;; Mark additional regions matching current region
-(global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)
-(global-set-key (kbd "C-å") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-æ") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-Æ") 'mc/mark-more-like-this-extended)
+(global-set-key (kbd "M-=") 'mc/mark-all-like-this-dwim)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m") 'mc/mark-more-like-this-extended)
 (global-set-key (kbd "M-å") 'mc/mark-all-in-region)
 
 ;; Symbol and word specific mark-more
@@ -201,7 +201,7 @@
 (global-set-key (kbd "<s-down>") 'windmove-down)
 
 ;; Magit
-(global-set-key (kbd "C-x m") 'magit-status)
+(global-set-key (kbd "C-c g") 'magit-status)
 (autoload 'magit-status "magit")
 
 ;; Mu4e
@@ -258,6 +258,9 @@
 
 ;; Display and edit occurances of regexp in buffer
 (global-set-key (kbd "C-c o") 'occur)
+
+;; Align text in lines based on the supplied regexp.
+(global-set-key (kbd "C-c a") 'align-regexp)
 
 ;; Find files by name and display results in dired
 (global-set-key (kbd "M-s f") 'find-name-dired)
