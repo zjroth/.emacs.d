@@ -13,9 +13,9 @@
 ;; Highlight the current line. Set the color of that highlighting.
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#333333")
-
+ 
 ;; Highlight in yasnippet
-(set-face-background 'yas/field-highlight-face "#333399")
+;; (set-face-background 'yas/field-highlight-face "#333399") ;; TODO: This is not working.  Why?
 (set-face-foreground 'font-lock-warning-face "#ff6666")
 
 ;; org-mode colors
