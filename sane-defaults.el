@@ -109,4 +109,8 @@
     (dotimes (i 10)
       (when (= p (point)) ad-do-it))))
 
+;; When in nxml-mode, treat an element (beginning and ending tags and
+;; everything in between) as an s-expression.
+(setq nxml-sexp-element-flag t)
+
 (provide 'sane-defaults)
