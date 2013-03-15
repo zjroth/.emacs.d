@@ -101,4 +101,8 @@
 (add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
 (add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode))
 
+;; Matlab
+(autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
+(add-to-list 'auto-mode-alist '("\\.m$" . matlab-mode))
+
 (provide 'mode-mappings)
