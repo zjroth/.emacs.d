@@ -19,6 +19,7 @@
         dired-back-to-start-of-files
         duplicate-current-line-or-region
         eval-and-replace
+        fill-paragraph
         fold-this
         forward-paragraph
         html-wrap-in-tag
@@ -28,6 +29,7 @@
         js2r-inline-var
         js2r-var-to-this
         kill-region-or-backward-word
+        kmacro-insert-counter
         magit-stage-item
         markdown-enter-key
         move-line-down
