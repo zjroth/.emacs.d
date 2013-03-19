@@ -13,15 +13,19 @@
         change-inner
         change-number-at-point
         change-outer
+        comment-dwim
         cua-replace-region
         cua-set-mark
         delete-blank-lines
+        delete-horizontal-space
         dired-back-to-start-of-files
         duplicate-current-line-or-region
         eval-and-replace
         fill-paragraph
         fold-this
         forward-paragraph
+        forward-sexp
+        hippie-expand-no-case-fold
         html-wrap-in-tag
         js2-beginning-of-line
         js2-end-of-line
@@ -35,15 +39,18 @@
         move-line-down
         move-line-up
         new-line-above
+        nxml-electric-slash
         org-beginning-of-line
         org-delete-backward-char
         org-delete-char
         org-end-of-line
+        org-force-self-insert
         org-metaleft
         org-metaright
         org-self-insert-command
         org-shiftright
         orgtbl-self-insert-command
+        outline-forward-same-level
         quoted-insert
         save-region-or-current-line
         sgml-delete-tag
@@ -56,6 +63,8 @@
 
 (setq mc/cmds-to-run-once
       '(
+        delete-window
+        ido-switch-buffer
         js2r-extract-var
         js2r-rename-var
         smex
