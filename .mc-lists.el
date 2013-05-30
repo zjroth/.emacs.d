@@ -5,6 +5,7 @@
       '(
         ac-complete
         back-to-indentation-or-beginning
+        backward-sexp
         c-electric-backspace
         c-electric-delete-forward
         c-electric-paren
@@ -56,6 +57,7 @@
         sgml-delete-tag
         sgml-slash
         slime-space
+        transpose-params
         wrap-region-trigger
         yank-indented
         yas/expand
@@ -64,9 +66,11 @@
 (setq mc/cmds-to-run-once
       '(
         delete-window
+        ido-find-file
         ido-switch-buffer
         js2r-extract-var
         js2r-rename-var
+        rotate-windows
         smex
         wgrep-change-to-wgrep-mode
         ))
