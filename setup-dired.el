@@ -49,4 +49,7 @@
      (define-key wdired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
      (define-key wdired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)))
 
+;; List directories first.
+(setq dired-listing-switches "-alh --group-directories-first")
+
 (provide 'setup-dired)
