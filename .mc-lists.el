@@ -3,6 +3,8 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        TeX-insert-backslash
+        TeX-insert-sub-or-superscript
         ac-complete
         back-to-indentation-or-beginning
         backward-sexp
@@ -21,6 +23,8 @@
         delete-horizontal-space
         dired-back-to-start-of-files
         duplicate-current-line-or-region
+        ess-smart-comma
+        ess-yank
         eval-and-replace
         fill-paragraph
         fold-this
@@ -37,10 +41,17 @@
         kmacro-insert-counter
         magit-stage-item
         markdown-enter-key
+        matlab-backward-sexp
+        matlab-electric-comment
+        matlab-fill-paragraph
+        matlab-forward-sexp
+        matlab-linefeed
         move-line-down
         move-line-up
         new-line-above
         nxml-electric-slash
+        open-line-above
+        open-line-below
         org-beginning-of-line
         org-delete-backward-char
         org-delete-char
@@ -53,6 +64,7 @@
         orgtbl-self-insert-command
         outline-forward-same-level
         quoted-insert
+        reindent-then-newline-and-indent
         save-region-or-current-line
         sgml-delete-tag
         sgml-slash
@@ -60,16 +72,19 @@
         transpose-params
         wrap-region-trigger
         yank-indented
+        yas-expand
         yas/expand
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        TeX-next-error
         delete-window
         ido-find-file
         ido-switch-buffer
         js2r-extract-var
         js2r-rename-var
+        rename-current-buffer-file
         rotate-windows
         smex
         wgrep-change-to-wgrep-mode
