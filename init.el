@@ -123,6 +123,9 @@
 (eval-after-load 'matlab-mode '(require 'setup-matlab-mode))
 (eval-after-load 'ess-julia '(require 'setup-julia-mode))
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/matlab-mode/")
+(load-library "matlab-load")
+
 ;; Load slime-js when asked for
 (autoload 'slime-js-jack-in-browser "setup-slime-js" nil t)
 (autoload 'slime-js-jack-in-node "setup-slime-js" nil t)
