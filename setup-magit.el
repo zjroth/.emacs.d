@@ -1,5 +1,3 @@
-(require 'magit-svn)
-
 ;; Subtler highlight
 (set-face-background 'magit-item-highlight "#121212")
 (set-face-foreground 'diff-context "#666666")
@@ -76,5 +74,7 @@
 
 (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
 
+(require 'magit-commit-training-wheels)
+(ad-activate 'magit-log-edit-commit)
 
 (provide 'setup-magit)

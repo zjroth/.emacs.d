@@ -3,7 +3,9 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        LaTeX-babel-insert-hyphen
         TeX-insert-backslash
+        TeX-insert-dollar
         TeX-insert-sub-or-superscript
         ac-complete
         back-to-indentation-or-beginning
@@ -23,12 +25,16 @@
         delete-horizontal-space
         dired-back-to-start-of-files
         duplicate-current-line-or-region
+        end-of-buffer
+        ess-smart-S-assign
         ess-smart-comma
         ess-yank
         eval-and-replace
+        eval-print-last-sexp
         fill-paragraph
         fold-this
         forward-paragraph
+        forward-sentence
         forward-sexp
         hippie-expand-no-case-fold
         html-wrap-in-tag
@@ -42,12 +48,14 @@
         magit-stage-item
         markdown-enter-key
         matlab-backward-sexp
+        matlab-comment
         matlab-electric-comment
         matlab-fill-paragraph
         matlab-forward-sexp
         matlab-linefeed
         move-line-down
         move-line-up
+        move-text-up
         new-line-above
         nxml-electric-slash
         open-line-above
@@ -61,6 +69,8 @@
         org-metaright
         org-self-insert-command
         org-shiftright
+        org-todo
+        org-yank
         orgtbl-self-insert-command
         outline-forward-same-level
         quoted-insert
@@ -68,16 +78,19 @@
         save-region-or-current-line
         sgml-delete-tag
         sgml-slash
+        sh-assignment
         slime-space
         transpose-params
         wrap-region-trigger
         yank-indented
+        yank-unindented
         yas-expand
         yas/expand
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        TeX-command-master
         TeX-next-error
         delete-window
         ido-find-file

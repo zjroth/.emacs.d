@@ -13,7 +13,13 @@
 ;; Indent headlines and content.
 (setq org-startup-indented t)
 
-;; I use this command too much outside of org-mode to not have it here, too.
+;; I use these commands too much outside of org-mode to not have them here, too.
 (define-key org-mode-map (kbd "<C-S-return>") 'open-line-above)
+(define-key org-mode-map (kbd "<C-S-down>") 'move-text-down)
+(define-key org-mode-map (kbd "<C-S-up>") 'move-text-up)
+
+;; Stuff for reproducible research
+;(add-to-list 'org-src-lang-modes ...)
+;(setq org-src-preserve-indentation t)
 
 (provide 'setup-org)

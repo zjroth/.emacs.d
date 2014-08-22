@@ -86,7 +86,8 @@
    (cons 'change-inner         melpa)
    (cons 'multifiles           melpa)
    (cons 'browse-kill-ring     melpa)
-   (cons 'smex                 melpa)))
+   (cons 'smex                 melpa)
+   (cons 'smex                 marmalade)))
 
 (condition-case nil
     (init--install-packages)
@@ -114,6 +115,7 @@
 (require 'setup-html-mode)
 (require 'setup-paredit)
 (require 'ess-site)
+(require 'setup-latex)
 
 ;; Language specific setup files
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
@@ -125,6 +127,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/matlab-mode/")
 (load-library "matlab-load")
+
+(setq inferior-julia-program-name "/home/zroth/bin/julia")
 
 ;; Load slime-js when asked for
 (autoload 'slime-js-jack-in-browser "setup-slime-js" nil t)
