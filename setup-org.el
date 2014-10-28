@@ -17,6 +17,8 @@
 (define-key org-mode-map (kbd "<C-S-return>") 'open-line-above)
 (define-key org-mode-map (kbd "<C-S-down>") 'move-text-down)
 (define-key org-mode-map (kbd "<C-S-up>") 'move-text-up)
+(define-key org-mode-map (kbd "M-p") 'backward-paragraph)
+(define-key org-mode-map (kbd "M-n") 'forward-paragraph)
 
 ;; Stuff for reproducible research
 ;(add-to-list 'org-src-lang-modes ...)

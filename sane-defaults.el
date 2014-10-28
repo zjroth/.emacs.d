@@ -113,4 +113,7 @@
 ;; everything in between) as an s-expression.
 (setq nxml-sexp-element-flag t)
 
+;; Lines should wrap at 80 characters.
+(setq-default fill-column 80)
+
 (provide 'sane-defaults)
