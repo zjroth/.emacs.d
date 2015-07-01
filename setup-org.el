@@ -24,4 +24,18 @@
 ;(add-to-list 'org-src-lang-modes ...)
 ;(setq org-src-preserve-indentation t)
 
+;; Execute code blocks in these languages.
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '( (emacs-lisp . t)
+    (sh . t)
+    ;(julia . t)
+    ;(python . t)
+    ;(R . t)
+    (matlab . t)
+    ))
+
+;; Don't ask me to confirm evaluation every time.
+(setq org-confirm-babel-evaluate nil)
+
 (provide 'setup-org)
