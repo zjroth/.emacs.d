@@ -199,8 +199,8 @@
 (global-set-key (kbd "<s-down>") 'windmove-down)
 
 ;; Magit
-(global-set-key (kbd "C-c g") 'magit-status)
-(autoload 'magit-status "magit")
+(global-set-key (kbd "C-c g") 'magit-status-fullscreen)
+(autoload 'magit-status-fullscreen "magit")
 
 ;; Mu4e
 (global-set-key (kbd "C-x M") 'mu4e-up-to-date-status)
