@@ -27,5 +27,7 @@
 ;; A bit of misc cargo culting in misc.el
 (setq xterm-mouse-mode t)
 
+;; Use the system's ssh connection settings.
+(setq tramp-use-ssh-controlmaster-options nil)
 
 (provide 'my-misc)
