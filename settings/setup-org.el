@@ -10,6 +10,10 @@
 (defadvice kill-whole-line (after fix-cookies activate)
   (myorg-update-parent-cookie))
 
+;; Exporting
+(require 'ox-odt nil t)
+(require 'ox-md nil t)
+
 ;; Indent headlines and content.
 (setq org-startup-indented t)
 
@@ -32,10 +36,21 @@
     ;(julia . t)
     ;(python . t)
     ;(R . t)
-    (matlab . t)
+    ;(matlab . t)
     ))
 
 ;; Don't ask me to confirm evaluation every time.
 (setq org-confirm-babel-evaluate nil)
+
+;; Built-in exporters
+(require 'ox-md)
+(require 'ox-odt)
+(require 'ox-man)
+(require 'ox-pandoc)
+
+;; Extra features for exporting.
+(require 'ox-extra)
+(ox-extras-activate '(latex-header-blocks
+                      ignore-headlines))
 
 (provide 'setup-org)

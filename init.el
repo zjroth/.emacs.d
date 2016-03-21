@@ -9,9 +9,11 @@
 ;; Set path to dependencies
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
+(setq settings-dir
+      (expand-file-name "settings" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path settings-dir)
 (add-to-list 'load-path site-lisp-dir)
 
 ;; Settings for currently logged in user
@@ -25,7 +27,7 @@
     (add-to-list 'load-path project)))
 
 ;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "custom.el" settings-dir))
 (load custom-file)
 
 ;; Write backup files to own directory
@@ -39,7 +41,7 @@
 ;; Save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
-(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+(setq save-place-file (expand-file-name ".places" settings-dir))
 
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
@@ -61,18 +63,14 @@
    (cons 'htmlize              melpa)
    (cons 'elisp-slime-nav      melpa)
    ;(cons 'elnode               marmalade)
-   (cons 'slime-js             marmalade)
-   (cons 'git-commit-mode      melpa)
+   ;; (cons 'slime-js             marmalade)
+   ;; (cons 'git-commit-mode      melpa)
    (cons 'gitconfig-mode       melpa)
    (cons 'gitignore-mode       melpa)
-   (cons 'clojure-mode         melpa)
-   (cons 'clojure-test-mode    melpa)
    (cons 'nrepl                melpa)
    (cons 'ido-ubiquitous       melpa)
-   (cons 'yasnippet            melpa)
-   (cons 'buster-snippets      melpa)
-   (cons 'perspective          melpa)
-   (cons 'find-file-in-project melpa)
+   ;; (cons 'perspective          melpa)
+   ;; (cons 'find-file-in-project melpa)
    (cons 'ess                  melpa)
    (cons 'dash                 melpa)
    (cons 's                    melpa)
@@ -109,18 +107,15 @@
 (eval-after-load 'grep '(require 'setup-rgrep))
 (eval-after-load 'shell '(require 'setup-shell))
 (require 'setup-hippie)
-(require 'setup-yasnippet)
 (require 'setup-perspective)
 (require 'setup-ffip)
 (require 'setup-html-mode)
 (require 'setup-paredit)
-(require 'ess-site)
-(require 'setup-latex)
+;; (require 'ess-site)
+;; (require 'setup-latex)
 
 ;; Language specific setup files
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
-(eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
-(eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
 (eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
 (eval-after-load 'matlab-mode '(require 'setup-matlab-mode))
 (eval-after-load 'ess-julia '(require 'setup-julia-mode))
@@ -149,11 +144,15 @@
 (require 'multiple-cursors)
 (require 'delsel)
 (require 'jump-char)
-(require 'eproject)
+;; (require 'eproject)
 (require 'wgrep)
 (require 'smart-forward)
 (require 'change-inner)
 (require 'multifiles)
+
+;; Forward/inverse search in LaTeX
+(load "auctex.el" nil t t)
+(eval-after-load 'tex-mode '(TeX-source-correlate-mode))
 
 ;; Fill column indicator
 (require 'fill-column-indicator)
@@ -162,6 +161,12 @@
 ;; Browse kill ring
 (require 'browse-kill-ring)
 (setq browse-kill-ring-quit-action 'save-and-restore)
+
+;; ;; Helm is supposed to be great for completion.
+;; (require 'helm)
+;; (require 'helm-config)
+;; (helm-mode 1)
+;; ;; (require 'helm-fuzzier)
 
 ;; Smart M-x is smart
 (require 'smex)
@@ -175,13 +180,13 @@
 (require 'my-misc)
 (when is-mac (require 'mac))
 
-;; Elisp go-to-definition with M-. and back again with M-,
-(autoload 'elisp-slime-nav-mode "elisp-slime-nav")
-(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
-(eval-after-load 'elisp-slime-nav '(diminish 'elisp-slime-nav-mode))
+;; ;; Elisp go-to-definition with M-. and back again with M-,
+;; (autoload 'elisp-slime-nav-mode "elisp-slime-nav")
+;; (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
+;; (eval-after-load 'elisp-slime-nav '(diminish 'elisp-slime-nav-mode))
 
-;; Email, baby
-(require 'setup-mu4e)
+;; ;; Email, baby
+;; (require 'setup-mu4e)
 
 ;; Emacs server
 (require 'server)
@@ -194,7 +199,6 @@
 
 ;; Diminish modeline clutter
 (require 'diminish)
-;; (diminish 'yas/minor-mode)
 
 ;; Conclude init by setting up specifics for the current user
 (when (file-exists-p user-settings-dir)

@@ -3,102 +3,30 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        LaTeX-babel-insert-hyphen
-        TeX-insert-backslash
-        TeX-insert-dollar
-        TeX-insert-sub-or-superscript
-        ac-complete
-        back-to-indentation-or-beginning
         backward-sexp
-        c-electric-backspace
-        c-electric-delete-forward
-        c-electric-paren
-        c-electric-semi&comma
-        c-electric-slash
-        change-inner
-        change-number-at-point
-        change-outer
+        beginning-of-visual-line
         comment-dwim
-        cua-replace-region
-        cua-set-mark
-        delete-blank-lines
         delete-horizontal-space
-        dired-back-to-start-of-files
-        duplicate-current-line-or-region
-        end-of-buffer
-        ess-smart-S-assign
-        ess-smart-comma
-        ess-yank
+        electric-newline-and-maybe-indent
+        end-of-visual-line
         eval-and-replace
-        eval-print-last-sexp
-        fill-paragraph
-        fold-this
-        forward-paragraph
-        forward-sentence
         forward-sexp
         hippie-expand-no-case-fold
-        html-wrap-in-tag
-        js2-beginning-of-line
-        js2-end-of-line
-        js2-insert-and-indent
-        js2r-inline-var
-        js2r-var-to-this
+        kill-and-retry-line
         kill-region-or-backward-word
-        kmacro-insert-counter
-        magit-stage-item
-        markdown-enter-key
         matlab-backward-sexp
-        matlab-comment
         matlab-electric-comment
-        matlab-fill-paragraph
         matlab-forward-sexp
-        matlab-linefeed
-        move-line-down
-        move-line-up
-        move-text-up
-        new-line-above
-        nxml-electric-slash
-        open-line-above
-        open-line-below
         org-beginning-of-line
-        org-delete-backward-char
         org-delete-char
         org-end-of-line
         org-force-self-insert
-        org-metaleft
-        org-metaright
+        org-kill-line
         org-self-insert-command
-        org-shiftright
-        org-todo
-        org-yank
-        orgtbl-self-insert-command
-        outline-forward-same-level
-        quoted-insert
-        reindent-then-newline-and-indent
         save-region-or-current-line
-        sgml-delete-tag
-        sgml-slash
-        sh-assignment
-        slime-space
         transpose-params
-        wrap-region-trigger
-        yank-indented
-        yank-unindented
-        yas-expand
-        yas/expand
         ))
 
 (setq mc/cmds-to-run-once
       '(
-        TeX-command-master
-        TeX-next-error
-        delete-window
-        ido-find-file
-        ido-switch-buffer
-        js2r-extract-var
-        js2r-rename-var
-        rename-current-buffer-file
-        rotate-windows
-        smex
-        wgrep-change-to-wgrep-mode
         ))
