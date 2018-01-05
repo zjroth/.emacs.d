@@ -1,0 +1,333 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/zroth/Dropbox/org/" . "archived/")
+ ("/media/zroth/" . "rothz/")
+ ("/media/" . "zroth/")
+ ("/home/zroth/.julia/v0.6/" . "HttpParser/")
+ ("/home/zroth/.julia/" . "v0.6/")
+ ("/home/zroth/programs/mu/" . "mu4e/")
+ ("/usr/share/emacs/25.2/site-lisp/" . "mu4e/")
+ ("/usr/share/emacs/25.2/" . "site-lisp/")
+ ("/usr/share/emacs/" . "25.2/")
+ ("/usr/local/share/emacs/25.2/" . "site-lisp/")
+ ("/usr/local/share/emacs/" . "25.2/")
+ ("/usr/local/share/" . "emacs/")
+ ("/usr/local/" . "share/")
+ ("/home/zroth/mail/" . "zjroth/")
+ ("/usr/share/texlive/texmf-dist/bibtex/bst/" . "base/")
+ ("/usr/share/texlive/texmf-dist/bibtex/" . "bst/")
+ ("/usr/share/texlive/texmf-dist/" . "bibtex/")
+ ("/usr/share/texlive/" . "texmf-dist/")
+ ("/usr/share/" . "emacs/")
+ ("/usr/" . "share/")
+ ("/home/zroth/Dropbox-janelia/job-related/" . "vita/")
+ ("/home/zroth/Dropbox-janelia/" . "job-related/")
+ ("/home/zroth/Dropbox/job-related/vita/" . "twentysecondcv/")
+ ("/home/zroth/projects/document-scanner/OpenCV/" . "opencv-2.4.13/")
+ ("/home/zroth/projects/document-scanner/" . "OpenCV/")
+ ("/home/zroth/projects/game-of-life/" . "clojure/")
+ ("/home/zroth/projects/flask-tutorial/" . "templates/")
+ ("/home/zroth/Dropbox/personal/" . "finances/")
+ ("/home/zroth/projects/heroku-apps/clojure-getting-started/src/" . "clojure_getting_started/")
+ ("/home/zroth/projects/heroku-apps/clojure-getting-started/" . "src/")
+ ("/home/zroth/projects/heroku-apps/python-getting-started/" . "gettingstarted/")
+ ("/home/zroth/Dropbox/job-related/applications/data-incubator/" . "application-for-2017-january/")
+ ("/home/zroth/Dropbox/job-related/applications/" . "cia/")
+ ("/home/zroth/Dropbox/job-related/" . "vita/")
+ ("/home/zroth/programs/" . "readability.js/")
+ ("/home/" . "zroth/")
+ ("/home/zroth/Dropbox/applications/" . "dean-and-company/")
+ ("/home/zroth/projects/heroku-apps/painlessly-deploying-data-apps/" . "templates/")
+ ("/home/zroth/projects/heroku-apps/" . "python-getting-started/")
+ ("/ssh:rothz@10.102.20.182:/groups/pastalkova/home/rothz/data/analysis/notebooks/" . "findcommunities/")
+ ("/ssh:rothz@10.102.20.182:/groups/pastalkova/home/rothz/data/analysis/" . "notebooks/")
+ ("/ssh:rothz@10.102.20.182:/groups/pastalkova/home/rothz/data/" . "analysis/")
+ ("/ssh:rothz@10.102.20.182:/groups/pastalkova/home/rothz/" . "data/")
+ ("/ssh:rothz@10.102.20.182:/" . "bin/")
+ ("/home/zroth/Dropbox/research-notes/reveal.js/css/" . "theme/")
+ ("/home/zroth/Dropbox/research-notes/reveal.js/plugin/" . "menu/")
+ ("/home/zroth/Dropbox/research-notes/reveal.js/" . "css/")
+ ("/home/zroth/projects/" . "game-of-life/")
+ ("/etc/" . "modprobe.d/")
+ ("/" . "media/")
+ ("/home/zroth/.emacs.d/elpa/" . "spacemacs-theme-20171201.640/")
+ ("/home/zroth/.emacs.d/" . "settings/")
+ ("/home/zroth/Dropbox/research-notes/" . "thesis/")
+ ("/home/zroth/Dropbox/" . "org/")
+ ("/home/zroth/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/zroth/.emacs.d/"
+ "/home/zroth/Dropbox/org/"
+ "/home/zroth/.emacs.d/settings/"
+ "/home/zroth/"
+ "/home/zroth/Dropbox/org/archived/"
+ "/home/zroth/Dropbox/job-related/vita/twentysecondcv/"
+ "/home/zroth/Dropbox/job-related/applications/janelia/"
+ "/home/zroth/Dropbox/personal/"
+ "/home/zroth/Downloads/"
+ "/home/zroth/Dropbox/job-related/"
+ "/home/zroth/.emacs.d/other-packages/"
+ "/home/zroth/Dropbox/job-related/applications/"
+ "/home/zroth/Dropbox/job-related/applications/cia/"
+ "/home/zroth/.emacs.d/elpa/"
+ "/home/zroth/Dropbox/sequence-paper/"
+ "/home/zroth/Dropbox/"
+ "/media/zroth/rothz/"
+ "/home/zroth/Dropbox/job-related/applications/dean-and-company/"
+ "/usr/share/emacs/25.2/lisp/net/"
+ "/home/zroth/.emacs.d/elpa/org-20171116/"
+ "/home/zroth/.emacs.d/elpa/spacemacs-theme-20171201.640/"
+ "/home/zroth/.emacs.d/elpa/color-theme-buffer-local-20170125.2201/"
+ "/home/zroth/projects/"
+ "/home/zroth/.julia/v0.6/HttpParser/"
+ "/home/zroth/projects/emacs-readability/"
+ "/home/zroth/programs/readability.js/"
+ "/home/zroth/.emacs.d/site-lisp/"
+ "/home/zroth/programs/mu/mu4e/"
+ "/home/zroth/.emacs.d/site-lisp/mu4e/"
+ "/usr/share/emacs/25.2/site-lisp/mu4e/"
+ "/home/zroth/mail/zjroth/"
+ "/usr/local/share/emacs/site-lisp/"
+ "/home/zroth/mail/zjroth@gmail/"
+ "/usr/share/texlive/texmf-dist/bibtex/bst/base/"
+ "/usr/local/"
+ "/home/zroth/Dropbox/job-related/vita/"
+ "/home/zroth/Dropbox-janelia/job-related/vita/"
+ "/home/zroth/projects/craigslist-car-search/"
+ "/home/zroth/programs/"
+ "/home/zroth/projects/game-of-life/clojure/"
+ "/home/zroth/projects/document-scanner/OpenCV/opencv-2.4.13/"
+ "/home/zroth/projects/document-scanner/"
+ "/home/zroth/projects/document-scanner/OpenCV/"
+ "/home/zroth/.lein/"
+ "/home/zroth/projects/game-of-life/"
+ "/home/zroth/projects/heroku-apps/painlessly-deploying-data-apps/"
+ "/home/zroth/projects/heroku-apps/julia-getting-started/"
+ "/home/zroth/projects/heroku-apps/painlessly-deploying-data-apps/templates/"
+ "/home/zroth/projects/flask-tutorial/"
+ "/home/zroth/projects/flask-tutorial/templates/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "articles.org"
+ "setup-org.el"
+ "examples.desktop"
+ "someday.org"
+ "jobsearch.org_archive"
+ "inbox.org_archive"
+ "use-org.el"
+ "key-bindings.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/zroth/.emacs.d/settings/" (23101 13956 561429 964000) "use-org.el" ".#setup-org.el" "setup-matlab-mode.el" ".mc-lists.el" "setup-html-mode.el" "sane-defaults.el" "setup-clojure-mode.el" "./" "appearance.el" "mode-mappings.el" "setup-slime-js.el" "custom.el" "setup-org.el" "setup-js2-mode.el" "setup-hippie.el" "setup-yasnippet.el" "setup-package.el" "setup-rgrep.el" "setup-shell.el" "setup-julia-mode.el" "mac.el" "setup-dired.el" "key-bindings.el" "setup-mu4e.el" "my-misc.el" "setup-perspective.el" "setup-elfeed.el" "setup-markdown-mode.el" "setup-magit.el" "setup-ido.el" "setup-elnode.el" "setup-paredit.el" "../" "setup-ruby-mode.el" "setup-ffip.el" "#setup-eww.el#" "setup-eww.el")
+
+ ("/home/zroth/.emacs.d/" (23101 13349 140757 865000) "url/" ".mc-lists.el" "backups/" "./" "other-packages/" "recentf" "site-lisp/" "settings/" "custom.el" "auto-save-list/" ".trash/" "init.el" ".gitignore" "abbrev_defs" "defuns/" ".gitmodules" "smex-items" "bookmarks" "elpa/" "ido.last" ".places" "../" ".git/" "README.md")
+
+ ("/home/zroth/Dropbox/org/" (23100 25633 741325 355000) ".#work.org" "date-ideas.org" "manuscript-journal.org" "work.org" "./" "articles.org" "#inbox.org#" "someday.org" "projects.org" "../" "archived/" "non-org/" ".#articles.org" "inbox.org")
+
+ ("/home/zroth/Dropbox/org/archived/" (23100 16450 134393 885000) "./" "../" "jobsearch.org_archive")
+
+ ("/home/zroth/" (23097 15860 437587 504000) ".ICEauthority" ".macromedia/" ".dropbox/" ".heroku/" ".julia/" "bin/" ".dropbox-dist-janelia/" ".QtWebEngineProcess/" ".offlineimap/" ".bashrc-anaconda3.bak" ".cinnamon/" ".bashrc.original" "examples.desktop" "programs/" "Music/" ".texmf-var/" ".icons/" ".compiz/" "./" ".python_history" ".netrc" ".gvfs/" ".wine/" ".continuum/" ".xsession-errors.old" ".config/" ".julia_history" "Pictures/" ".gnome2/" ".rpmdb/" "PlayOnLinux's virtual drives/" ".cache/" ".ipython/" ".taskrc" ".elfeed/" ".node_repl_history" ".themes/" ".m2/" ".PlayOnLinux/" ".thunderbird/" "Documents/" "Dropbox-janelia/" ".dmrc" ".pki/" ".dropbox-janelia/" ".nixnote/" ".sqlite_history" ".gconf/" ".Xauthority" ".lesshst" ".recently-used" ".remmina/" ".emacs.d/" ".texlive2017/" ".kde/" ".bashrc-anaconda2.bak" ".npm/" ".dbus/" ".aliases" ".mu/" ".newspaper_scraper/" "Dropbox/" "#.notes#" ".dropbox-dist/" ".local/" ".xsession-errors" ".psql_history" ".bashrc" ".xournal/" "Desktop/" ".lastpass/" ".xsel.log" ".beeline/" ".jupyter/" ".pip/" ".gimp-2.8/" ".profile" ".aqbanking/" "Downloads/" ".gstreamer-0.10/" ".hardinfo/" "#.offlineimaprc#" ".offlineimaprc" ".gourmet/" ".gitconfig" ".emacs.d.new/" ".bash_logout" ".audacity-data/" "mail/" ".sudo_as_admin_successful" ".purple/" ".bash_history" "projects/" ".ssh/" ".thumbnails/" "../" ".task/" ".scala_history" ".adobe/" ".gnome/" ".eteks/" ".lein/" ".gnupg/" "Public/" "#.taskrc#" ".mozilla/" "Videos/" ".mono/" "missfont.log" "Templates/" ".java/" ".wget-hsts" ".gnucash/")
+
+ ("/home/zroth/Dropbox/job-related/applications/janelia/" (23097 15896 634173 584000) "./" "digital-signature.pdf" "coverletter.pdf" "../" "coverletter.tex")
+
+ ("/home/zroth/Dropbox/personal/" (23092 29033 116684 100000) "liberty-first-close-account.tex" "townhouse-seller-disclosure/" "receipts/" "./" "schwab-simple-external-account.pdf" "digital-signature.pdf" "EligibilityNotice.pdf" "room-dimensions.png" "liberty-first-close-account.pdf" "meline-medical-guadianship.pdf" "2017-12-15-193959.webm" "2017-03-21--fidelity-401k-contributions.pdf" "resolutions/" "inova-annual-enrollment-2017.pdf" "taxes/" "honeymoon-details/" "PassportApplicationComplete.pdf" "inova-annual-enrollment-confirmation-2017.pdf" "finances/" "room-dimensions.pdf" "meline-medical-guadianship.tex" "../" "meline-medical-guadianship.org" "navient-electronic-payment-authorization-2016-10-31.pdf" "digital-signature.svg" "random-baby-name.png")
+
+ ("/home/zroth/Downloads/" (23095 59464 548565 129000) "family-photos-master-43b518826bbc63442d2d1b1e1dc87b863ee48269.tar.bz2" "christmas-card-2.png" "kevin-resume.pdf" "./" "Screenshot from 2017-12-15 18-48-23.png" "GCC 2018 Budget Draft 19Nov2017.xlsx" "christmas-card.png" "t-david-gordon/" "family-photos-master-43b518826bbc63442d2d1b1e1dc87b863ee48269/" "Janssen-GVSULetter.pdf" "transcript-unl.pdf" "transcript-hc.pdf" "../" "vita.pdf" "hugo-master/")
+
+ ("/home/zroth/Dropbox/job-related/" (23095 65202 727271 619000) "./" "vita/" "janelia-contract-romani-lab-2017-03-31.pdf" "janelia-intranet/" "applications/" "myidp/" "2017-janelia-holiday-calendar.pdf" "2017-janelia-payroll-calendar.pdf" "janelia-invoices/" "../" "coverletter.org")
+
+ ("/home/zroth/Dropbox/job-related/applications/" (23095 59998 442248 776000) "./" "data-incubator/" "cia/" "dean-and-company/" "janelia/" "../")
+
+ ("/home/zroth/Dropbox/job-related/vita/twentysecondcv/" (23090 61903 808859 547000) "vita.bcf" "vita.yaml.org" "./" "vita.tex" "pandoc.org" "vita.out" "vita.aux" "vita-metron-application.pdf" "twentysecondcv.cls" "vita.md" "vita.bib" "linkedin2.png" "linkedin.png" "vita.blg" "alice.jpeg" "vita.txt" "vita.log" "vita.yaml" "LICENSE" "alice-orig.jpeg" "vita.run.xml" "linkedin4.png" "../" "#vita.org#" "vita.bbl" "vita.pdf" "pdfa.xmpi" "vita.org")
+
+ ("/home/zroth/Dropbox/job-related/applications/cia/" (23095 56981 595716 606000) "./" "../" "positions.org" "coverletter.tex" "coverletter.org")
+
+ ("/home/zroth/.emacs.d/elpa/org-20171116/" (23089 34321 117130 539000) "org-indent.el" "ob-R.elc" "ox-texinfo.elc" "org-docview.elc" "ob-sql.elc" "ob-forth.elc" "ox-latex.elc" "ob-fortran.elc" "org-duration.el" "org-duration.elc" "ox.elc" "org-pkg.elc" "org-info.el" "ob-ruby.elc" "ob-J.elc" "ob-processing.elc" "ox.el" "ox-texinfo.el" "org-feed.elc" "org-footnote.elc" "ob-C.elc" "ob-screen.elc" "ob-exp.elc" "ob-sql.el" "ob-makefile.el" "ox-publish.el" "org-mouse.elc" "org-attach.el" "org-gnus.elc" "etc/" "org.elc" "ob-haskell.elc" "org-list.el" "ob-lob.elc" "ob-maxima.elc" "ob-js.elc" "org-mhe.el" "org-list.elc" "ob-C.el" "ob-dot.el" "COPYING" "ob-plantuml.el" "org-archive.elc" "org-gnus.el" "ob-picolisp.elc" "org-table.elc" "org-agenda.elc" "ob-mscgen.elc" "ob-sqlite.el" "ob-io.elc" "ob-table.elc" "org-indent.elc" "ob-J.el" "org-colview.el" "ob.el" "org-eshell.el" "org-mouse.el" "ox-man.elc" "org-loaddefs.el" "ox-ascii.elc" "ob-scheme.el" "ob-java.el" "ob-shen.elc" "org-clock.el" "org-w3m.elc" "ob-groovy.el" "ob-lisp.el" "ob-plantuml.elc" "ob-processing.el" "org-table.el" "ob-eval.elc" "ox-icalendar.elc" "org-timer.elc" "ob-mscgen.el" "org-macro.elc" "ob-org.el" "ob-ref.elc" "org-faces.el" "ob-perl.elc" "ob-keys.el" "ob-python.el" "ob-abc.el" "ob-js.el" "ob-ref.el" "ox-latex.el" "ob-keys.elc" "ox-man.el" "ox-icalendar.el" "org-plot.el" "ob-ocaml.elc" "ob-gnuplot.elc" "org-mobile.elc" "ob-forth.el" "ob-table.el" "org-bibtex.elc" "ob-latex.elc" "README_ELPA" "ob-hledger.el" "ob-calc.elc" "ox-beamer.el" "ob-python.elc" "org-irc.elc" "ox-md.el" "ob-lilypond.el" "ob-ebnf.elc" "org-lint.elc" "ob-maxima.el" "ob-shell.elc" "org-eshell.elc" "ox-org.elc" "ob-coq.elc" "org-pcomplete.elc" "ob-ledger.el" "ob-fortran.el" "ob-java.elc" "org-macro.el" "org-mhe.elc" "ob-awk.elc" "ob-shell.el" "org-plot.elc" "org-clock.elc" "org.el" "ob-ditaa.el" "org-compat.elc" "ob-io.el" "org-crypt.el" "org-entities.elc" "ob-picolisp.el" "ob-core.el" "ob-lilypond.elc" "org-macs.el" "org" "ob-asymptote.el" "org-rmail.el" "ob-vala.el" "org-id.elc" "org-crypt.elc" "ob-comint.elc" "ob-ocaml.el" "ob-sass.elc" "dir" "org-datetree.el" "org-inlinetask.elc" "ob-coq.el" "org-pcomplete.el" "ob-tangle.elc" "ob-lua.elc" "org-element.el" "ox-beamer.elc" "org-colview.elc" "org-feed.el" "ob-eval.el" "org-eww.el" "ob-org.elc" "org-w3m.el" "ob-clojure.el" "ob-asymptote.elc" "org-footnote.el" "org-version.el" "ob-makefile.elc" "ob-lua.el" "ob-matlab.el" "org-irc.el" "orgcard.pdf" "ob-gnuplot.el" "ob-comint.el" "org-capture.el" "org-bibtex.el" "org-attach.elc" "ox-html.el" "ob-tangle.el" "org-element.elc" "ob-lisp.elc" "org-eww.elc" "ob-css.el" "org-protocol.el" "org-entities.el" "ob-sed.el" "ob-hledger.elc" "ob-shen.el" "ob-groovy.elc" "org-info.elc" "ob-css.elc" "ob-octave.elc" "org-timer.el" "ob-R.el" "ob-matlab.elc" "ob-scheme.elc" "org-bbdb.el" "org-rmail.elc" "ox-odt.elc" "ob.elc" "ob-screen.el" "ob-ebnf.el" "ob-latex.el" "ox-org.el" "org-habit.el" "ox-ascii.el" "ob-ditaa.elc" "org-archive.el" "ob-ruby.el" "org-autoloads.el" "org-agenda.el" "org-pkg.el" "ob-octave.el" "org-lint.el" "org-bbdb.elc" "ox-html.elc" "ob-stan.elc" "org-mobile.el" "org-src.elc" "ob-awk.el" "org-ctags.elc" "org-compat.el" "org-inlinetask.el" "ob-emacs-lisp.el" "ob-ledger.elc" "ob-clojure.elc" "ob-calc.el" "org-capture.elc" "org-protocol.elc" "org-ctags.el" "ob-sqlite.elc" "ox-odt.el" "ob-exp.el" "ob-sass.el" "ob-perl.el" "org-docview.el" "ob-dot.elc" "org-macs.elc" "org-datetree.elc" "ob-lob.el" "org-faces.elc" "ob-vala.elc" "org-habit.elc" "ob-stan.el" "org-id.el" "ob-core.elc" "org-install.el" "ox-publish.elc" "ob-emacs-lisp.elc" "org-src.el" "ob-haskell.el" "ob-abc.elc" "ob-sed.elc" "ox-md.elc" "../" "./")
+
+ ("/home/zroth/.emacs.d/elpa/" (23089 32973 183989 687000) "eproject-20151205.2130/" "tidy-20111222.956/" "zoom-frm-20170309.1439/" "buster-snippets-20151125.210/" "org-dotemacs-readme.txt" "memoize-20170720.1802/" "language-detection-20161123.1013/" "magit-20171112.348/" "elfeed-20171103.737/" "exec-path-from-shell-20170508.4/" "draft-mode-readme.txt" "ob-ipython-20171111.740/" "frame-fns-20170222.1759/" "csv-mode-readme.txt" "pcache-20170105.1414/" "mark-multiple-20121118.754/" "move-text-20170908.2030/" "dash-functional-20171028.804/" "popwin-20150315.600/" "use-package-20171210.2136/" "elisp-slime-nav-20160128.1109/" "logito-20120225.1255/" "org-bullets-20171127.526/" "zencoding-mode-20140213.22/" "powerline-20171023.750/" "pkg-info-20150517.443/" "gitignore-mode-20160319.302/" "smart-forward-20140430.13/" "god-mode-20151005.925/" "shell-command-20090830.340/" "dracula-theme-20170412.845/" "elfeed-org-20171113.356/" "helm-ag-20170209.745/" "pocket-reader-readme.txt" "csv-nav-readme.txt" "use-package-readme.txt" "frame-cmds-20170819.1358/" "gist-20170604.1834/" "elfeed-org-readme.txt" "change-inner-20150707.844/" "dired-details-20130824.458/" "swoop-readme.txt" "wgrep-20141016.1656/" "julia-mode-20170916.628/" "gh-20170512.2049/" "f-20171119.723/" "async-20171015.2239/" "ledger-mode-20170901.2039/" "csv-mode-1.7/" "seq-2.20/" "markdown-mode+-20170320.1404/" "multiple-cursors-20170908.1452/" "readability-readme.txt" "elfeed-web-readme.txt" "js-comint-20170808.527/" "google-readme.txt" "adaptive-wrap-0.5.1/" "org-20171113.signed" "mark-more-like-this-1.0/" "marshal-20171018.932/" "helm-20171106.429/" "smooth-scrolling-20161002.1249/" "expand-region-20170514.1309/" "browse-kill-ring-20171016.1312/" "visual-fill-column-20170502.1300/" "ereader-readme.txt" "counsel-20171118.1113/" "yaml-mode-20170727.1531/" "gitconfig-mode-20170627.854/" "tagedit-20161121.55/" "noflet-20141102.654/" "ido-ubiquitous-20170923.842/" "elfeed-goodies-readme.txt" "perspective-20160609.1444/" "gnupg/" "lastpass-readme.txt" "slime-20171106.1331/" "adaptive-wrap-0.5.1.signed" "smex-20151212.1409/" "hledger-mode-20171101.1139/" "kroman-readme.txt" "popup-20160709.729/" "s-20171102.227/" "git-commit-20171007.346/" "clojure-mode-20171103.1150/" "archives/" "bind-key-20161218.1520/" "mosey-readme.txt" "spinner-1.7.3.signed" "org-gnome-readme.txt" "csv-mode-1.7.signed" "seq-2.20.signed" "markdown-mode-20171112.1835/" "rainbow-blocks-readme.txt" "paredit-20170405.1149/" "jump-char-20160505.851/" "org-20171116.signed" "ido-completing-read+-20170820.3/" "diminish-20170419.1036/" "use-package-20171030.1428/" "org-20171116/" "epl-20150517.433/" "ace-jump-mode-20140616.115/" "company-20171017.1638/" "fill-column-indicator-20170905.1008/" "ivy-20171119.842/" "monokai-theme-20171013.236/" "multifiles-20130615.1433/" "htmlize-20171017.141/" "elfeed-goodies-20171126.2251/" "find-file-in-project-20171025.1943/" "buffer-move-20160615.1103/" "ess-20171113.612/" "dash-20171028.854/" "rainbow-delimiters-20170929.432/" "helm-core-20171103.2225/" "csv-readme.txt" "queue-0.2/" "adaptive-wrap-readme.txt" "yaml-tomato-20151122.2353/" "lastpass-20170801.1214/" "spinner-1.7.3/" "load-theme-buffer-local-20120702.1336/" "undo-tree-20170706.246/" "color-theme-20080305.34/" "ht-20171112.1405/" "with-editor-20171006.352/" "slime-js-0.0.1/" "swiper-20171107.1041/" "macrostep-20161120.1306/" "yasnippet-20170923.1646/" "magit-popup-20171109.1438/" "spacemacs-theme-20171201.640/" "org-20171113/" "slime-repl-20100404/" "queue-0.2.signed" "ivy-20171106.1142/" "cider-20171001.112/" "../" "./")
+
+ ("/home/zroth/Dropbox/" (23089 36615 708069 932000) ".dropbox" "books/" "job-related/" "./" "travel/" ".dropbox.cache/" "recommendation-letters/" "setup-org.el" "readability-export.json" "org/" "grad-school/" "../" "sequence-paper/" "personal/" "cns-abstract.doc")
+
+ ("/home/zroth/Dropbox/sequence-paper/" (23089 36394 62563 459000) ".dropbox" "paper.prv/" "prv_authorea-local-editing.log" "manuscript-journal.org" "./" "figure-references.org" "paper.pdf" "supplementary-material-dump.org" "authorea-version.pdf" "paper.out" "_region_.tex" "_region_.log" ".gitignore" "header.tex" "authorea-version-2016-06-01.zip" "figures-for-eva/" "paper.aux" "paper.tex" "README.org" "rewrite.org" "authorea-local-editing.tex" "../" "authorea-version.tex" "images/" ".git/" "paper.log")
+
+ ("/media/zroth/rothz/" (22952 37044 623955 924000) "../" "lost+found/" ".SyncID" "Documents/" ".SyncArchive/" "analysis/" "projects/" ".Trash-1001/" ".SyncIgnore" "./" ".Trash-51550/" "archive-2014/")
+
+ ("/media/zroth/" (23087 10696 81515 430000) "rothz/" "./" "../")
+
+ ("/media/" (23026 23245 304084 874000) "./" "../" "zroth/")
+
+ ("/home/zroth/Dropbox/job-related/applications/dean-and-company/" (22450 34390 134711 835000) "./" "resume.tex" "description.org" "resume.pdf" "../" "coverletter.org")
+
+ ("/usr/share/emacs/25.2/lisp/net/" (23029 23776 909349 786000) "sasl-digest.elc" "tramp-compat.elc" "nsm.el.gz" "netrc.elc" "tramp.el.gz" "eudc-bob.el.gz" "tramp-uu.elc" "newst-backend.elc" "dbus.elc" "eudcb-mab.elc" "telnet.elc" "sasl-ntlm.el.gz" "dig.el.gz" "newst-plainview.el.gz" "tramp-cmds.el.gz" "socks.elc" "ange-ftp.elc" "rcirc.elc" "tramp-cmds.elc" "net-utils.elc" "zeroconf.elc" "newst-treeview.elc" "sasl-digest.el.gz" "tramp-adb.el.gz" "rlogin.el.gz" "tls.el.gz" "sasl-scram-rfc.elc" "secrets.el.gz" "network-stream.el.gz" "newst-reader.elc" "browse-url.elc" "eww.el.gz" "shr.el.gz" "tramp-gw.elc" "net-utils.el.gz" "hmac-def.el.gz" "goto-addr.el.gz" "tramp-ftp.el.gz" "sasl-scram-rfc.el.gz" "tramp-smb.el.gz" "mairix.el.gz" "soap-client.el.gz" "hmac-md5.elc" "eudcb-bbdb.el.gz" "eudc-hotlist.elc" "newst-ticker.elc" "tramp-cache.el.gz" "eudc.el.gz" "soap-client.elc" "ntlm.elc" "pinentry.el.gz" "tramp-sh.elc" "hmac-md5.el.gz" "eudcb-mab.el.gz" "webjump.el.gz" "webjump.elc" "ange-ftp.el.gz" "secrets.elc" "newst-treeview.el.gz" "dns.elc" "tramp-adb.elc" "snmp-mode.elc" "newsticker.el.gz" "soap-inspect.el.gz" "eww.elc" "imap.elc" "trampver.el.gz" "eudc.elc" "quickurl.el.gz" "tramp-sh.el.gz" "eudcb-ldap.el.gz" "dig.elc" "newst-reader.el.gz" "shr-color.el.gz" "imap.el.gz" "dbus.el.gz" "quickurl.elc" "tramp-uu.el.gz" "eudc-hotlist.el.gz" "tls.elc" "newst-backend.el.gz" "rfc2104.elc" "pinentry.elc" "soap-inspect.elc" "eudc-vars.el.gz" "newst-ticker.el.gz" "sasl-ntlm.elc" "sasl.el.gz" "netrc.el.gz" "snmp-mode.el.gz" "eudc-bob.elc" "tramp-smb.elc" "tramp-gw.el.gz" "goto-addr.elc" "tramp-compat.el.gz" "zeroconf.el.gz" "network-stream.elc" "gnutls.elc" "browse-url.el.gz" "shr-color.elc" "./" "tramp-gvfs.elc" "rcirc.el.gz" "tramp-cache.elc" "gnutls.el.gz" "newsticker.elc" "../" "eudcb-bbdb.elc" "eudc-vars.elc" "sasl-cram.el.gz" "socks.el.gz" "ntlm.el.gz" "ldap.elc" "eudcb-ldap.elc" "sasl.elc" "sasl-cram.elc" "tramp-gvfs.el.gz" "ldap.el.gz" "rfc2104.el.gz" "tramp-ftp.elc" "hmac-def.elc" "nsm.elc" "trampver.elc" "eudc-export.el.gz" "eudc-export.elc" "tramp.elc" "mairix.elc" "shr.elc" "telnet.el.gz" "newst-plainview.elc" "rlogin.elc" "tramp-loaddefs.el" "dns.el.gz")
+
+ ("/home/zroth/.emacs.d/other-packages/" (23079 17717 39657 513000) "org-protocol-capture-html/" "./" "../")
+
+ ("/home/zroth/.emacs.d/elpa/spacemacs-theme-20171201.640/" (23079 9974 550493 402000) "./" "spacemacs-light-theme.elc" "spacemacs-theme-autoloads.el" "spacemacs-common.el" "spacemacs-dark-theme.elc" "spacemacs-dark-theme.el" "spacemacs-theme-pkg.el" "../" "spacemacs-light-theme.el")
+
+ ("/home/zroth/.emacs.d/elpa/color-theme-buffer-local-20170125.2201/" (23078 7462 898857 401000) "./" "color-theme-buffer-local-pkg.el" "color-theme-buffer-local.el" "color-theme-buffer-local.elc" "color-theme-buffer-local-autoloads.el" "../")
+
+ ("/home/zroth/.julia/v0.6/HttpParser/" (23076 43913 577057 457000) "./" "deps/" "src/" "test/" ".travis.yml" "appveyor.yml" "docs/" ".gitignore" "REQUIRE" "../" "LICENSE.txt" ".git/" "README.md")
+
+ ("/home/zroth/.julia/v0.6/" (23076 45071 689741 790000) "SHA/" "Mustache/" "HttpCommon/" "HttpParser/" "MacroTools/" "BinDeps/" "./" "JSON/" ".cache/" "HttpServer/" "Codecs/" "Lazy/" "HTTP/" "REQUIRE" "Blink/" "META_BRANCH" "Reexport/" "../" "WebSockets/" "Mux/" "Compat/" "Hiccup/" "Nullables/" "URIParser/" "MbedTLS/" "METADATA/")
+
+ ("/home/zroth/.julia/" (23076 43915 213064 74000) "v0.6/" "./" ".cache/" "lib/" "../")
+
+ ("/home/zroth/projects/" (23076 43825 132699 718000) "document-scanner/" "./" "org-reveal/" "ripple-detector/" "game-of-life/" "reveal.js/" "matlab-incremented/" "flask-tutorial/" "job-search-manager/" "rank-pairs/" "craigslist-car-search/" "../" "emacs-readability/" "heroku-apps/")
+
+ ("/home/zroth/projects/job-search-manager/" (23076 43825 132699 718000) "./" "../")
+
+ ("/home/zroth/projects/emacs-readability/" (23059 44670 613779 272000) "./" "node_modules/" "package-lock.json" "test.py" "test.js" ".#test.org" "../")
+
+ ("/home/zroth/programs/readability.js/" (23058 17729 84596 83000) "./" "node_modules/" "test/" "package-lock.json" ".travis.yml" ".gitignore" ".npmignore" "benchmarks/" "package.json" "../" ".eslintrc.js" "JSDOMParser.js" "Readability.js" "index.js" ".git/" "README.md")
+
+ ("/home/zroth/programs/" (23057 12030 716394 697000) "./" "readability.js/" "mu/" "julia/" "../" "spark-2.2.0-bin-hadoop2.7/")
+
+ ("/home/zroth/.emacs.d/site-lisp/" (23057 8360 381804 179000) "smart-forward/" "fold-this/" "dired-details.el" "matlab.el.old" "fill-column-indicator.el" "crappy-jsp-mode/" "./" "perspective/" "change-inner/" "expand-region/" "multifiles/" "oppdrag-mode.el" "dash/" "hardcore-mode/" "smex/" "frame-fns.el" "fill-column-indicator/" "find-file-in-project/" "multiple-cursors/" "php-mode/" "apache-mode.el" "delsel/" "frame-cmds.el" "jump-char/" "eproject/" "mu4e-v0.9.9/" "top-mode.el" "matlab-emacs/" "ruby-end/" "smooth-scrolling.el" "annoying-arrows-mode/" "puppet-mode/" "buster-snippets/" "groovy-mode/" "shell-command.el" "mark-multiple/" "ido-ubiquitous/" "jade-mode/" "feature-mode/" "zoom-frm.el" "zencoding/" "wgrep/" "ace-jump-mode/" "yasnippet/" "undo-tree.el" "buster-mode/" "evil/" "../" "js2-mode/" "js2-refactor/" "diminish.el" "markdown-mode.el" "coffee-mode/" "rhtml-mode/" "s/" "yaml-mode/" "tagedit/" "bash-completion/" "browse-kill-ring/")
+
+ ("/home/zroth/.emacs.d/site-lisp/mu4e-v0.9.9/" (23057 8360 397804 377000) "mu4e-mark.el" "mdate-sh" "texinfo.tex" "mu4e-about.el" "mu4e-proc.el" "mu4e-speedbar.el" "./" "mu4e.el" "mu4e-utils.el" "Makefile.in" "mu4e-vars.el" "mu4e.info" "mu4e-headers.el" "mu4e-main.el" "mu4e-compose.el" "mu4e.texi" "version.texi" "mu4e-view.el" "org-mu4e.el" "stamp-vti" "Makefile.am" "version.texi.in" "mu4e-actions.el" "Makefile" "mu4e-about.org" "elc-stamp" "mu4e-meta.el" "../" "fdl.texi" "mu4e-meta.el.in" "TODO" "mu4e-message.el")
+
+ ("/home/" (23012 25548 0 0) "./" "../" "lost+found/" "zroth/")
+
+ ("/home/zroth/.emacs.d/site-lisp/mu4e/" (21989 10653 820915 517000) "mu4e-mark.el" "mdate-sh" "texinfo.tex" "mu4e-about.el" "mu4e-proc.el" "mu4e-speedbar.el" "./" "mu4e.el" "mu4e-utils.el" "Makefile.in" "mu4e-vars.el" "mu4e.info" "mu4e-headers.el" "mu4e-main.el" "mu4e-compose.el" "mu4e.texi" "version.texi" "mu4e-view.el" "org-mu4e.el" "stamp-vti" "Makefile.am" "version.texi.in" "mu4e-actions.el" "Makefile" "mu4e-about.org" "elc-stamp" "mu4e-meta.el" "../" "fdl.texi" "mu4e-meta.el.in" "TODO" "mu4e-message.el")
+
+ ("/home/zroth/programs/mu/mu4e/" (23056 60376 210237 533000) "mu4e-mark.el" "mu4e-proc.el" "mu4e-speedbar.el" "mu4e-main.elc" "texi.texi" "./" "mu4e-context.el" "mu4e-meta.elc" "mu4e.el" "mu4e-utils.el" "Makefile.in" "mu4e-vars.el" "mu4e-lists.elc" "mu4e-lists.el" "mu4e.info" "texi.texi.in" "mu4e-headers.el" "mu4e-main.el" "mu4e-compose.el" "mu4e.texi" "mu4e-view.el" "org-old-mu4e.el" "org-mu4e.el" "mu4e-speedbar.elc" "mu4e-actions.elc" "Makefile.am" "mu4e-view.elc" "mu4e-context.elc" "mu4e-mark.elc" "mu4e-draft.el" "mu4e-actions.el" "mu4e-contrib.el" "mu4e-contrib.elc" "org-old-mu4e.elc" "mu4e-message.elc" "mu4e-compose.elc" "mu4e-utils.elc" "Makefile" "mu4e.elc" "mu4e-about.org" "mu4e-vars.elc" "mu4e-meta.el" "mu4e-draft.elc" "../" "fdl.texi" "mu4e-meta.el.in" "TODO" "org-mu4e.elc" "mu4e-proc.elc" "mu4e-message.el" "mu4e-headers.elc")
+
+ ("/home/zroth/programs/mu/" (23056 60365 342135 987000) "mu4e/" ".github/" "COPYING" "./" "m4/" "c.cfg" "config.h" "Makefile.in" "configure.ac" "ChangeLog" "lib/" "gtest.mk" ".travis.yml" "README" "autom4te.cache/" "mu/" "configure" "toys/" "stamp-h1" "Makefile.am" "libtool" "man/" "NEWS" ".gitignore" "NEWS.org" "config.status" "config.log" "build-aux/" "Makefile" "aclocal.m4" "www/" "contrib/" "guile/" "README.org" "perl/" "../" "HACKING" "TODO" "autogen.sh" "AUTHORS" ".git/" "config.h.in")
+
+ ("/home/zroth/mail/zjroth/" (23056 41049 13049 857000) "Forwards/" "_CSU/" "INBOX/" "[Gmail].Spam/" "Sent/" "Purchases/" "Google Voice/" "Craigslist/" "Old Inbox (needs sorting)/" "recipes/" "[Gmail].All Mail/" "./" "Facebook/" "_IMMERSE/" "Archived inbox (6.1.2016)/" "People/" "[Gmail].Drafts/" "_UNL/" "Grad Schools/" "[Gmail].Important/" "[Gmail].Sent Mail/" "Trash/" "../" "[Gmail].Trash/" "[Gmail].Starred/" "Research/" "Confirmations etc./" "Drafts/")
+
+ ("/home/zroth/mail/" (23056 41040 712831 346000) "zjrothmath/" "zjroth/" "./" "zjroth.math@gmail/" "../" "zjroth@gmail/")
+
+ ("/usr/share/emacs/25.2/site-lisp/mu4e/" (23056 55705 401333 698000) "mu4e-context.elc" "mu4e-context.el" "mu4e.elc" "mu4e-vars.elc" "org-old-mu4e.el" "mu4e-proc.el" "mu4e.el" "org-mu4e.el" "mu4e-contrib.elc" "mu4e-lists.el" "mu4e-main.el" "mu4e-headers.elc" "mu4e-proc.elc" "mu4e-view.elc" "mu4e-actions.el" "mu4e-draft.el" "mu4e-compose.el" "mu4e-mark.el" "mu4e-compose.elc" "mu4e-contrib.el" "org-mu4e.elc" "mu4e-utils.el" "mu4e-meta.elc" "mu4e-vars.el" "./" "mu4e-message.el" "org-old-mu4e.elc" "mu4e-actions.elc" "../" "mu4e-speedbar.elc" "mu4e-main.elc" "mu4e-utils.elc" "mu4e-draft.elc" "mu4e-view.el" "mu4e-meta.el" "mu4e-lists.elc" "mu4e-message.elc" "mu4e-speedbar.el" "mu4e-mark.elc" "mu4e-headers.el")
+
+ ("/usr/share/emacs/25.2/site-lisp/" (23056 55704 157424 678000) "debian-startup.elc" "subdirs.el" "dictionaries-common/" "./" "debian-startup.el" "../" "mu4e/")
+
+ ("/usr/share/" (23056 54545 613763 956000) "ssl-cert/" "emacs/" "adduser/" "consoletrans/" "Thunar/" "thumbnailers/" "fwupd/" "gnupg/" "dbus-1/" "man-db/" "pixmaps/" "ibus-table/" "offlineimap/" "libdrm/" "usb-creator/" "metainfo/" "plymouth/" "aspell/" "libthai/" "gnome-session/" "gdm/" "ppp/" "python/" "liblouis/" "calendar/" "vino/" "grilo-plugins/" "gnome-background-properties/" "update-notifier/" "iso-codes/" "appdata/" "pkg-config-crosswrapper" "avahi/" "im-config/" "info/" "blueman/" "cinnamon-control-center/" "intltool-debian/" "file/" "pkgconfig/" "ufw/" "groff/" "gnome-control-center/" "language-selector/" "poppler/" "colord/" "readline/" "kerneloops/" "mime/" "python-apt/" "iptables/" "kde4/" "apport/" "application-registry/" "perl-openssl-defaults/" "dns/" "qt5/" "libgksu/" "javascript/" "gutenprint/" "dconf/" "transmission/" "consolefonts/" "alex/" "texmf/" "xscreensaver/" "usb_modeswitch/" "evince/" "liblangtag/" "zsh/" "applications/" "gnome-bluetooth/" "ghostscript/" "mimelnk/" "console-setup/" "icedtea-web/" "cinnamon-session/" "wine/" "enchant/" "scala/" "lintian/" "GeoIP/" "lightdm/" "bash-completion/" "ibus/" "libgweather/" "branding/" "bug/" "secureboot/" "gstreamer-1.0/" "pyshared/" "perl5/" "openal/" "simple-scan/" "debianutils/" "app-info/" "package-data-downloads/" "xsessions/" "mozilla/" "hal/" "ca-certificates-java/" "liblouisutdml/" "muffin/" "caribou/" "scala-2.11/" "gnome-tweak-tool/" "distro-info/" "hardinfo/" "publicsuffix/" "PackageKit/" "dpkg/" "m17n/" "file-roller/" "grub-gfxpayload-lists/" "pandoc/" "xapps-common/" "omf/" "unattended-upgrades/" "librevenge/" "maven-repo/" "X11/" "vala/" "apturl/" "hwdata/" "xml/" "gnome-video-effects/" "apps/" "orca/" "gcc-7/" "ImageMagick-6/" "acpi-support/" "gtksourceview-3.0/" "cinnamon-settings-daemon/" "speech-dispatcher/" "gnome-user-share/" "vim/" "libsensors4/" "brltty/" "libgphoto2/" "unity/" "gnome-mahjongg/" "ca-certificates/" "gtk-engines/" "gconf/" "libexttextcat/" "gnome-online-accounts/" "media-player-info/" "telepathy/" "gettext-0.19.8/" "fonts-font-awesome/" "language-tools/" "software-properties/" "gnome-system-monitor/" "zeitgeist/" "wayland-sessions/" "alsa-base/" "dnsmasq-base/" "nautilus-dropbox/" "rhythmbox/" "mousetweaks/" "zenity/" "chromium-browser/" "tex-common/" "hunspell/" "vrms/" "locale-langpack/" "hyphen/" "app-install/" "locales/" "dictionaries-common/" "gnome-software/" "p11-kit/" "zoneinfo/" "color/" "sensible-utils/" "gnome-settings-daemon/" "foo2zjs/" "locale/" "help/" "fontconfig/" "perl/" "luajit-2.0.4/" "help-langpack/" "dict/" "libgnomekbd/" "happy/" "doc-base/" "awk/" "foo2qpdl/" "guile/" "polkit-1/" "texlive/" "eog/" "debconf/" "netpbm/" "pulseaudio/" "ant/" "common-licenses/" "gdb/" "iso-flags-png-320x240/" "ppd/" "base-files/" "desktop-directories/" "grub/" "pkg-config-dpkghook" "aclocal/" "hplip/" "rsyslog/" "fonts/" "icons/" "gnome-sudoku/" "dh-python/" "gnome-mines/" "cinnamon-screensaver/" "cups/" "gcr-3/" "os-prober/" "sgml-base/" "pnm2ppa/" "menu/" "djvu/" "tabset/" "defaults/" "mythes/" "nixnote2/" "adium/" "fonts-droid-fallback/" "gnome-vpn-properties/" "upstart/" "totem/" "gir-1.0/" "keyrings/" "nautilus-share/" "sgml/" "libreoffice/" "language-support/" "systemtap/" "gnome/" "ubuntu-release-upgrader/" "debhelper/" "cinnamon/" "ubuntu-xorg/" "rubygems-integration/" "aisleriot/" "cogl/" "pygtk/" "gtksourceview-2.0/" "nano/" "alsa/" "libc-bin/" "base-passwd/" "sweethome3d/" "mime-info/" "gedit/" "sounds/" "python3/" "xdg-desktop-portal/" "terminfo/" "man/" "gst-plugins-base/" "libparse-debianchangelog-perl/" "ubuntu/" "indicators/" "GConf/" "ubuntu-drivers-common/" "glib-2.0/" "themes/" "tcltk/" "gettext/" "popularity-contest/" "misc/" "java-wrappers/" "linux-sound-base/" "pam-configs/" "libwacom/" "guake/" "mobile-broadband-provider-info/" "yelp/" "backgrounds/" "initramfs-tools/" "systemd/" "mu/" "evolution-data-server/" "snmp/" "example-content/" "gvfs/" "i18n/" "seahorse/" "yelp-xsl/" "build-essential/" "system-config-printer/" "binfmts/" "update-manager/" "gksu/" "libaudio2/" "gtk-doc/" "pam/" "metacity/" "gnome-shell/" "ubuntu-web-launchers/" "nemo/" "vte/" "session-migration/" "emacs25/" "java/" "doc/" "command-not-found/" "remmina/" "../" "./")
+
+ ("/usr/local/share/emacs/25.2/site-lisp/" (23029 23777 661354 946000) "./" "../")
+
+ ("/usr/local/share/emacs/25.2/" (23029 23777 661354 946000) "./" "site-lisp/" "../")
+
+ ("/usr/local/share/emacs/site-lisp/" (23015 40744 0 0) "./" "../")
+
+ ("/usr/local/share/emacs/" (23029 23777 657354 919000) "./" "site-lisp/" "../" "25.2/")
+
+ ("/usr/local/share/" (23035 22486 585938 574000) "emacs/" "texmf/" "ca-certificates/" "fonts/" "./" "sgml/" "../" "man/")
+
+ ("/home/zroth/mail/zjroth@gmail/" (23055 39566 648910 583000) "Forwards/" "_CSU/" "INBOX/" "[Gmail].Spam/" "Sent/" "Purchases/" "Google Voice/" "Craigslist/" "Old Inbox (needs sorting)/" "recipes/" "[Gmail].All Mail/" "./" "Facebook/" "_IMMERSE/" "Archived inbox (6.1.2016)/" "People/" "[Gmail].Drafts/" "_UNL/" "Grad Schools/" "[Gmail].Important/" "[Gmail].Sent Mail/" "Trash/" "../" "[Gmail].Trash/" "[Gmail].Starred/" "Research/" "Confirmations etc./" "Drafts/")
+
+ ("/usr/share/texlive/texmf-dist/bibtex/bst/base/" (23035 22481 413873 858000) "abbrv.bst" "apalike.bst" "acm.bst" "unsrt.bst" "./" "plain.bst" "../" "alpha.bst" "siam.bst" "ieeetr.bst")
+
+ ("/usr/share/texlive/texmf-dist/bibtex/bst/" (23035 47444 188380 971000) "vak/" "multibib/" "bestpapers/" "adrconv/" "mciteplus/" "index/" "mslapa/" "inlinebib/" "phfnote/" "dvdcoll/" "ijqc/" "savetrees/" "beebe/" "biolett-bst/" "natbib/" "achemso/" "base/" "chembst/" "pnas2009/" "sort-by-letters/" "multibibliography/" "perception/" "chscite/" "chet/" "listbib/" "besjournals/" "bibexport/" "figbib/" "tufte-latex/" "din1505/" "nmbib/" "francais-bst/" "cell/" "datatool/" "chicago/" "amsrefs/" "economic/" "directory/" "amscls/" "ajl/" "rsc/" "harvard/" "dlfltxb/" "gloss/" "iopart-num/" "chicago-annote/" "jurabib/" "bibhtml/" "ksfh_nat/" "nar/" "fbs/" "./" "computational-complexity/" "babelbib/" "abstyles/" "frankenstein/" "../" "aichej/" "dk-bib/" "munich/" "hc/" "apacite/" "bookdb/" "notex-bst/" "urlbst/" "dinat/" "upmethodology/" "opcit/" "jneurosci/" "shipunov/" "biblatex/" "apalike2/")
+
+ ("/usr/share/texlive/texmf-dist/bibtex/" (23035 47444 188380 971000) "bst/" "./" "../" "csf/" "bib/")
+
+ ("/usr/share/texlive/texmf-dist/" (23035 23672 465190 915000) "makeindex/" "tex4ht/" "xdvi/" "tex/" "metapost/" "mft/" "web2c/" "source/" "dvipdfmx/" "ttf2pk/" "fonts/" "metafont/" "dvips/" "scripts/" "./" "../" "texdoctk/" "ls-R" "omega/" "bibtex/" "doc/" "texdoc/")
+
+ ("/usr/share/texlive/" (23035 22481 413873 858000) "LICENSE.TL" "texmf-dist/" "index.html" "doc.html" "README" "debian/" "readme-html.dir/" "LICENSE.CTAN" "./" "release-texlive.txt" "../" "README.usergroups" "readme-txt.dir/" "tlpkg/")
+
+ ("/usr/local/" (23015 40508 0 0) "include/" "bin/" "lib/" "games/" "share/" "src/" "./" "sbin/" "../" "man/" "etc/")
+
+ ("/usr/" (23015 40508 0 0) "include/" "bin/" "lib/" "local/" "games/" "share/" "src/" "./" "sbin/" "../")
+
+ ("/usr/share/emacs/" (23029 23772 749321 239000) "./" "site-lisp/" "../" "25.2/")
+
+ ("/usr/share/emacs/25.2/" (23029 23774 293331 835000) "lisp/" "./" "site-lisp/" "../" "etc/")
+
+ ("/usr/share/emacs/25.2/lisp/" (23029 23776 941350 6000) "talk.elc" "help-mode.elc" "windmove.elc" "char-fold.el.gz" "sort.elc" "font-lock.el.gz" "novice.elc" "scroll-all.elc" "hfy-cmap.elc" "ffap.el.gz" "edmacro.el.gz" "image-dired.elc" "buff-menu.elc" "dabbrev.el.gz" "faces.elc" "ebuff-menu.el.gz" "ps-samp.el.gz" "mwheel.elc" "array.elc" "cedet/" "env.el.gz" "help.el.gz" "calendar/" "repeat.el.gz" "newcomment.elc" "t-mouse.elc" "dynamic-setting.elc" "emacs-lock.el.gz" "server.elc" "echistory.elc" "cmuscheme.el.gz" "view.el.gz" "paren.el.gz" "font-core.el.gz" "help-fns.elc" "loadhist.elc" "info.elc" "kmacro.elc" "password-cache.elc" "dom.el.gz" "shadowfile.el.gz" "obsolete/" "files.el.gz" "vt100-led.elc" "isearchb.el.gz" "saveplace.el.gz" "button.elc" "info-xref.elc" "ansi-color.el.gz" "pcmpl-cvs.elc" "vt-control.el.gz" "dired-aux.el.gz" "frameset.elc" "window.elc" "rect.elc" "wid-browse.elc" "jit-lock.elc" "reposition.el.gz" "hexl.elc" "locate.el.gz" "autoinsert.el.gz" "replace.elc" "tooltip.elc" "password-cache.el.gz" "scroll-lock.elc" "tutorial.elc" "man.elc" "play/" "rot13.elc" "ls-lisp.elc" "wid-browse.el.gz" "bindings.el.gz" "dos-fns.el.gz" "filecache.el.gz" "kmacro.el.gz" "saveplace.elc" "disp-table.elc" "reveal.el.gz" "ehelp.elc" "bindings.elc" "cus-face.elc" "find-dired.el.gz" "macros.elc" "avoid.elc" "x-dnd.el.gz" "ansi-color.elc" "mwheel.el.gz" "abbrev.el.gz" "term/" "epa-dired.elc" "image-mode.el.gz" "cus-start.elc" "arc-mode.el.gz" "master.el.gz" "face-remap.elc" "autoarg.elc" "dired.elc" "pcmpl-cvs.el.gz" "md4.el.gz" "w32-vars.el.gz" "woman.el.gz" "allout-widgets.el.gz" "filenotify.el.gz" "tempo.elc" "tree-widget.el.gz" "mpc.el.gz" "forms.el.gz" "vc/" "jka-cmpr-hook.el.gz" "pcmpl-linux.elc" "bookmark.el.gz" "sb-image.el.gz" "calculator.elc" "descr-text.el.gz" "find-file.el.gz" "thingatpt.el.gz" "printing.elc" "desktop.el.gz" "proced.el.gz" "flow-ctrl.el.gz" "scroll-bar.elc" "misc.elc" "kermit.el.gz" "sb-image.elc" "ido.el.gz" "dos-w32.el.gz" "dirtrack.elc" "calc/" "menu-bar.el.gz" "wdired.elc" "vt-control.elc" "ehelp.el.gz" "type-break.el.gz" "doc-view.el.gz" "custom.elc" "mb-depth.elc" "flow-ctrl.elc" "time.elc" "wid-edit.el.gz" "help.elc" "help-mode.el.gz" "tooltip.el.gz" "net/" "find-cmd.elc" "vcursor.elc" "w32-vars.elc" "register.el.gz" "speedbar.elc" "paren.elc" "cdl.elc" "hilit-chg.el.gz" "chistory.el.gz" "tree-widget.elc" "frame.el.gz" "elide-head.elc" "timezone.elc" "delsel.el.gz" "battery.el.gz" "forms.elc" "lpr.el.gz" "edmacro.elc" "version.el.gz" "bs.elc" "autorevert.el.gz" "ibuf-macs.elc" "facemenu.el.gz" "format-spec.el.gz" "shell.elc" "mouse-drag.elc" "json.el.gz" "xt-mouse.elc" "dnd.elc" "finder.elc" "format.el.gz" "subr.elc" "font-core.elc" "pcmpl-gnu.el.gz" "cus-theme.el.gz" "loadup.el" "subdirs.el" "electric.elc" "elec-pair.el.gz" "apropos.el.gz" "abbrev.elc" "vcursor.el.gz" "ielm.el.gz" "hex-util.el.gz" "ffap.elc" "ps-def.el.gz" "find-file.elc" "epa-mail.el.gz" "ses.elc" "delim-col.elc" "lpr.elc" "timezone.el.gz" "shadowfile.elc" "org/" "ruler-mode.el.gz" "align.elc" "follow.el.gz" "generic-x.elc" "makesum.el.gz" "info-look.el.gz" "htmlfontify.elc" "hexl.el.gz" "subr.el.gz" "tool-bar.el.gz" "pcmpl-unix.el.gz" "epg.el.gz" "hilit-chg.elc" "indent.elc" "midnight.el.gz" "help-macro.el.gz" "obarray.elc" "ses.el.gz" "dnd.el.gz" "w32-fns.elc" "ibuf-ext.elc" "case-table.elc" "dabbrev.elc" "startup.el.gz" "leim/" "epa-dired.el.gz" "completion.elc" "hl-line.elc" "tempo.el.gz" "info-look.elc" "calculator.el.gz" "filenotify.elc" "time.el.gz" "epa-file.elc" "emacs-lock.elc" "register.elc" "minibuf-eldef.elc" "image-file.elc" "pcmpl-linux.el.gz" "xt-mouse.el.gz" "replace.el.gz" "recentf.elc" "speedbar.el.gz" "tmm.elc" "informat.el.gz" "filesets.elc" "epa-hook.elc" "env.elc" "epg-config.elc" "find-cmd.el.gz" "notifications.el.gz" "menu-bar.elc" "bookmark.elc" "cus-dep.el.gz" "uniquify.el.gz" "bs.el.gz" "kermit.elc" "mpc.elc" "dos-fns.elc" "sort.el.gz" "makesum.elc" "dired-x.el.gz" "cus-load.el" "find-lisp.el.gz" "button.el.gz" "jka-compr.el.gz" "dom.elc" "help-at-pt.el.gz" "window.el.gz" "isearch.elc" "outline.el.gz" "locate.elc" "fringe.elc" "cus-face.el.gz" "shell.el.gz" "epa-hook.el.gz" "foldout.el.gz" "pcmpl-unix.elc" "widget.elc" "md4.elc" "info-xref.el.gz" "image-file.el.gz" "find-dired.elc" "hippie-exp.el.gz" "expand.elc" "savehist.elc" "thumbs.elc" "xwidget.elc" "ps-mule.elc" "vt100-led.el.gz" "t-mouse.el.gz" "skeleton.elc" "buff-menu.el.gz" "files-x.elc" "ezimage.elc" "mouse.el.gz" "mh-e/" "README" "userlock.el.gz" "mouse-copy.el.gz" "linum.el.gz" "ls-lisp.el.gz" "url/" "autoarg.el.gz" "thingatpt.elc" "woman.elc" "jka-compr.elc" "ps-mule.el.gz" "select.el.gz" "custom.el.gz" "pcmpl-x.elc" "soundex.el.gz" "scroll-lock.el.gz" "allout.elc" "files-x.el.gz" "doc-view.elc" "isearch.el.gz" "misearch.elc" "completion.el.gz" "rect.el.gz" "hippie-exp.elc" "composite.el.gz" "pcmpl-gnu.elc" "ps-print.el.gz" "xml.elc" "htmlfontify.el.gz" "dired.el.gz" "find-lisp.elc" "progmodes/" "reveal.elc" "reposition.elc" "filesets.el.gz" "windmove.el.gz" "elide-head.el.gz" "COPYING" "nxml/" "epg-config.el.gz" "pcmpl-rpm.el.gz" "allout-widgets.elc" "userlock.elc" "desktop.elc" "frameset.el.gz" "hi-lock.elc" "time-stamp.elc" "linum.elc" "loadhist.el.gz" "select.elc" "ibuf-macs.el.gz" "scroll-all.el.gz" "ido.elc" "hl-line.el.gz" "disp-table.el.gz" "mb-depth.el.gz" "savehist.el.gz" "ruler-mode.elc" "jka-cmpr-hook.elc" "view.elc" "epa.elc" "msb.elc" "info.el.gz" "outline.elc" "cus-dep.elc" "gs.el.gz" "rfn-eshadow.elc" "finder-inf.el" "help-fns.el.gz" "cmuscheme.elc" "array.el.gz" "server.el.gz" "minibuffer.el.gz" "hex-util.elc" "dos-vars.el.gz" "skeleton.el.gz" "foldout.elc" "informat.elc" "x-dnd.elc" "minibuf-eldef.el.gz" "minibuffer.elc" "gnus/" "winner.el.gz" "misearch.el.gz" "hfy-cmap.el.gz" "double.el.gz" "delsel.elc" "newcomment.el.gz" "international/" "soundex.elc" "dos-w32.elc" "type-break.elc" "winner.elc" "image.elc" "strokes.elc" "loaddefs.el" "simple.el.gz" "macros.el.gz" "eshell/" "tar-mode.elc" "term.el.gz" "term.elc" "elec-pair.elc" "jit-lock.el.gz" "tutorial.el.gz" "follow.elc" "imenu.el.gz" "char-fold.elc" "electric.el.gz" "uniquify.elc" "generic-x.el.gz" "pcomplete.el.gz" "dframe.elc" "tool-bar.elc" "emacs-lisp/" "midnight.elc" "tmm.el.gz" "ezimage.el.gz" "composite.elc" "arc-mode.elc" "ps-bdf.el.gz" "rot13.el.gz" "image-dired.el.gz" "iimage.elc" "thumbs.el.gz" "autoinsert.elc" "indent.el.gz" "msb.el.gz" "ibuf-ext.el.gz" "ibuffer.el.gz" "iimage.el.gz" "json.elc" "ps-def.elc" "xml.el.gz" "ebuff-menu.elc" "autorevert.elc" "dired-aux.elc" "font-lock.elc" "erc/" "color.el.gz" "dired-x.elc" "image-mode.elc" "gs.elc" "faces.el.gz" "hi-lock.el.gz" "notifications.elc" "echistory.el.gz" "wdired.el.gz" "cus-edit.elc" "time-stamp.el.gz" "comint.el.gz" "tabify.elc" "simple.elc" "descr-text.elc" "language/" "help-at-pt.elc" "ldefs-boot.el" "whitespace.elc" "files.elc" "avoid.el.gz" "color.elc" "help-macro.elc" "repeat.elc" "imenu.elc" "mouse.elc" "ielm.elc" "pcomplete.elc" "epa.el.gz" "cus-start.el.gz" "allout.el.gz" "mouse-copy.elc" "cdl.el.gz" "isearchb.elc" "ps-bdf.elc" "w32-fns.el.gz" "obarray.el.gz" "epa-mail.elc" "format-spec.elc" "scroll-bar.el.gz" "xwidget.el.gz" "emulation/" "profiler.elc" "delim-col.el.gz" "misc.el.gz" "mail/" "dos-vars.elc" "pcmpl-rpm.elc" "frame.elc" "image.el.gz" "master.elc" "cus-edit.el.gz" "align.el.gz" "fringe.el.gz" "format.elc" "rfn-eshadow.el.gz" "ps-samp.elc" "proced.elc" "filecache.elc" "icomplete.elc" "printing.el.gz" "strokes.el.gz" "recentf.el.gz" "ps-print.elc" "epg.elc" "widget.el.gz" "man.el.gz" "tabify.el.gz" "icomplete.el.gz" "ibuffer.elc" "novice.el.gz" "dframe.el.gz" "double.elc" "epa-file.el.gz" "battery.elc" "textmodes/" "whitespace.el.gz" "chistory.elc" "finder.el.gz" "mouse-drag.el.gz" "facemenu.elc" "talk.el.gz" "startup.elc" "cus-theme.elc" "version.elc" "face-remap.el.gz" "comint.elc" "tar-mode.el.gz" "dynamic-setting.el.gz" "expand.el.gz" "apropos.elc" "pcmpl-x.el.gz" "dirtrack.el.gz" "case-table.el.gz" "profiler.el.gz" "wid-edit.elc" "../" "./")
+
+ ("/usr/share/emacs/25.2/lisp/textmodes/" (23029 23776 933349 951000) "sgml-mode.el.gz" "refer.elc" "reftex-sel.elc" "refbib.el.gz" "dns-mode.el.gz" "remember.el.gz" "reftex.elc" "rst.elc" "underline.el.gz" "nroff-mode.el.gz" "remember.elc" "table.el.gz" "reftex-auc.elc" "refbib.elc" "reftex-global.el.gz" "bib-mode.el.gz" "two-column.el.gz" "paragraphs.el.gz" "picture.elc" "flyspell.elc" "texnfo-upd.el.gz" "reftex-vars.elc" "page.el.gz" "css-mode.el.gz" "reftex-vars.el.gz" "underline.elc" "refill.el.gz" "tildify.el.gz" "reftex-index.el.gz" "reftex-ref.elc" "enriched.elc" "texinfo.el.gz" "bibtex-style.el.gz" "reftex-parse.el.gz" "table.elc" "refill.elc" "texnfo-upd.elc" "reftex-parse.elc" "tildify.elc" "bibtex.elc" "fill.elc" "texinfmt.el.gz" "conf-mode.el.gz" "reftex-dcr.el.gz" "reftex-cite.el.gz" "css-mode.elc" "fill.el.gz" "page-ext.elc" "reftex-cite.elc" "rst.el.gz" "reftex-index.elc" "reftex-toc.el.gz" "two-column.elc" "bib-mode.elc" "texinfmt.elc" "page-ext.el.gz" "reftex-ref.el.gz" "page.elc" "paragraphs.elc" "enriched.el.gz" "refer.el.gz" "texinfo.elc" "nroff-mode.elc" "po.elc" "makeinfo.el.gz" "reftex-global.elc" "makeinfo.elc" "conf-mode.elc" "tex-mode.el.gz" "./" "reftex-sel.el.gz" "reftex.el.gz" "ispell.el.gz" "text-mode.elc" "reftex-toc.elc" "../" "sgml-mode.elc" "artist.el.gz" "bibtex-style.elc" "po.el.gz" "artist.elc" "picture.el.gz" "dns-mode.elc" "reftex-dcr.elc" "tex-mode.elc" "ispell.elc" "text-mode.el.gz" "flyspell.el.gz" "bibtex.el.gz" "reftex-auc.el.gz")
+
+ ("/home/zroth/Dropbox/job-related/vita/" (23035 45192 65411 202000) "vita-header.tex" "vita-new.pdf" "vita-new.org" "./" "vita.tex" "resume.tex" "resume (pastalkova-ws2's conflicted copy 2016-06-03).tex" "resume.org" "twentysecondcv/" "mycv.sty.working" "resume (pastalkova-ws2's conflicted copy 2016-06-03).org" "resume (pastalkova-ws2's conflicted copy 2016-06-03).pdf" "header.tex" "vita-new.tex" "resume.pdf" "../" "vita.html" "vita.pdf" "mycv.sty" "vita.org")
+
+ ("/home/zroth/Dropbox-janelia/job-related/vita/" (23035 19811 293773 316000) "vita-header.tex" "vita-new.pdf" "vita-new.org" "./" "vita.tex" "resume.tex" "resume (pastalkova-ws2's conflicted copy 2016-06-03).tex" "resume.org" "twentysecondcv/" "mycv.sty.working" "resume (pastalkova-ws2's conflicted copy 2016-06-03).org" "resume (pastalkova-ws2's conflicted copy 2016-06-03).pdf" "header.tex" "vita-new.tex" "resume.pdf" "../" "vita.html" "vita.pdf" "mycv.sty" "vita.org")
+
+ ("/home/zroth/Dropbox-janelia/job-related/" (22953 45938 171477 231000) "./" "vita/" "janelia-contract-romani-lab-2017-03-31.pdf" "janelia-intranet/" "applications/" "myidp/" "2017-janelia-holiday-calendar.pdf" "2017-janelia-payroll-calendar.pdf" "janelia-invoices/" "../")
+
+ ("/home/zroth/Dropbox-janelia/" (22953 45959 807694 38000) ".dropbox" "books/" "job-related/" "./" "travel/" ".dropbox.cache/" "recommendation-letters/" "setup-org.el" "readability-export.json" "what-was-i-doing.md" "org/" "grad-school/" "../" "sequence-paper/" "personal/" "cns-abstract.doc")
+
+ ("/home/zroth/.emacs.d/elpa/hledger-mode-20170729.742/" (22914 29731 700731 945000) "hledger-mode-autoloads.el" "hledger-suggest.elc" "hledger-navigate.elc" "hledger-mode.el" "./" "hledger-core.elc" "hledger-defuns.elc" "hledger-suggest.el" "hledger-defuns.el" "hledger-navigate.el" "hledger-mail.el" "hledger-webservice.el" "hledger-mode.elc" "hledger-core.el" "../" "hledger-mail.elc" "hledger-input.elc" "hledger-mode-pkg.el" "hledger-webservice.elc" "hledger-reports.el" "hledger-reports.elc" "hledger-input.el")
+
+ ("/home/zroth/projects/craigslist-car-search/" (22885 42106 344739 58000) "cities.json" "./" ".ipynb_checkpoints/" "Untitled.ipynb" "query.js" ".git/" "#craigslist.org#" "code.org" ".#craigslist.org" "cities.py" "../" "#code.org#" ".#code.org" "craigslist.org")
+
+ ("/home/zroth/projects/heroku-apps/" (22528 18168 17434 165000) "python-getting-started/" "./" "clojure-getting-started/" "murmuring-cliffs-15916/" "painlessly-deploying-data-apps/" "julia-getting-started/" "../")
+
+ ("/home/zroth/projects/heroku-apps/painlessly-deploying-data-apps/" (22543 61165 618254 208000) "templates/" "./" "conda-requirements.txt" "app.html" ".ipynb_checkpoints/" "README.md" ".git/" "runtime.txt" "Procfile" "Testing.ipynb" "app.py" "finance.py" "../" "mpl_plot.html" "requirements.txt")
+
+ ("/home/zroth/projects/game-of-life/clojure/" (22586 27694 242983 573000) "game-of-life.clj" "./" "game-of-life.org" "../")
+
+ ("/home/zroth/projects/document-scanner/OpenCV/opencv-2.4.13/build/modules/" (22570 28127 366124 246000) "python/" "imgproc/" "CTestTestfile.cmake" "cmake_install.cmake" "legacy/" "photo/" "world/" "contrib/" "./" "videostab/" "java/" "ml/" "ocl/" "objdetect/" "superres/" "features2d/" "androidcamera/" "video/" "calib3d/" "nonfree/" "ts/" "gpu/" "Makefile" "../" "dynamicuda/" "highgui/" "stitching/" "core/" "CMakeFiles/" "flann/" "viz/")
+
+ ("/home/zroth/projects/document-scanner/OpenCV/opencv-2.4.13/" (22570 28097 621505 989000) "build/" "CMakeLists.txt" "./" "README.md" "3rdparty/" "data/" "cmake/" "include/" "doc/" "../" "LICENSE" "index.rst" "samples/" "modules/" "CONTRIBUTING.md" "apps/" "platforms/" ".tgitconfig")
+
+ ("/home/zroth/projects/document-scanner/OpenCV/" (22570 28093 41422 277000) "./" "OpenCV-2.4.13.zip" "opencv-2.4.13/" "../")
+
+ ("/home/zroth/projects/document-scanner/" (22570 27976 596556 867000) "opencv.sh" "box.png" "./" "featurematching.py" ".git/" "OpenCV/" "flann.cpp" "readme.org" "../" "box_in_scene.png")
+
+ ("/home/zroth/.lein/" (22567 42179 460263 360000) "self-installs/" "./" "repl-history" "repl-port" "../")
+
+ ("/home/zroth/projects/game-of-life/" (22557 15254 558240 247000) "./" "clojure/" ".git/" "julia/" "README.org" "javascript/" "../" "emacs/")
+
+ ("/home/zroth/projects/heroku-apps/painlessly-deploying-data-apps/templates/" (22534 48156 10155 729000) "graph.html" "./" "index.html" "../")
+
+ ("/home/zroth/projects/heroku-apps/julia-getting-started/" (22528 18163 545405 634000) "package.jl" "./" ".git/" "../")
+
+ ("/home/zroth/projects/flask-tutorial/" (22525 31517 354503 436000) "templates/" "asdf_asdf.txt" "static/" "name_age.txt" "application.py" "./" "hello.py" "asdf_fdsa.txt" "../")
+
+ ("/home/zroth/projects/flask-tutorial/templates/" (22524 21335 307090 733000) "./" "layout_lulu.html" "userinfo_lulu.html" "../")
+
+ ("/home/zroth/projects/heroku-apps/clojure-getting-started/" (22524 22850 925187 620000) "src/" ".lein-repl-history" "./" "README.md" "resources/" "project.clj" "test/" ".git/" "Procfile" "target/" "app.json" "../" ".gitignore")
+
+ ("/home/zroth/projects/flask-tutorial/static/" (22524 5557 474619 724000) "./" "../")
+
+ ("/home/zroth/Dropbox/personal/finances/" (22521 26691 436320 221000) "finances.gnucash.20161008163308.log" "finances.gnucash.20161008162531.gnucash" "finances.gnucash.20161008161203.log" "./" "finances.gnucash.20161008161454.log" "finances.gnucash.20161008161255.gnucash" "finances.gnucash.20161008161346.gnucash" "finances.gnucash.20161008153907.log" "finances.gnucash.20161008161903.log" "finances.gnucash.20161008161433.log" "finances.gnucash.20161008161453.gnucash" "finances.gnucash.20161008162333.gnucash" "finances.gnucash.20161008160123.gnucash" "finances.gnucash.20161001174622.log" "finances.gnucash.20161008163307.gnucash" "finances.gnucash.LCK" "finances.gnucash.20161008174226.gnucash" "finances.gnucash.20161008163407.log" "finances.gnucash.20161008162830.gnucash" "finances.gnucash.20161008161255.log" "finances.gnucash.20161008161320.log" "finances.gnucash.20161008161432.gnucash" "finances.gnucash.20161008153906.gnucash" "finances.gnucash.20161008161903.gnucash" "finances.gnucash.20161008161410.log" "finances.gnucash" "finances.gnucash.20161008163407.gnucash" "finances.gnucash.7f0101.5052.LNK" "finances.gnucash.20161008161347.log" "finances.gnucash.20161008160124.log" "../" "finances.gnucash.20161008162334.log" "finances.gnucash.20161008162532.log" "finances.gnucash.20161008161203.gnucash" "finances.gnucash.20161008161410.gnucash" "finances.gnucash.20161008161320.gnucash" "finances.gnucash.20161008162830.log")
+
+ ("/home/zroth/projects/heroku-apps/python-getting-started/" (22520 24720 885151 267000) "./" "venv/" "README.md" ".git/" "Procfile.windows" "runtime.txt" "Procfile" "gettingstarted/" "app.json" ".env" "manage.py" "hello/" "../" "aardvark.org" "requirements.txt" ".gitignore")
+
+ ("/home/zroth/projects/heroku-apps/clojure-getting-started/src/clojure_getting_started/" (22520 25590 345375 516000) "./" "../" "web.clj")
+
+ ("/home/zroth/projects/heroku-apps/clojure-getting-started/src/" (22520 25590 345375 516000) "./" "../" "clojure_getting_started/")
+
+ ("/home/zroth/programs/clojure-1.8.0/" (22174 33020 0 0) "changes.md" "src/" "pom.xml" "./" "clojure-1.8.0-slim.jar" "build.xml" "test/" "readme.txt" "epl-v10.html" "doc/" "../" "clojure.iml" "clojure-1.8.0.jar")
+
+ ("/home/zroth/.gnupg/" (22517 40705 372307 844000) "./" "pubring.gpg" "gpg.conf" "secring.gpg" "../" "trustdb.gpg")
+
+ ("/home/zroth/Documents/" (22483 25140 461335 878000) "tmp.tex" "lastpass-2016-09-09.csv" "lastpass-2016-09-09.csv~" "./" "townhouse-seller-disclosure/" "defense-draft.pdf" "wedding-video/" "tmp.org" "../" "lastpass-2015-12-13.kdbx" "groomsmen.md" "tmp.csv" "lastpass-2016-09-09.kdbx")
+
+ ("/home/zroth/projects/heroku-apps/python-getting-started/gettingstarted/" (22404 24405 275267 195000) "wsgi.py" "static/" "settings.py" "./" "__init__.py" "__init__.pyc" "urls.py" "staticfiles/" "urls.pyc" "../" "settings.pyc" "wsgi.pyc")
+
+ ("/home/zroth/projects/heroku-apps/python-getting-started/hello/" (22520 23876 230250 874000) "templates/" "static/" "./" "migrations/" "__init__.py" "__init__.pyc" "admin.py" "views.py" "views.pyc" "tests.py" "models.py" "models.pyc" "../" "admin.pyc")
+
+ ("/home/zroth/Dropbox/job-related/applications/data-incubator/application-for-2017-january/" (22511 6848 189234 62000) "./" "application-round-1.pdf" "application-round-1.org" "../")
+
+ ("/home/zroth/Dropbox/job-related/applications/data-incubator/" (22511 6846 577214 991000) "application-for-2016-june/" "application-for-2017-january/" "./" ".ipynb_checkpoints/" "application-for-2016-september/" "../" "application-for-2016-january/")
+
+ ("/home/zroth/programs/taskwarrior/" (22493 32662 218225 970000) "src/" "CMakeLists.txt" "INSTALL" "DEVELOPER" "./" "performance/" "README.md" "commit.h.in" "ChangeLog" "test/" ".git/" "scripts/" "EXPOSITION" "AUTHORS" "cmake.h.in" "COPYING" "doc/" "../" "NEWS" "LICENSE" ".gitignore")
+
+ ("/home/zroth/.task/" (22493 32134 673796 475000) "completed.data" "./" "private.certificate.pem" "pending.data" "private.key.pem" "ca.cert.pem" "backlog.data" "../")
+
+ ("/home/zroth/Dropbox/applications/dean-and-company/" (22433 19269 382888 486000) "resume.tex" "./" "../" "coverletter.org" "description.org" ".#description.org" "#description.org#" "resume.pdf")
+
+ ("/home/zroth/Dropbox/vita/" (22433 19317 722354 126000) "resume (pastalkova-ws2's conflicted copy 2016-06-03).pdf" "resume.tex" "vita.html" "./" "mycv.sty" "resume.org" "header.tex" "vita-header.tex" "mycv.sty.working" "vita.tex" "../" "resume.pdf" "resume (pastalkova-ws2's conflicted copy 2016-06-03).tex" "resume (pastalkova-ws2's conflicted copy 2016-06-03).org" "vita.pdf" "vita.org")
+
+ ("/home/zroth/Dropbox/applications/" (22429 8746 638595 426000) "./" "data-incubator/" "dean-and-company/" "../")
+
+ ("/home/zroth/projects/heroku-apps/painlessly-deploying-data-apps/finance/" (22406 47011 618199 481000) "templates/" "static/" "./" "../")
+
+ ("/home/zroth/projects/heroku-apps/murmuring-cliffs-15916/" (22405 42182 420813 779000) "package.jl" "./" ".git/" "../" "index.jl")
+
+ ("/home/zroth/projects/rank-pairs/" (22211 41546 203960 161000) "./" "../" "rank-pairs.jl")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

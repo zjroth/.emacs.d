@@ -1,4 +1,11 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -6,23 +13,28 @@
 ;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 
-;; Set path to dependencies
-(setq site-lisp-dir
-      (expand-file-name "site-lisp" user-emacs-directory))
+;; ;; Set path to dependencies
+;; (setq site-lisp-dir
+;;       (expand-file-name "site-lisp" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path user-emacs-directory)
-(add-to-list 'load-path site-lisp-dir)
+;; (add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path
+             (expand-file-name "settings" user-emacs-directory))
+;; (add-to-list 'load-path site-lisp-dir)
 
-;; Settings for currently logged in user
-(setq user-settings-dir
-      (concat user-emacs-directory "users/" user-login-name))
-(add-to-list 'load-path user-settings-dir)
+;; ;; Settings for currently logged in user
+;; (setq user-settings-dir
+;;       (concat user-emacs-directory "users/" user-login-name))
+;; (add-to-list 'load-path user-settings-dir)
 
-;; Add external projects to load path
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
+;; ;; Add external projects to load path
+;; (dolist (project (directory-files site-lisp-dir t "\\w+"))
+;;   (when (file-directory-p project)
+;;     (add-to-list 'load-path project)))
+
+(add-to-list 'load-path
+             "~/.emacs.d/other-packages/org-protocol-capture-html/")
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -49,6 +61,7 @@
 
 ;; Setup packages
 (require 'setup-package)
+;; (require 'setup-use-package)
 
 ;; Install extensions if they're missing
 (defun init--install-packages ()
@@ -60,15 +73,11 @@
    (cons 'gist                 melpa)
    (cons 'htmlize              melpa)
    (cons 'elisp-slime-nav      melpa)
-   ;(cons 'elnode               marmalade)
-   (cons 'slime-js             marmalade)
-   (cons 'git-commit-mode      melpa)
+   ;; (cons 'git-commit-mode      melpa)
    (cons 'gitconfig-mode       melpa)
    (cons 'gitignore-mode       melpa)
-   (cons 'clojure-mode         melpa)
-   (cons 'clojure-test-mode    melpa)
-   (cons 'nrepl                melpa)
-   (cons 'ido-ubiquitous       melpa)
+   (cons 'cider                melpa)
+   (cons 'ido-completing-read+ melpa)
    (cons 'yasnippet            melpa)
    (cons 'buster-snippets      melpa)
    (cons 'perspective          melpa)
@@ -87,7 +96,18 @@
    (cons 'multifiles           melpa)
    (cons 'browse-kill-ring     melpa)
    (cons 'smex                 melpa)
-   (cons 'smex                 marmalade)))
+   (cons 'smex                 marmalade)
+   (cons 'tagedit              melpa)
+   (cons 'buffer-move          melpa)
+   (cons 'smooth-scrolling     melpa)
+   (cons 'undo-tree            melpa)
+   (cons 'dired-details        melpa)
+   (cons 'shell-command        melpa)
+   (cons 'eproject             melpa)
+   (cons 'fill-column-indicator melpa)
+   (cons 'zoom-frm             melpa)
+   (cons 'visual-fill-column   melpa)
+   ))
 
 (condition-case nil
     (init--install-packages)
@@ -115,7 +135,8 @@
 (require 'setup-html-mode)
 (require 'setup-paredit)
 (require 'ess-site)
-(require 'setup-latex)
+;;(require 'setup-latex)
+(require 'setup-elfeed)
 
 ;; Language specific setup files
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
@@ -125,14 +146,10 @@
 (eval-after-load 'matlab-mode '(require 'setup-matlab-mode))
 (eval-after-load 'ess-julia '(require 'setup-julia-mode))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/matlab-mode/")
-(load-library "matlab-load")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/matlab-mode/")
+;; (load-library "matlab-load")
 
 (setq inferior-julia-program-name "/home/zroth/bin/julia")
-
-;; Load slime-js when asked for
-(autoload 'slime-js-jack-in-browser "setup-slime-js" nil t)
-(autoload 'slime-js-jack-in-node "setup-slime-js" nil t)
 
 ;; Map files to modes
 (require 'mode-mappings)
@@ -172,6 +189,7 @@
 
 ;; Misc
 (require 'appearance)
+;; (require 'spacemacs-dark-theme)
 (require 'my-misc)
 (when is-mac (require 'mac))
 
@@ -181,6 +199,7 @@
 (eval-after-load 'elisp-slime-nav '(diminish 'elisp-slime-nav-mode))
 
 ;; Email, baby
+(add-to-list 'load-path "~/programs/mu/mu4e")
 (require 'setup-mu4e)
 
 ;; Emacs server
@@ -196,7 +215,124 @@
 (require 'diminish)
 ;; (diminish 'yas/minor-mode)
 
-;; Conclude init by setting up specifics for the current user
-(when (file-exists-p user-settings-dir)
-  (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
+;; Web browsing
+(require 'setup-eww)
+
+;; org-protocol
+(require 'org-protocol)
+(require 'org-protocol-capture-html)
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/org/inbox.org")
+         "* TODO %?\n  %i\n  %a")
+        ("a" "Article" entry (file+olp "~/Dropbox/org/lists.org" "Reading" "Internet articles")
+         "
+* %c
+:PROPERTIES:
+  :CAPTURED: %U
+:END:
+%?
+%:initial")
+        ;; ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
+        ;;  "* %?\nEntered on %U\n  %i\n  %a")
+        ("p" "Job posting" entry (file+olp "~/Dropbox/org/projects.org"
+                                           "Job search" "Postings" "Apply")
+         "
+* %?%c
+:PROPERTIES:
+  :TITLE:        %^{Job title}
+  :COMPANY:      %^{Company name}
+  :LOCATION:     %^{Job location}
+  :CAPTURED:     %U
+  :POSTED:       %^{Job posting found at}
+  :DATE_APPLIED:
+:END:
+%:initial
+** Information
+** Cover letter
+** Follow up about application
+")))
+
+;; ;; helm
+;; (use-package helm
+;;   :diminish helm-mode
+;;   :init (progn
+;;           (require 'helm-config)
+;;           ;; (require 'helm-org-rifle)
+;;           ;; (require 'helm-orgcard)
+;;           (setq helm-candidate-number-limit 100)
+;;           ;; From https://gist.github.com/antifuchs/9238468
+;;           (setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
+;;                 helm-input-idle-delay 0.01  ; this actually updates things
+;;                                         ; reeeelatively quickly.
+;;                 helm-yas-display-key-on-candidate t
+;;                 helm-quick-update t
+;;                 helm-M-x-requires-pattern nil
+;;                 helm-ff-skip-boring-files t)
+;;           (helm-mode))
+;;   :bind (("C-c h" . helm-mini)
+;;          ("C-h a" . helm-apropos)
+;;          ("C-x b" . helm-buffers-list)
+;;          ("M-y" . helm-show-kill-ring)
+;;          ("M-x" . helm-M-x)
+;;          ("C-x c o" . helm-occur)
+;;          ("C-x c s" . helm-swoop)
+;;          ("C-x c y" . helm-yas-complete)
+;;          ("C-x c Y" . helm-yas-create-snippet-on-region)
+;;          ("C-x c b" . my/helm-do-grep-book-notes)
+;;          ("C-x c SPC" . helm-all-mark-rings)))
+;; (ido-mode -1) ;; Turn off ido mode in case I enabled it accidentally
+
+;; ivy
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode . "")
+
+  :bind (:map ivy-mode-map
+              ("C-'" . ivy-avy))
+
+  :config
+  (progn
+    (ivy-mode 1)
+    ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
+    (setq ivy-use-virtual-buffers t)
+    ;; number of result lines to display
+    (setq ivy-height 10)
+    ;; does not count candidates
+    (setq ivy-count-format "")
+    ;; no regexp by default
+    (setq ivy-initial-inputs-alist nil)
+    ;; configure regexp engine.
+    (setq ivy-re-builders-alist
+          ;; allow input not in order
+          '((t   . ivy--regex-ignore-order)))
+
+    (use-package ivy-rich
+      :init
+      (ivy-set-display-transformer 'ivy-switch-buffer
+                                   'ivy-rich-switch-buffer-transformer)))
+
+  :bind (("C-x b"     . ivy-switch-buffer)
+         ("M-y"       . counsel-yank-pop)
+         ("M-x"       . counsel-M-x)
+         ("C-s"       . swiper)
+         ("C-x C-f"   . counsel-find-file)
+         :map org-mode-map
+         ("C-c C-j"   . counsel-org-goto)
+         ;("C-h a"     . helm-apropos)
+         ;("C-x b"     . helm-buffers-list)
+         ;("C-x c o"   . helm-occur)
+         ;("C-x c SPC" . helm-all-mark-rings)
+         ))
+
+;; god-mode
+(require 'god-mode)
+;; (global-set-key (kbd "<escape>") 'god-local-mode)
+(global-set-key (kbd "<escape>") 'god-mode-all)
+(setq god-exempt-major-modes nil)
+(setq god-exempt-predicates nil)
+
+;; ;; Conclude init by setting up specifics for the current user
+;; (when (file-exists-p user-settings-dir)
+;;   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
 (put 'dired-find-alternate-file 'disabled nil)

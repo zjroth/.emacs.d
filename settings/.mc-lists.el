@@ -10,7 +10,6 @@
         ac-complete
         back-to-indentation-or-beginning
         backward-sexp
-        beginning-of-buffer
         c-electric-backspace
         c-electric-delete-forward
         c-electric-paren
@@ -28,12 +27,10 @@
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
         end-of-buffer
-        end-of-visual-line
         ess-smart-S-assign
         ess-smart-comma
         ess-yank
         eval-and-replace
-        eval-last-sexp
         eval-print-last-sexp
         fill-paragraph
         fold-this
@@ -42,15 +39,12 @@
         forward-sexp
         hippie-expand-no-case-fold
         html-wrap-in-tag
-        indent-for-tab-command
         js2-beginning-of-line
         js2-end-of-line
         js2-insert-and-indent
         js2r-inline-var
         js2r-var-to-this
         kill-region-or-backward-word
-        kill-sentence
-        kill-visual-line
         kmacro-insert-counter
         magit-stage-item
         markdown-enter-key
@@ -68,26 +62,17 @@
         open-line-above
         open-line-below
         org-beginning-of-line
-        org-ctrl-c-ctrl-c
-        org-ctrl-c-minus
-        org-cycle
-        org-deadline
         org-delete-backward-char
         org-delete-char
         org-end-of-line
-        org-fill-paragraph
         org-force-self-insert
-        org-insert-item
-        org-kill-line
         org-metaleft
         org-metaright
-        org-previous-visible-heading
         org-return-indent
         org-self-insert-command
         org-shiftmetaleft
         org-shiftmetaright
         org-shiftright
-        org-shifttab
         org-todo
         org-yank
         orgtbl-self-insert-command
@@ -100,13 +85,9 @@
         sh-assignment
         slime-space
         subword-right
-        tex-handle-newline
         tex-insert-quote
         transpose-params
-        transpose-words
         wrap-region-trigger
-        yaml-electric-backspace
-        yaml-electric-dash-and-dot
         yank-indented
         yank-unindented
         yas-expand
@@ -117,7 +98,6 @@
       '(
         TeX-command-master
         TeX-next-error
-        counsel-M-x
         delete-window
         ido-find-file
         ido-switch-buffer
@@ -126,7 +106,6 @@
         matlab-comment-line-break-function
         org-edit-src-save
         org-export-dispatch
-        overwrite-mode
         rename-current-buffer-file
         rotate-windows
         smex
