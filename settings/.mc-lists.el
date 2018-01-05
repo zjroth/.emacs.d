@@ -23,6 +23,7 @@
         cua-set-mark
         delete-blank-lines
         delete-horizontal-space
+        delete-rectangle
         dired-back-to-start-of-files
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
@@ -31,6 +32,7 @@
         ess-smart-comma
         ess-yank
         eval-and-replace
+        eval-last-sexp
         eval-print-last-sexp
         fill-paragraph
         fold-this
@@ -39,11 +41,13 @@
         forward-sexp
         hippie-expand-no-case-fold
         html-wrap-in-tag
+        inline-string-rectangle
         js2-beginning-of-line
         js2-end-of-line
         js2-insert-and-indent
         js2r-inline-var
         js2r-var-to-this
+        kill-and-retry-line
         kill-region-or-backward-word
         kmacro-insert-counter
         magit-stage-item
@@ -66,6 +70,7 @@
         org-delete-char
         org-end-of-line
         org-force-self-insert
+        org-kill-line
         org-metaleft
         org-metaright
         org-return-indent
@@ -92,12 +97,14 @@
         yank-unindented
         yas-expand
         yas/expand
+        universal-argument-minus
         ))
 
 (setq mc/cmds-to-run-once
       '(
         TeX-command-master
         TeX-next-error
+        create-scratch-buffer
         delete-window
         ido-find-file
         ido-switch-buffer
@@ -105,6 +112,7 @@
         js2r-rename-var
         matlab-comment-line-break-function
         org-edit-src-save
+        mouse-drag-vertical-line
         org-export-dispatch
         rename-current-buffer-file
         rotate-windows

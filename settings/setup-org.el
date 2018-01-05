@@ -1,5 +1,3 @@
-(require 'ox-pandoc)
-
 (defun myorg-update-parent-cookie ()
   (when (equal major-mode 'org-mode)
     (save-excursion
@@ -11,6 +9,9 @@
 
 (defadvice kill-whole-line (after fix-cookies activate)
   (myorg-update-parent-cookie))
+
+;; Exporting
+(require 'ox-pandoc)
 
 ;; Indent headlines and content.
 (setq org-startup-indented t)

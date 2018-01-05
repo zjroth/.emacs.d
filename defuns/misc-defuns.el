@@ -121,3 +121,20 @@ Both PATTERN and CONTENTS are matched as regular expressions."
   (interactive)
   (kmacro-push-ring)
   (edit-kbd-macro 'view-lossage))
+
+;; Window splitting --- a partially-written function
+;;
+;;
+;; (defun split-window-horizontally (arg)
+;;   (interactive "P")
+;;   (let ((num (cond ((numberp arg) arg)
+;;                    ((eq (length arg) 1) (car arg))
+;;                    (t 2))))
+;;     (if (> num 0)
+;;         (split-window-right width)
+;;         (split-window-horizontally))
+;;
+;;     (setq width (/ (window-total-width) num))
+;;     ;; Don't forget about the function balance-windows
+;;     )
+;;   )

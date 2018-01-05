@@ -72,20 +72,15 @@
 ;; Configuration files
 (add-to-list 'auto-mode-alist '("\\.offlineimaprc$" . conf-mode))
 
-;; Snippets
-(add-to-list 'auto-mode-alist '("yasnippet/snippets" . snippet-mode))
-(add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))
-
-;; Buster.JS
-;(autoload 'buster-mode "buster-mode")
-;(setq buster-node-executable "/usr/local/bin/node")
-;(add-file-find-hook-with-pattern "test\\.js$" (lambda () (buster-mode)) "require(\\(\"\\|'\\)buster")
+;; ;; Snippets
+;; (add-to-list 'auto-mode-alist '("yasnippet/snippets" . snippet-mode))
+;; (add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode")
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
-(add-hook 'markdown-mode-hook (lambda () (define-key markdown-mode-map (kbd "<tab>") 'yas/expand)))
+;; (add-hook 'markdown-mode-hook (lambda () (define-key markdown-mode-map (kbd "<tab>") 'yas/expand)))
 
 ;; Highlighting in editmsg-buffer for magit
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . conf-javaprop-mode))

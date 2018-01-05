@@ -44,6 +44,12 @@
 ;; Ditch them scrollbars
 (scroll-bar-mode -1)
 
+;; Soft-wrap lines
+(require 'visual-fill-mode)
+(global-visual-line-mode)
+(require 'visual-fill-column-mode)
+(global-visual-fill-column-mode)
+
 ;; Make zooming affect frame instead of buffers
 (require 'zoom-frm)
 
