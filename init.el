@@ -339,6 +339,11 @@
 (setq god-exempt-major-modes nil)
 (setq god-exempt-predicates nil)
 
+;; which-key
+(use-package which-key
+  :config
+  (which-key-mode t))
+
 ;; ;; Conclude init by setting up specifics for the current user
 ;; (when (file-exists-p user-settings-dir)
 ;;   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
