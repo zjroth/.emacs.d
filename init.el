@@ -37,6 +37,7 @@
              "~/.emacs.d/other-packages/org-protocol-capture-html/")
 
 ;; Keep emacs Custom-settings in separate file
+(setq settings-dir "~/.emacs.d")
 (setq custom-file (expand-file-name "custom.el" settings-dir))
 (load custom-file)
 
