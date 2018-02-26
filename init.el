@@ -171,7 +171,8 @@
 
 ;; Forward/inverse search in LaTeX
 (load "auctex.el" nil t t)
-(eval-after-load 'tex-mode '(TeX-source-correlate-mode))
+(setq TeX-engine 'luatex)
+;; (eval-after-load 'tex-mode '(TeX-source-correlate-mode))
 
 ;; Fill column indicator
 (require 'fill-column-indicator)
