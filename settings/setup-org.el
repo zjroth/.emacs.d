@@ -11,7 +11,10 @@
   (myorg-update-parent-cookie))
 
 ;; Exporting
-(require 'ox-pandoc)
+;(require 'ox-pandoc)
+(require 'ox-reveal)
+(require 'ox-ioslide)
+(require 'ox-impress-js)
 
 ;; Indent headlines and content.
 (setq org-startup-indented t)
@@ -63,12 +66,18 @@
 
 ;; Log to-do completion times with optional notes.
 (setq org-log-done 'time)
-(setq org-log-done 'note)
+;; (setq org-log-done 'note)
 
 ;; To-do dependencies
 (setq org-enforce-todo-dependencies t)
 (setq org-agenda-dim-blocked-tasks t)
 ;; (setq org-agenda-dim-blocked-tasks 'invisible)
+
+;; Add a unique ID for each entry.
+(require 'org-id)
+;(setq org-id-prefix )
+;(setq org-id-method 'org)
+(setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
 
 ;; Agenda files
 (setq org-directory "~/Dropbox/org")
