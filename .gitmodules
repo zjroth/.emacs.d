@@ -109,3 +109,12 @@
 [submodule "site-lisp/fold-this"]
 	path = site-lisp/fold-this
 	url = https://github.com/magnars/fold-this.el.git
+[submodule "other-packages/ob-julia"]
+	path = other-packages/ob-julia
+	url = https://github.com/gjkerns/ob-julia.git
+[submodule "other-packages/ox-ipynb"]
+	path = other-packages/ox-ipynb
+	url = https://github.com/jkitchin/ox-ipynb.git
+[submodule "other-packages/emacs-web-server"]
+	path = other-packages/emacs-web-server
+	url = https://github.com/eschulte/emacs-web-server.git

@@ -1,20 +1,20 @@
-;;;; Emacs Bookmark Format Version 1 ;;;;
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored-marker"
- (filename . "~/Dropbox/org/jobsearch.org")
- (front-context-string . "** [[https://www")
- (rear-context-string . "t an interview\n\n")
- (position . 8339))
+ (filename . "~/Documents/org/tensors.org")
+ (front-context-string . "** [[http://oakt")
+ (rear-context-string . "gebra]] :ebook:\n")
+ (position . 6343))
 ("org-refile-last-stored"
- (filename . "~/Dropbox/org/projects.org")
- (front-context-string . "*** [[https://ca")
- (rear-context-string . "Scientist\n:END:\n")
- (position . 11565))
+ (filename . "~/Documents/org/tensors.org")
+ (front-context-string . "* TODO Update an")
+ (rear-context-string . "e 13:00]\n:END:\n\n")
+ (position . 4751))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/org/projects.org")
- (front-context-string . "*** [[https://ww")
- (rear-context-string . "ngton, DC\n:END:\n")
- (position . 1639))
+ (filename . "~/Documents/org/lists.org")
+ (front-context-string . "*** [[http://oak")
+ (rear-context-string . "-ref][org-ref]]\n")
+ (position . 192))
 )

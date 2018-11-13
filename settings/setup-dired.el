@@ -1,10 +1,10 @@
 (require 'dired)
-(require 'dash)
 
 ;; Make dired less verbose
-(require 'dired-details)
-(setq-default dired-details-hidden-string "--- ")
-(dired-details-install)
+(use-package dired-details
+  :config
+  (setq-default dired-details-hidden-string "--- ")
+  (dired-details-install))
 
 ;; Reload dired after making changes
 (--each '(dired-do-rename

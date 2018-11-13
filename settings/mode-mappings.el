@@ -3,26 +3,6 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("jsTestDriver\\.conf$" . yaml-mode))
 
-;; Emacs lisp
-(add-to-list 'auto-mode-alist '("Carton$" . emacs-lisp-mode))
-
-;; CSS
-(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
-
-;; Cucumber
-(autoload 'feature-mode "feature-mode")
-(add-to-list 'auto-mode-alist '("\\.feature$" . feature-mode))
-
-;; Adventur
-(autoload 'adventur-mode "adventur-mode")
-(add-to-list 'auto-mode-alist '("\\.adv$" . adventur-mode))
-
-;; Jade and Stylus (sws = significant whitespace)
-(autoload 'sws-mode "sws-mode")
-(autoload 'jade-mode "jade-mode")
-(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-
 ;; HTML
 (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tag$" . html-mode))
@@ -31,34 +11,6 @@
           (lambda ()
             (require 'rename-sgml-tag)
             (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)))
-
-;; JSP
-(autoload 'crappy-jsp-mode "crappy-jsp-mode")
-(add-to-list 'auto-mode-alist '("\\.jsp$" . crappy-jsp-mode))
-(add-to-list 'auto-mode-alist '("\\.jspf$" . crappy-jsp-mode))
-
-;; Ruby
-(autoload 'rhtml-mode "rhtml-mode")
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.watchr$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("capfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
-
-;; Puppet
-(autoload 'puppet-mode "puppet-mode")
-(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
-
-;; Groovy
-(autoload 'groovy-mode "groovy-mode")
-(add-to-list 'auto-mode-alist '("\\.groovy$" . groovy-mode))
-
-;; Clojure
-(autoload 'clojure-mode "clojure-mode")
-(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 
 ;; SVG
 (add-to-list 'auto-mode-alist '("\\.svg$" . image-mode))
@@ -87,14 +39,6 @@
 
 ;; org-mode
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-
-;; Apache config
-(autoload 'apache-mode "apache-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))
-(add-to-list 'auto-mode-alist '("httpd\\.conf\\'"  . apache-mode))
-(add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))
-(add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
-(add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode))
 
 ;; Matlab
 (autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)

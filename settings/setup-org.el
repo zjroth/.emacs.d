@@ -57,9 +57,9 @@
 
 (setq org-babel-clojure-backend 'cider)
 
-;; Line wrapping.
-(visual-line-mode)
-(visual-fill-column-mode)
+;; ;; Line wrapping.
+;; (visual-line-mode)
+;; (visual-fill-column-mode)
 
 ;; Log to-do completion times with optional notes.
 (setq org-log-done 'time)

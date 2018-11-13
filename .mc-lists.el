@@ -3,8 +3,13 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        LaTeX-babel-insert-hyphen
+        LaTeX-insert-left-brace
+        TeX-insert-backslash
+        TeX-insert-sub-or-superscript
         backward-sexp
         beginning-of-buffer
+        beginning-of-visual-line
         c-electric-backspace
         c-electric-delete-forward
         c-electric-paren
@@ -39,15 +44,20 @@
         js2-insert-and-indent
         js2r-inline-var
         js2r-var-to-this
+        julia-latexsub-or-indent
+        kill-and-retry-line
         kill-region-or-backward-word
         kill-sentence
         kill-visual-line
         kmacro-insert-counter
         magit-stage-item
+        mark-sexp
         markdown-enter-key
+        markdown-outdent-or-delete
         matlab-backward-sexp
         matlab-electric-comment
         matlab-forward-sexp
+        open-line-above
         org-beginning-of-line
         org-ctrl-c-ctrl-c
         org-ctrl-c-minus
@@ -85,6 +95,7 @@
         tex-insert-quote
         transpose-params
         transpose-words
+        undefined
         wrap-region-trigger
         yaml-electric-backspace
         yaml-electric-dash-and-dot
@@ -100,6 +111,7 @@
         TeX-next-error
         counsel-M-x
         delete-window
+        handle-switch-frame
         ido-find-file
         ido-switch-buffer
         js2r-extract-var
@@ -111,5 +123,6 @@
         rename-current-buffer-file
         rotate-windows
         smex
+        swiper
         wgrep-change-to-wgrep-mode
         ))

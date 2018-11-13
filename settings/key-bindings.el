@@ -7,49 +7,15 @@
 (global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
 (global-set-key (kbd "C-:") 'hippie-expand-lines)
 
-;; Smart M-x
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;; Use C-x C-m to do M-x per Steve Yegge's advice
-(global-set-key (kbd "C-x C-m") 'smex)
-
-;; Expand region (increases selected region by semantic units)
-(global-set-key (kbd "C-=") 'er/expand-region)
-
-;; Experimental multiple-cursors
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
-
-;; Mark additional regions matching current region
-(global-set-key (kbd "M-=") 'mc/mark-all-like-this-dwim)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c m") 'mc/mark-more-like-this-extended)
-(global-set-key (kbd "M-å") 'mc/mark-all-in-region)
-
-;; Symbol and word specific mark-more
-(global-set-key (kbd "s-æ") 'mc/mark-next-word-like-this)
-(global-set-key (kbd "s-å") 'mc/mark-previous-word-like-this)
-(global-set-key (kbd "M-s-æ") 'mc/mark-all-words-like-this)
-(global-set-key (kbd "s-Æ") 'mc/mark-next-symbol-like-this)
-(global-set-key (kbd "s-Å") 'mc/mark-previous-symbol-like-this)
-(global-set-key (kbd "M-s-Æ") 'mc/mark-all-symbols-like-this)
-
-;; Set anchor to start rectangular-region-mode
-(global-set-key (kbd "H-SPC") 'set-rectangular-region-anchor)
-
 ;; Replace rectangle-text with inline-string-rectangle
 (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
 
-;; Quickly jump in document with ace-jump-mode
-(define-key global-map (kbd "C-ø") 'ace-jump-mode)
+;; ;; Quickly jump in document with ace-jump-mode
+;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
 
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
-(global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
+;; (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 ;; M-i for back-to-indentation
 (global-set-key (kbd "M-i") 'back-to-indentation)
@@ -67,10 +33,11 @@
 (global-set-key (kbd "M-t w") 'transpose-words)
 (global-set-key (kbd "M-t s") 'transpose-sexps)
 (global-set-key (kbd "M-t p") 'transpose-params)
+;; (global-set-key (kbd "M-t f") 'transpose-frame) ; set elsewhere
 
-;; Change next underscore with a camel case
-(global-set-key (kbd "C-c C--") 'replace-next-underscore-with-camel)
-(global-set-key (kbd "M-s M--") 'snakeify-current-word)
+;; ;; Change next underscore with a camel case
+;; (global-set-key (kbd "C-c C--") 'replace-next-underscore-with-camel)
+;; (global-set-key (kbd "M-s M--") 'snakeify-current-word)
 
 ;; Killing text
 (global-set-key (kbd "C-S-k") 'kill-and-retry-line)
@@ -81,9 +48,13 @@
 (global-set-key (kbd "M-w") 'save-region-or-current-line)
 (global-set-key (kbd "M-W") '(lambda () (interactive) (save-region-or-current-line 1)))
 
-;; Make shell more convenient, and suspend-frame less
-(global-set-key (kbd "C-z") 'shell)
+;; Rebind suspend-frame, and use C-z to access the various shells.
+(global-unset-key (kbd "C-z"))
 (global-set-key (kbd "C-x M-z") 'suspend-frame)
+(global-set-key (kbd "C-z s") 'shell)
+(global-set-key (kbd "C-z t") 'term)
+(global-set-key (kbd "C-z a") 'ansi-term)
+(global-set-key (kbd "C-z e") 'eshell)
 
 ;; Zap to char
 (global-set-key (kbd "M-z") 'zap-up-to-char)
@@ -100,8 +71,8 @@
 ;; Create new frame
 (define-key global-map (kbd "C-x C-n") 'make-frame-command)
 
-;; Jump to a definition in the current file. (This is awesome)
-(global-set-key (kbd "C-x C-i") 'ido-imenu)
+;; ;; Jump to a definition in the current file. (This is awesome)
+;; (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
 ;; File finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
@@ -170,11 +141,6 @@
 (global-set-key (kbd "C-S-p") (lambda () (interactive) (previous-line 5)))
 (global-set-key (kbd "C-S-f") (lambda () (interactive) (forward-char 5)))
 (global-set-key (kbd "C-S-b") (lambda () (interactive) (backward-char 5)))
-;; Convenience on ThinkPad Keyboard: Use back/forward as pg up/down
-
-(global-set-key (kbd "<XF86Back>") 'scroll-down)
-(global-set-key (kbd "<XF86Forward>") 'scroll-up)
-(global-set-key (kbd "<XF86WakeUp>") 'beginning-of-buffer)
 
 ;; Query replace regex key binding
 (global-set-key (kbd "M-&") 'query-replace-regexp)
@@ -198,12 +164,8 @@
 (global-set-key (kbd "<S-up>") 'windmove-up)
 (global-set-key (kbd "<S-down>") 'windmove-down)
 
-;; Magit
-(global-set-key (kbd "C-c g") 'magit-status-fullscreen)
-(autoload 'magit-status-fullscreen "magit")
-
-;; Mu4e
-(global-set-key (kbd "C-x M") 'mu4e-up-to-date-status)
+;; ;; Mu4e
+;; (global-set-key (kbd "C-x M") 'mu4e-up-to-date-status)
 
 ;; Clever newlines
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -215,6 +177,10 @@
 (global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
 
 ;; Line movement
+(use-package move-text
+  :bind (("<C-S-down>" . move-text-down)
+         ("<C-S-up>"   . move-text-up)))
+
 (global-set-key (kbd "<C-S-down>") 'move-text-down)
 (global-set-key (kbd "<C-S-up>") 'move-text-up)
 
@@ -267,20 +233,20 @@
 ;; Find file in project
 (global-set-key (kbd "C-x o") 'find-file-in-project)
 
-;; Find file in project, with specific patterns
-(global-unset-key (kbd "C-x C-o")) ;; which used to be delete-blank-lines (also bound to C-c C-<return>)
-(global-set-key (kbd "C-x C-o ja") (ffip-create-pattern-file-finder "*.java"))
-(global-set-key (kbd "C-x C-o js") (ffip-create-pattern-file-finder "*.js"))
-(global-set-key (kbd "C-x C-o jp") (ffip-create-pattern-file-finder "*.jsp"))
-(global-set-key (kbd "C-x C-o cs") (ffip-create-pattern-file-finder "*.css"))
-(global-set-key (kbd "C-x C-o cl") (ffip-create-pattern-file-finder "*.clj"))
-(global-set-key (kbd "C-x C-o el") (ffip-create-pattern-file-finder "*.el"))
-(global-set-key (kbd "C-x C-o md") (ffip-create-pattern-file-finder "*.md"))
-(global-set-key (kbd "C-x C-o rb") (ffip-create-pattern-file-finder "*.rb"))
-(global-set-key (kbd "C-x C-o or") (ffip-create-pattern-file-finder "*.org"))
-(global-set-key (kbd "C-x C-o ph") (ffip-create-pattern-file-finder "*.php"))
-(global-set-key (kbd "C-x C-o tx") (ffip-create-pattern-file-finder "*.txt"))
-(global-set-key (kbd "C-x C-o vm") (ffip-create-pattern-file-finder "*.vm"))
+;; ;; Find file in project, with specific patterns
+;; (global-unset-key (kbd "C-x C-o")) ;; which used to be delete-blank-lines (also bound to C-c C-<return>)
+;; (global-set-key (kbd "C-x C-o ja") (ffip-create-pattern-file-finder "*.java"))
+;; (global-set-key (kbd "C-x C-o js") (ffip-create-pattern-file-finder "*.js"))
+;; (global-set-key (kbd "C-x C-o jp") (ffip-create-pattern-file-finder "*.jsp"))
+;; (global-set-key (kbd "C-x C-o cs") (ffip-create-pattern-file-finder "*.css"))
+;; (global-set-key (kbd "C-x C-o cl") (ffip-create-pattern-file-finder "*.clj"))
+;; (global-set-key (kbd "C-x C-o el") (ffip-create-pattern-file-finder "*.el"))
+;; (global-set-key (kbd "C-x C-o md") (ffip-create-pattern-file-finder "*.md"))
+;; (global-set-key (kbd "C-x C-o rb") (ffip-create-pattern-file-finder "*.rb"))
+;; (global-set-key (kbd "C-x C-o or") (ffip-create-pattern-file-finder "*.org"))
+;; (global-set-key (kbd "C-x C-o ph") (ffip-create-pattern-file-finder "*.php"))
+;; (global-set-key (kbd "C-x C-o tx") (ffip-create-pattern-file-finder "*.txt"))
+;; (global-set-key (kbd "C-x C-o vm") (ffip-create-pattern-file-finder "*.vm"))
 
 ;; View occurrence in occur mode
 (define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
@@ -288,9 +254,10 @@
 (define-key occur-mode-map (kbd "p") 'previous-line)
 
 ;; Buffer movement
-(global-set-key (kbd "<M-S-up>")    'buf-move-up)
-(global-set-key (kbd "<M-S-down>")  'buf-move-down)
-(global-set-key (kbd "<M-S-left>")  'buf-move-left)
-(global-set-key (kbd "<M-S-right>") 'buf-move-right)
+(use-package buffer-move
+  :bind (("<M-S-up>"    . buf-move-up)
+         ("<M-S-down>"  . buf-move-down)
+         ("<M-S-left>"  . buf-move-left)
+         ("<M-S-right>" . buf-move-right)))
 
 (provide 'key-bindings)

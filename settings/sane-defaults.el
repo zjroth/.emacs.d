@@ -69,21 +69,38 @@
 (setq-default truncate-lines nil)
 
 ;; Keep cursor away from edges when scrolling up/down
-(require 'smooth-scrolling)
+(use-package smooth-scrolling
+  :config
+  (setq smooth-scroll-margin 5)
+  (smooth-scrolling-mode))
 
 ;; org-mode: Don't ruin S-arrow to switch windows please (use M-+ and M-- instead to toggle)
 (setq org-replace-disputed-keys t)
-
-;; Fontify org-mode code blocks
-(setq org-src-fontify-natively t)
+(setq org-disputed-keys
+      '(;; Shift plus arrow key
+        ([(shift up)] . [(meta p)])
+        ([(shift down)] . [(meta n)])
+        ([(shift left)] . [(meta -)])
+        ([(shift right)] . [(meta +)])
+        ;; Meta-Shift plus arrow key
+        ([(meta shift up)] . [(meta shift p)])
+        ([(meta shift down)] . [(meta shift n)])
+        ([(meta shift left)] . [(meta shift -)])
+        ([(meta shift right)] . [(meta shift +)])
+        ;; Control-Shift plus arrow key
+        ([(control shift right)] . [(meta shift +)])
+        ([(control shift left)] . [(meta shift -)])))
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
-(setq undo-tree-mode-lighter "")
-(require 'undo-tree)
-(global-undo-tree-mode)
+(use-package undo-tree
+  :pin "gnu"
+  :config
+  (progn
+    (setq undo-tree-mode-lighter "")
+    (global-undo-tree-mode)))
 
-;; Sentences do not need double spaces to end. Period.
-(set-default 'sentence-end-double-space nil)
+;; Sentences do need double spaces between them.  Period.
+(set-default 'sentence-end-double-space t)
 
 ;; Add parts of each file's directory to the buffer name if not unique
 (require 'uniquify)
@@ -115,5 +132,9 @@
 
 ;; Lines should wrap at 80 characters.
 (setq-default fill-column 80)
+
+;; Remember what I've been doing.
+(require 'desktop)
+(desktop-save-mode 1)
 
 (provide 'sane-defaults)
