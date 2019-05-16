@@ -1,4 +1,4 @@
-(setq visible-bell t
+(setq visible-bell nil
       font-lock-maximum-decoration t
       color-theme-is-global t
       truncate-partial-width-windows nil)
@@ -7,6 +7,7 @@
 ;; Themes I want to try out...
 
 ;; My modifications to this theme are in the theme file.
+;; - Set the base00 dark variant to #3C3C3C (in the theme file).
 ;; - https://github.com/waymondo/apropospriate-theme
 ;; - org-mode colors: ~/.emacs.d/elpa/org-9.1.13/org-faces.el
 (use-package apropospriate-theme
@@ -159,6 +160,7 @@
        ;; `(ediff-odd-diff-B ((,class (:background ,base01))))
        ;; `(ediff-odd-diff-C ((,class (:background ,base01))))
 
+       `(region ((,class (:background ,base02))))
        ))
     ))
 
