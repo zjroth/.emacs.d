@@ -1,10 +1,16 @@
 (require 'dired)
 
-;; Make dired less verbose
-(use-package dired-details
-  :config
-  (setq-default dired-details-hidden-string "--- ")
-  (dired-details-install))
+;; This is no longer available.  The implementation in emacs 24.4+ does not
+;; allow me to set `dired-details-hidden-string`, and it sets "(" to toggle the
+;; mode (instead of using "(" and ")" to hide and show details, respectively.
+;; Do something to get this functionality back.  I prefer the old way (using
+;; both parentheses and the `dired-details-hidden-string`.
+;;
+;; ;; Make dired less verbose
+;; (use-package dired-details
+;;   :config
+;;   (setq-default dired-details-hidden-string "--- ")
+;;   (dired-details-install))
 
 ;; Reload dired after making changes
 (--each '(dired-do-rename
