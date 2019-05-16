@@ -91,7 +91,9 @@
 (global-set-key (kbd "C-x M-w") 'copy-current-file-path)
 
 ;; Window switching
+(require 'framemove)
 (windmove-default-keybindings) ;; Shift+direction
+(setq framemove-hook-into-windmove t)
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
 (global-unset-key (kbd "C-x C-+")) ;; don't zoom like this
