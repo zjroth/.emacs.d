@@ -52,6 +52,17 @@
       (expand-file-name ".places" settings-dir))
 
 ;; ======================================================================
+;; Working on a mac?
+;; ======================================================================
+;;
+;; Macs need special treatment...because they're special.
+
+(setq is-mac (equal system-type 'darwin))
+
+(if is-mac
+    (require 'mac))
+
+;; ======================================================================
 ;; Load and initialize packages (this contains most of the settings)
 ;; ======================================================================
 
