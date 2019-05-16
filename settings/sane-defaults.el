@@ -133,8 +133,4 @@
 ;; Lines should wrap at 80 characters.
 (setq-default fill-column 80)
 
-;; Remember what I've been doing.
-(require 'desktop)
-(desktop-save-mode 1)
-
 (provide 'sane-defaults)
