@@ -122,6 +122,12 @@ Both PATTERN and CONTENTS are matched as regular expressions."
   (kmacro-push-ring)
   (edit-kbd-macro 'view-lossage))
 
+;; Test whether a shell command exists.
+(defun shell-command-exists-p (cmd)
+  (if (eq 0 (call-process "command" nil nil nil "-v" cmd))
+      t
+    nil))
+
 ;; Window splitting --- a partially-written function
 ;;
 ;;

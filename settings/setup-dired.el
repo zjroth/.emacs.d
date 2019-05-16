@@ -55,7 +55,16 @@
      (define-key wdired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
      (define-key wdired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)))
 
-;; List directories first.
+;; List directories first if we can.
 (setq dired-listing-switches "-alh --group-directories-first")
 
+(when is-mac
+  ;; Use the `ls` from gnu-coreutils if it exists.
+  (if (shell-command-exists-p "gls")
+      (setq insert-directory-program "gls"
+            dired-use-ls-dired t)
+    ;; Otherwise, don't group directories first.
+    (setq dired-listing-switches "-alh"))
+
+;; Allow loading of this via a call to `require'.
 (provide 'setup-dired)
