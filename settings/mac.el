@@ -1,3 +1,9 @@
+;; To make things work as I like, a few things need to be installed on a mac
+;; system.  For me, installing homebrew was necessary.  Once homebrew is
+;; installed, run the following commands:
+;; - brew install coreutils
+;; - brew install aspell --lang=en
+
 ;; Fix emacs modifiers on a mac.
 (setq mac-command-modifier 'meta
       mac-option-modifier  'super
