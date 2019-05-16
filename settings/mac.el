@@ -1,10 +1,14 @@
-;; change command to meta, and ignore option to use weird Norwegian keyboard
-(setq mac-option-modifier 'none)
-(setq mac-command-modifier 'meta)
-(setq ns-function-modifier 'hyper)
+;; Fix emacs modifiers on a mac.
+(setq mac-command-modifier 'meta
+      mac-option-modifier  'super
+      mac-control-modifier 'control)
+
+;; This is so that I can use the macbook pro keyboard, which doesn't have a
+;; right control key.  Bah!
+(setq ns-right-option-modifier 'control)
 
 ;; mac friendly font
-(set-face-attribute 'default nil :font "Monaco-16")
+;;(set-face-attribute 'default nil :font "Monaco-16")
 
 ;; make sure path is correct when launched as application
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
