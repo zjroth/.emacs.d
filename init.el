@@ -98,7 +98,7 @@
 (require 'setup-hippie)
 (require 'setup-eww)
 
-(require 'setup-dired)
+(require 'use-dired)
 (require 'key-bindings)
 (require 'use-ess)
 (require 'use-julia)
@@ -107,16 +107,15 @@
 (require 'use-magit)
 ;; (require 'use-exwm)
 ;; (require 'use-slack)
-(provide 'use-markdown-mode)
+(require 'use-markdown-mode)
+(require 'use-ein)
 
 (use-package define-word)
 (use-package which-key
   :config (which-key-mode))
 (use-package transpose-frame
   :bind ("M-t f" . transpose-frame))
-(use-package ein)
 ;; (use-package nxhtml)
-;; (use-package ein-mumamo)
 (use-package pretty-mode
   :config
   (pretty-add-keywords 'org-mode
