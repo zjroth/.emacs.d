@@ -13,3 +13,6 @@ site-lisp/adventur-mode
 .yas-compiled-snippets.el
 recentf
 smex-items
+eshell
+request
+transient
