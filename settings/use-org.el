@@ -210,6 +210,10 @@
         ;; (matlab . t)
         ))
 
+    ;; Show only hours and minutes in time durations.  (Days are confusing:
+    ;; They're 24-hour days in a setting of 8-hour work days.)
+    (setq org-duration-format 'h:mm)
+
     ;; Export settings
     (use-package htmlize)
     (setq org-html-inline-images t)
