@@ -21,7 +21,8 @@
                (cond ((eq org-agenda-dim-blocked-tasks t)           "dimmed")
                      ((eq org-agenda-dim-blocked-tasks 'invisible)  "hidden")))))
 
-  :bind (("V" . org-agenda-cycle-blocked-task-visibility))
+  :bind (:map org-agenda-mode
+              ("V" . org-agenda-cycle-blocked-task-visibility))
 
   :config
   (progn
