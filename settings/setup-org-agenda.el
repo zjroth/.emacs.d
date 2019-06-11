@@ -1,5 +1,6 @@
 (use-package org-agenda
-  :ensure nil
+  :ensure org
+  :pin "gnu"
 
   :init
   (progn
@@ -19,9 +20,10 @@
       (org-agenda-redo)
       (message "Blocked tasks %s..."
                (cond ((eq org-agenda-dim-blocked-tasks t)           "dimmed")
-                     ((eq org-agenda-dim-blocked-tasks 'invisible)  "hidden")))))
+                     ((eq org-agenda-dim-blocked-tasks 'invisible)  "hidden"))))
 
-  :bind (:map org-agenda-mode
+
+  :bind (:map org-agenda-mode-map
               ("V" . org-agenda-cycle-blocked-task-visibility))
 
   :config
