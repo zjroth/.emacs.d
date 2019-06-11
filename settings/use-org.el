@@ -85,6 +85,7 @@
 
     (setq org-enforce-todo-dependencies t)
     (setq org-log-done 'time)
+    (setq org-log-into-drawer t)
     (setq org-catch-invisible-edits t)
     (setq org-use-property-inheritance t)
 
