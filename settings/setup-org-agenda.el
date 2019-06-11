@@ -22,6 +22,8 @@
                (cond ((eq org-agenda-dim-blocked-tasks t)           "dimmed")
                      ((eq org-agenda-dim-blocked-tasks 'invisible)  "hidden"))))
 
+    ;; We want to use the diary for some recurring tasks.
+    (setq org-agenda-include-diary t))
 
   :bind (:map org-agenda-mode-map
               ("V" . org-agenda-cycle-blocked-task-visibility))
@@ -52,7 +54,7 @@
     ;; generated.  The idea for using `'all` is that I am only looking through my
     ;; global to-do list if I'm looking for things that haven't already been
     ;; scheduled.
-    (setq org-agenda-todo-ignore-scheduled 'all)
+    (setq org-agenda-todo-ignore-scheduled 'future)
     (setq org-agenda-todo-ignore-deadlines 'far)
 
     ;; To-do dependencies
@@ -100,10 +102,10 @@
               ;; (todo "ACTIVE|NEXT|WAIT")
               (agenda "" ((org-agenda-span 1)
                           (org-agenda-overriding-header "Scheduled items...")))  ; show today's agenda
-              (todo "WAIT"
-                    ((org-agenda-overriding-header "Waiting...")))
               (todo ""
                     ((org-agenda-overriding-header "Unscheduled items...")))
+              (todo "WAIT"
+                    ((org-agenda-overriding-header "Waiting...")))
               ;; (todo "TODO|READ|STARTED|NEXT|ACTIVE")
               ;; (tags-todo "-TODO=\"NEXT\"-TODO=\"WAIT\"")       ; all to-do states except NEXT & WAIT
               ;; (alltodo "")                      ; show all to-do items in any state
@@ -153,8 +155,9 @@
     ;; Format of the time grid lines (hours) and the current time.
     (setq org-agenda-time-grid
           `((daily today remove-match)
-            (0600 0700 0800 0900 1000 1100 1200 1300 1400 1500)
-            " ⟵——————⟶" "                "))
+            (0800 0900 1000 1100 1200 1300 1400 1500 1600 1700)
+            " ———————————" "                "))
+    ;; " ⟵——————⟶" "                "))
     ;; " ————————" "                "))
     ;; "  →      " "                "))
 
