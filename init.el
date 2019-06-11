@@ -127,6 +127,9 @@
 (use-package atomic-chrome
   :config (atomic-chrome-start-server))
 
+;; yaml files
+(use-package yaml-mode)
+
 ;; ADDITIONAL PACKAGES (used in key-bindings.el)
 ;;     buf-move
 ;; DONE
