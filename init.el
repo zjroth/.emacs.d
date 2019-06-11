@@ -121,6 +121,12 @@
   (pretty-add-keywords 'org-mode
                        '(("^ *\\(#\\+begin_src\\) " . ?λ))))
 
+;; Support for editing text areas in Chrome.  This requires a Chrome extension
+;; to be installed.  The two options that I found are GhostText and Atomic
+;; Chrome.  I've only tried GhostText.
+(use-package atomic-chrome
+  :config (atomic-chrome-start-server))
+
 ;; ADDITIONAL PACKAGES (used in key-bindings.el)
 ;;     buf-move
 ;; DONE
