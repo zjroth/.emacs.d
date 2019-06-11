@@ -14,7 +14,7 @@
           ;; C-a is nicer in dired if it moves back to start of files
           (defun dired-back-to-start-of-files ()
             (interactive)
-            (backward-char (- (current-column) 2)))
+            (dired-move-to-filename))
 
           ;; M-up is nicer in dired if it moves to the third line - straight to the ".."
           (defun dired-back-to-top ()
@@ -37,14 +37,15 @@
                (define-key wdired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom))))
 
   :bind (:map dired-mode-map
-         ("N"       . dired-next-marked-file)
-         ("P"       . dired-prev-marked-file)
-         ("C-x C-k" . dired-do-delete)  ; to match file buffers and magit
+              ("C-a"     . dired-back-to-start-of-files)
+              ("N"       . dired-next-marked-file)
+              ("P"       . dired-prev-marked-file)
+              ("C-x C-k" . dired-do-delete)  ; to match file buffers and magit
 
-         ([remap smart-up]            . dired-back-to-top)
-         ([remap smart-down]          . dired-jump-to-bottom)
-         ([remap beginning-of-buffer] . dired-back-to-top)
-         ([remap end-of-buffer]       . dired-jump-to-bottom))
+              ([remap smart-up]            . dired-back-to-top)
+              ([remap smart-down]          . dired-jump-to-bottom)
+              ([remap beginning-of-buffer] . dired-back-to-top)
+              ([remap end-of-buffer]       . dired-jump-to-bottom))
 
   ;; :bind (:map wdired-mode-map
   ;;             ("C-a"                       . dired-back-to-start-of-files)
