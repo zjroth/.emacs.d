@@ -1,6 +1,8 @@
 (use-package org-agenda
+  :after org
   :ensure org
   :pin "gnu"
+  :defer t
 
   :init
   (progn
@@ -47,7 +49,7 @@
     ;;     (search . " %i %-12:c")))
 
     ;; Only show closed items in logbook mode.
-    (setq org-agenda-log-mode-items '(closed))
+    (setq org-agenda-log-mode-items '(closed clock))
 
     ;; What to do with to-do items that have a deadline or that been scheduled.
     ;; Note that this does not affect the agenda, just to-do lists that have
