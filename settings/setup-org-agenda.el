@@ -106,6 +106,8 @@
               ;; (todo "ACTIVE|NEXT|WAIT")
               (agenda "" ((org-agenda-span 1)
                           (org-agenda-overriding-header "Scheduled items...")))  ; show today's agenda
+              (tags "+catchall"
+                    ((org-agenda-overriding-header "Generic / daily...")))
               (todo ""
                     ((org-agenda-overriding-header "Unscheduled items...")))
               (todo "WAIT"
