@@ -28,7 +28,9 @@
     (setq org-agenda-include-diary t))
 
   :bind (:map org-agenda-mode-map
-              ("V" . org-agenda-cycle-blocked-task-visibility))
+              ("V" . org-agenda-cycle-blocked-task-visibility)
+              ("M-p" . org-agenda-backward-block)
+              ("M-n" . org-agenda-forward-block))
 
   :config
   (progn
@@ -50,8 +52,9 @@
 
     ;; Only show closed items in logbook mode.
     (setq org-agenda-log-mode-items '(closed clock))
+    (setq org-agenda-include-inactive-timestamps nil)
 
-    ;; What to do with to-do items that have a deadline or that been scheduled.
+    ;; What to do with to-do items that have a deadline or have been scheduled.
     ;; Note that this does not affect the agenda, just to-do lists that have
     ;; been generated.  The idea for using `'all` is that I am only looking
     ;; through my global to-do list if I'm looking for things that haven't
@@ -104,14 +107,24 @@
               ;; (tags "+SCHEDULED=\"<today>\"")
               ;; (todo "READING")
               ;; (todo "ACTIVE|NEXT|WAIT")
+              (tags "+daily-ARCHIVE-scheduled<>\"\""
+                    ((org-agenda-overriding-header "Generic / daily...")
+                     (org-agenda-prefix-format "  ")
+                     (org-agenda-remove-tags t)))
               (agenda "" ((org-agenda-span 1)
                           (org-agenda-overriding-header "Scheduled items...")))  ; show today's agenda
-              (tags "+catchall"
-                    ((org-agenda-overriding-header "Generic / daily...")))
-              (todo ""
-                    ((org-agenda-overriding-header "Unscheduled items...")))
+              ;; (todo ""
+              ;;       ((org-agenda-overriding-header "Unscheduled items...")))
+              (tags-todo "file={projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-someday-ARCHIVE"
+                         ((org-agenda-overriding-header "Project items...")))
+              ;; (tags-todo "file<>{projects\\.org$}-BLOCKED=\"t\"-scheduled<>\"\"-todo=\"WAIT\""
+              ;;            ((org-agenda-overriding-header "Other items...")))
+              (tags-todo "file<>{projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-someday-ARCHIVE"
+                         ((org-agenda-overriding-header "Other items...")))
               (todo "WAIT"
                     ((org-agenda-overriding-header "Waiting...")))
+              (tags "+someday"
+                    ((org-agenda-overriding-header "Someday...")))
               ;; (todo "TODO|READ|STARTED|NEXT|ACTIVE")
               ;; (tags-todo "-TODO=\"NEXT\"-TODO=\"WAIT\"")       ; all to-do states except NEXT & WAIT
               ;; (alltodo "")                      ; show all to-do items in any state
@@ -176,7 +189,7 @@
 
     ;; Redefine this function to get AM/PM (and leading spaces) instead of am/pm.
     (defun org-agenda-time-of-day-to-ampm (time)
-      "Convert TIME of a string like \"13:45\" to an AM/PM style time string."
+      "Convert `TIME' from a string like \"13:45\" to an AM/PM style time string."
       (let* ((hour-number (string-to-number (substring time 0 -3)))
              (minute (substring time -2))
              (ampm " AM"))
@@ -191,6 +204,20 @@
              (format "%02d" hour-number)
            (format "%02s" (number-to-string hour-number)))
          ":" minute ampm)))
+
+    (setq org-agenda-clock-consistency-checks
+          '(:max-duration "4:00"
+            :min-duration 0
+            :max-gap 0
+            :gap-ok-around ("4:00")
+            :default-face ((:background "DarkRed")
+                           (:foreground "white"))))
+    ;; -----------------------------------------------------------------------------
+    ;; Clock table/report
+    ;; -----------------------------------------------------------------------------
+
+    (setq org-agenda-clockreport-parameter-plist
+          '(:link t :maxlevel 10 :fileskip0 t :compact t :narrow 70 :formula %))
     ))
 
 ;; -----------------------------------------------------------------------------
