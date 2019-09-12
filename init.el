@@ -115,6 +115,8 @@
 (require 'use-clojure)
 
 (use-package define-word)
+(require 'setup-system-interaction)
+
 (use-package which-key
   :config (which-key-mode))
 (use-package transpose-frame
