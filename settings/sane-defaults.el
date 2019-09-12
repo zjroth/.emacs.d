@@ -133,4 +133,7 @@
 ;; Lines should wrap at 80 characters.
 (setq-default fill-column 80)
 
+;; Lisp indentation
+(setq lisp-indent-function 'common-lisp-indent-function)
+
 (provide 'sane-defaults)
