@@ -60,4 +60,4 @@
 
   :bind ("C-c s" . ivy-yasnippet))
 
-(provide 'setup-yasnippet)
+(provide 'use-yasnippet)
