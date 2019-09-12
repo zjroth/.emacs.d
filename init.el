@@ -109,6 +109,10 @@
 ;; (require 'use-slack)
 (require 'use-markdown-mode)
 (require 'use-ein)
+(require 'use-yasnippet)
+(require 'use-python)
+(require 'use-haskell)
+(require 'use-clojure)
 
 (use-package define-word)
 (use-package which-key
