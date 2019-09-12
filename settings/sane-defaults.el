@@ -136,4 +136,18 @@
 ;; Lisp indentation
 (setq lisp-indent-function 'common-lisp-indent-function)
 
+;; Use "f" and "b" instead of "r" and "l" for navigation in help-mode.
+(use-package help-mode
+    :ensure nil
+    :pin manual
+
+    :config
+    (progn
+      (define-key help-mode-map (kbd "l") nil)
+      (define-key help-mode-map (kbd "r") nil))
+
+    :bind (:map help-mode-map
+                ("f" . help-go-forward)
+                ("b" . help-go-back)))
+
 (provide 'sane-defaults)
