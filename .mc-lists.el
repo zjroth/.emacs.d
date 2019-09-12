@@ -4,11 +4,12 @@
 (setq mc/cmds-to-run-for-all
       '(
         LaTeX-babel-insert-hyphen
-        LaTeX-insert-left-brace
         TeX-insert-backslash
+        TeX-insert-dollar
         TeX-insert-sub-or-superscript
+        ac-complete
+        back-to-indentation-or-beginning
         backward-sexp
-        beginning-of-buffer
         beginning-of-visual-line
         c-electric-backspace
         c-electric-delete-forward
@@ -19,7 +20,11 @@
         change-number-at-point
         change-outer
         comment-dwim
+        cua-replace-region
+        cua-set-mark
+        delete-blank-lines
         delete-horizontal-space
+        delete-rectangle
         dired-back-to-start-of-files
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
@@ -39,6 +44,7 @@
         hippie-expand-no-case-fold
         html-wrap-in-tag
         indent-for-tab-command
+        inline-string-rectangle
         js2-beginning-of-line
         js2-end-of-line
         js2-insert-and-indent
@@ -47,40 +53,42 @@
         julia-latexsub-or-indent
         kill-and-retry-line
         kill-region-or-backward-word
-        kill-sentence
         kill-visual-line
         kmacro-insert-counter
         magit-stage-item
-        mark-sexp
         markdown-enter-key
-        markdown-outdent-or-delete
         matlab-backward-sexp
+        matlab-comment
         matlab-electric-comment
+        matlab-fill-paragraph
         matlab-forward-sexp
+        matlab-linefeed
+        move-line-down
+        move-line-up
+        move-text-down
+        move-text-up
+        new-line-above
+        nxml-electric-slash
         open-line-above
+        open-line-below
         org-beginning-of-line
         org-ctrl-c-ctrl-c
-        org-ctrl-c-minus
-        org-cycle
-        org-deadline
         org-delete-backward-char
         org-delete-char
         org-end-of-line
-        org-fill-paragraph
         org-force-self-insert
-        org-insert-item
+        org-forward-sentence
         org-kill-line
         org-metaleft
         org-metaright
-        org-previous-visible-heading
         org-return-indent
         org-self-insert-command
         org-shiftmetaleft
         org-shiftmetaright
         org-shiftright
-        org-shifttab
         org-todo
         org-yank
+        orgtbl-hijacker-command-109
         orgtbl-self-insert-command
         outline-forward-same-level
         quoted-insert
@@ -91,14 +99,10 @@
         sh-assignment
         slime-space
         subword-right
-        tex-handle-newline
         tex-insert-quote
         transpose-params
-        transpose-words
-        undefined
+        universal-argument-minus
         wrap-region-trigger
-        yaml-electric-backspace
-        yaml-electric-dash-and-dot
         yank-indented
         yank-unindented
         yas-expand
