@@ -1,10 +1,15 @@
 (use-package multiple-cursors
+  :defer t
+
+  :init
+  (global-unset-key (kbd "C-c m"))
+
   :bind (;; Mark additional regions matching current region
-         ("M-=" . mc/mark-all-like-this-dwim)
-         ("C-<" . mc/mark-previous-like-this)
-         ("C->" . mc/mark-next-like-this)
-         ("C-c m" . mc/mark-more-like-this-extended)
-         ("M-å" . mc/mark-all-in-region)))
+         ("M-="     . mc/mark-all-like-this-dwim)
+         ("C-<"     . mc/mark-previous-like-this)
+         ("C->"     . mc/mark-next-like-this)
+         ("C-c m m" . mc/mark-more-like-this-extended)
+         ("C-c m r" . mc/mark-all-in-region)))
 
 (provide 'use-multiple-cursors)
 
