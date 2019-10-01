@@ -55,6 +55,13 @@
     (setq org-habit-today-glyph ?♡)
     (setq org-habit-completed-glyph ?✓)
 
+    ;; Be explicit(-ish) about how org-mode should open files using external
+    ;; programs.  This affects, for instance, how an exported PDF is opened.
+    (setq org-file-apps '((auto-mode . emacs)
+                          ("\\.mm\\'" . default)
+                          ("\\.x?html?\\'" . default)
+                          ("\\.pdf\\'" . default)))
+
     ;; Archiving
     (setq org-archive-location "archive/datetree.org::datetree/")
 
