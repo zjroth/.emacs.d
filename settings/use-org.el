@@ -149,21 +149,33 @@
 
     )
 
-  ;(global-unset-key (kbd "C-c l"))
   :bind (("C-c c" . org-capture)
          ("C-c C-a" . org-agenda)
+         ;; Link-related.  NOTE: (global-unset-key (kbd "C-c l"))
          ("C-c l i" . org-insert-link)
          ("C-c l l" . org-insert-link)
          ("C-c l s" . org-store-link)
          ("C-c l c" . org-copy-link-at-point)
+         ;; Jump to an org entry.
+         ("C-c C-j"   . counsel-org-goto-all)) ; intentionally bound twice
 
-         :map org-mode-map
-         ("<C-S-return>" . open-line-above)
-         ("<C-S-down>"   . move-text-down)
-         ("<C-S-up>"     . move-text-up)
-         ("M-p"          . backward-paragraph)
-         ("M-n"          . forward-paragraph)
-         ("<M-return>"   . org-meta-return))
+  :bind (:map org-mode-map
+              ("<C-S-return>" . open-line-above)
+              ("<C-S-down>"   . move-text-down)
+              ("<C-S-up>"     . move-text-up)
+              ("M-p"          . backward-paragraph)
+              ("M-n"          . forward-paragraph)
+              ("<M-return>"   . org-meta-return)
+              ("<C-M-return>" . org-insert-todo-heading-respect-content)
+              ;; Jump to an org entry.
+              ("C-c C-j"      . counsel-org-goto-all) ; intentionally bound twice
+
+              ;; ivy
+              ;; ("C-h a"     . helm-apropos)
+              ;; ("C-x b"     . helm-buffers-list)
+              ;; ("C-x c o"   . helm-occur)
+              ;; ("C-x c SPC" . helm-all-mark-rings)
+              )
 
   :hook ((org-mode                    . visual-fill-column-mode)
          (org-mode                    . org-display-inline-images)
