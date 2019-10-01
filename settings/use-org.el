@@ -190,7 +190,7 @@
     ;; Indent headlines and content.
     (setq org-startup-indented t)
     (setq org-tags-column
-          (- 3 fill-column)) ; leave room for 3 dots when folded
+          (- 3 visual-fill-column-width)) ; leave room for 3 dots when folded
 
     ;; Make lists look like use bullets (in place of the actual hyphen (or
     ;; asterisk) that's really there.
