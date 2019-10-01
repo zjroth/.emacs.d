@@ -234,4 +234,6 @@
     (require 'setup-org-export)
     ))
 
+(require 'setup-org-agenda)
+
 (provide 'use-org)
