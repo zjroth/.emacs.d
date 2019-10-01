@@ -231,30 +231,7 @@
     (require 'setup-org-punch-in)
 
     ;; Export settings
-    (use-package htmlize)
-    (setq org-html-inline-images t)
-
-    (require 'ox-org)
-
-    (require 'ox-latex)
-    (setq org-latex-listings 'minted)
-    (setq org-export-with-smart-quotes t)
-    (add-to-list 'org-latex-packages-alist
-                 '("newfloat" "minted"))
-    (setq org-latex-pdf-process
-          '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-    ;;
-    ;; ;; Display inline images
-    ;; (add-hook 'org-mode-hook 'org-display-inline-images)
-
-    ;; ;; Allow exporting to jupyter notebooks.
-    ;; (load-file "~/.emacs.d/other-packages/ox-ipynb/ox-ipynb.el")
-    ;; (require 'ox-ipynb)
-
-    (use-package ox-gfm)
-
+    (require 'setup-org-export)
     ))
 
 (provide 'use-org)
