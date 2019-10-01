@@ -34,6 +34,7 @@
 (use-package org
   :pin "gnu"
   :defer t
+  :after ivy
 
   :init
   (progn
