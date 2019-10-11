@@ -7,7 +7,8 @@
   :init
   (progn
     ;; Make sure that luatex is used by default.
-    (setq TeX-engine 'luatex))
+    (setq-default TeX-engine 'luatex)
+    (setq TeX-command-extra-options "--shell-escape"))
 
   :config
   (progn
