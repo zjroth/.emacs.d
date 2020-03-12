@@ -1,6 +1,11 @@
 
 (use-package htmlize)
 (setq org-html-inline-images t)
+;; https://gongzhitaao.org/orgcss/org.css
+(setq org-html-head
+      (concat "<link rel=\"stylesheet\" type=\"text/css\" href=\"file://"
+              (expand-file-name "org.css" settings-dir)
+              "\"/>"))
 
 (require 'ox-org)
 
