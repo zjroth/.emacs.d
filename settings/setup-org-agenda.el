@@ -101,6 +101,7 @@
     ;; - https://orgmode.org/manual/Block-agenda.html#Block-agenda
     ;; - https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
     ;; - https://stackoverflow.com/a/31653151
+    ;; - https://orgmode.org/manual/Matching-tags-and-properties.html
     (setq org-agenda-custom-commands
           '(("d" "Today's agenda and all TODO items"
              (
