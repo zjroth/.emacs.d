@@ -228,6 +228,9 @@
 ;; Ditch them scrollbars
 (scroll-bar-mode -1)
 
+;; Always highlight the current line.
+(global-hl-line-mode 1)
+
 ;; Soft-wrap lines
 (global-visual-line-mode nil)
 (use-package visual-fill-column
