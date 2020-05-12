@@ -59,10 +59,12 @@
     ;; been generated.  The idea for using `'all` is that I am only looking
     ;; through my global to-do list if I'm looking for things that haven't
     ;; already been scheduled.  Deadlines that are near should already be in the
-    ;; agenda, so don't show them elsewhere.
+    ;; agenda, so don't show them elsewhere.  Don't show a deadline in the
+    ;; agenda before the scheduled date.
     (setq org-agenda-todo-ignore-scheduled 'all)
     (setq org-agenda-todo-ignore-deadlines 'near)
     (setq org-deadline-warning-days 14)
+    (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled)
 
     ;; To-do dependencies
     (setq org-agenda-dim-blocked-tasks t)
