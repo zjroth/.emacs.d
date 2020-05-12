@@ -16,10 +16,13 @@
         c-electric-paren
         c-electric-semi&comma
         c-electric-slash
+        c-indent-line-or-region
         change-inner
         change-number-at-point
         change-outer
         comment-dwim
+        completion-at-point
+        counsel-yank-pop
         cua-replace-region
         cua-set-mark
         delete-blank-lines
@@ -28,12 +31,13 @@
         dired-back-to-start-of-files
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
+        elpy-open-and-indent-line-above
         end-of-buffer
         end-of-visual-line
+        ess-indent-or-complete
         ess-smart-S-assign
         ess-smart-comma
         ess-yank
-        eval-and-replace
         eval-last-sexp
         eval-print-last-sexp
         fill-paragraph
@@ -41,6 +45,7 @@
         forward-paragraph
         forward-sentence
         forward-sexp
+        haskell-indentation-common-electric-command
         hippie-expand-no-case-fold
         html-wrap-in-tag
         indent-for-tab-command
@@ -56,7 +61,9 @@
         kill-visual-line
         kmacro-insert-counter
         magit-stage-item
+        mark-sexp
         markdown-enter-key
+        markdown-outdent-or-delete
         matlab-backward-sexp
         matlab-comment
         matlab-electric-comment
@@ -73,14 +80,17 @@
         open-line-below
         org-beginning-of-line
         org-ctrl-c-ctrl-c
+        org-cycle
         org-delete-backward-char
         org-delete-char
         org-end-of-line
         org-force-self-insert
         org-forward-sentence
         org-kill-line
+        org-meta-return
         org-metaleft
         org-metaright
+        org-next-visible-heading
         org-return-indent
         org-self-insert-command
         org-shiftmetaleft
@@ -101,8 +111,11 @@
         subword-right
         tex-insert-quote
         transpose-params
+        transpose-words
         universal-argument-minus
+        wgrep-finish-edit
         wrap-region-trigger
+        yaml-electric-backspace
         yank-indented
         yank-unindented
         yas-expand
@@ -113,6 +126,7 @@
       '(
         TeX-command-master
         TeX-next-error
+        atomic-chrome-send-buffer-text
         counsel-M-x
         delete-window
         handle-switch-frame
@@ -120,9 +134,12 @@
         ido-switch-buffer
         js2r-extract-var
         js2r-rename-var
+        magit-copy-buffer-revision
+        make-frame-command
         matlab-comment-line-break-function
         org-edit-src-save
         org-export-dispatch
+        org-shifttab
         overwrite-mode
         rename-current-buffer-file
         rotate-windows
