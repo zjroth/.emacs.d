@@ -1,4 +1,6 @@
 (use-package magit
+  :defer t
+
   :bind (("C-c g" . magit-status-fullscreen))
 
   :config

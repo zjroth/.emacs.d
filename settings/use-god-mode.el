@@ -1,4 +1,6 @@
 (use-package god-mode
+  :defer t
+
   ;; (global-set-key (kbd "<escape>") 'god-local-mode)
   :bind (("<escape>" . god-mode-all))
 

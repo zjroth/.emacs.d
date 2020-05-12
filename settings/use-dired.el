@@ -1,5 +1,6 @@
 
 (use-package dired
+  :defer t
   :ensure wdired
   :pin manual
 

@@ -122,7 +122,9 @@
 (use-package transpose-frame
   :bind ("M-t f" . transpose-frame))
 ;; (use-package nxhtml)
+
 (use-package pretty-mode
+  :defer t
   :config
   (pretty-add-keywords 'org-mode
                        '(("^ *\\(#\\+begin_src\\) " . ?λ))))
