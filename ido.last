@@ -56,20 +56,20 @@
  ("/home/zroth/.emacs.d/" . "settings/")
  ("/home/zroth/Dropbox/research-notes/" . "thesis/")
  ("/home/zroth/Dropbox/" . "org/")
- ("/home/zroth/" . ".emacs.d/")
+ ("/home/zroth/" . "Downloads/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/zroth/Downloads/"
  "/home/zroth/.emacs.d/"
- "/home/zroth/Dropbox/org/"
  "/home/zroth/.emacs.d/settings/"
+ "/home/zroth/Dropbox/org/"
  "/home/zroth/"
  "/home/zroth/Dropbox/org/archived/"
  "/home/zroth/Dropbox/job-related/vita/twentysecondcv/"
  "/home/zroth/Dropbox/job-related/applications/janelia/"
  "/home/zroth/Dropbox/personal/"
- "/home/zroth/Downloads/"
  "/home/zroth/Dropbox/job-related/"
  "/home/zroth/.emacs.d/other-packages/"
  "/home/zroth/Dropbox/job-related/applications/"
@@ -116,6 +116,7 @@
 ;; ----- ido-work-file-list -----
 (
  "init.el"
+ "custom.el"
  "articles.org"
  "setup-org.el"
  "examples.desktop"
@@ -123,26 +124,27 @@
  "jobsearch.org_archive"
  "inbox.org_archive"
  "use-org.el"
- "key-bindings.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/zroth/.emacs.d/settings/" (23101 13956 561429 964000) "use-org.el" ".#setup-org.el" "setup-matlab-mode.el" ".mc-lists.el" "setup-html-mode.el" "sane-defaults.el" "setup-clojure-mode.el" "./" "appearance.el" "mode-mappings.el" "setup-slime-js.el" "custom.el" "setup-org.el" "setup-js2-mode.el" "setup-hippie.el" "setup-yasnippet.el" "setup-package.el" "setup-rgrep.el" "setup-shell.el" "setup-julia-mode.el" "mac.el" "setup-dired.el" "key-bindings.el" "setup-mu4e.el" "my-misc.el" "setup-perspective.el" "setup-elfeed.el" "setup-markdown-mode.el" "setup-magit.el" "setup-ido.el" "setup-elnode.el" "setup-paredit.el" "../" "setup-ruby-mode.el" "setup-ffip.el" "#setup-eww.el#" "setup-eww.el")
+ ("/home/zroth/" (23373 5337 915005 756000) ".ICEauthority" ".macromedia/" ".dropbox/" ".heroku/" ".julia/" "bin/" ".dropbox-dist-janelia/" ".QtWebEngineProcess/" ".offlineimap/" ".bashrc-anaconda3.bak" ".cinnamon/" ".bashrc.original" "examples.desktop" "programs/" "Music/" ".texmf-var/" ".icons/" ".compiz/" "./" ".python_history" ".netrc" ".gvfs/" ".wine/" ".continuum/" ".xsession-errors.old" ".config/" ".julia_history" "Pictures/" ".gnome2/" ".rpmdb/" ".nano/" "PlayOnLinux's virtual drives/" ".cache/" ".ipython/" ".taskrc" ".elfeed/" ".node_repl_history" ".themes/" ".m2/" ".sane/" ".PlayOnLinux/" ".thunderbird/" "Documents/" "Dropbox-janelia/" ".dmrc" ".pki/" ".dropbox-janelia/" "R/" ".nixnote/" ".sqlite_history" ".gconf/" ".Xauthority" ".lesshst" ".recently-used" ".remmina/" ".emacs.d/" ".android/" ".texlive2017/" ".kde/" ".bashrc-anaconda2.bak" ".npm/" ".dbus/" ".aliases" "Raccoon/" ".mu/" ".newspaper_scraper/" "Dropbox/" "#.notes#" ".dropbox-dist/" ".local/" ".xsession-errors" ".psql_history" ".bashrc" ".xournal/" "Desktop/" ".lastpass/" ".xsel.log" ".beeline/" ".jupyter/" ".pip/" ".gimp-2.8/" ".profile" ".aqbanking/" "Downloads/" ".gstreamer-0.10/" ".hardinfo/" "#.offlineimaprc#" ".offlineimaprc" ".gourmet/" ".gitconfig" ".emacs.d.new/" ".bash_logout" ".audacity-data/" "mail/" ".sudo_as_admin_successful" ".fltk/" ".purple/" ".bash_history" "projects/" ".ssh/" ".thumbnails/" "../" ".task/" ".octave_hist" ".scala_history" "ofxclient.ini" "snap/" ".adobe/" ".gnome/" ".eteks/" ".lein/" ".xinitrc" ".gnupg/" "Public/" "#.taskrc#" ".mozilla/" "Videos/" ".mono/" "missfont.log" "Templates/" ".java/" ".zoom/" ".vuescan/" ".wget-hsts" ".gnucash/")
 
- ("/home/zroth/.emacs.d/" (23101 13349 140757 865000) "url/" ".mc-lists.el" "backups/" "./" "other-packages/" "recentf" "site-lisp/" "settings/" "custom.el" "auto-save-list/" ".trash/" "init.el" ".gitignore" "abbrev_defs" "defuns/" ".gitmodules" "smex-items" "bookmarks" "elpa/" "ido.last" ".places" "../" ".git/" "README.md")
+ ("/home/zroth/Downloads/" (23181 57099 470883 479000) "family-photos-master-43b518826bbc63442d2d1b1e1dc87b863ee48269.tar.bz2" "christmas-card-2.png" "20170709_154553.jpg" "2017-federal-voucher-q4-payment.pdf" "20170526_172335.jpg" "20170831_153322.jpg" "kevin-resume.pdf" "reference-check-pastoral.doc" "20170926_182514.jpg" "20170803_094053.jpg" "20171115_120110.jpg" "20170801_133349.jpg" "20171017_142649.jpg" "janssen-gvsu-cover-letter.pdf" "20170915_170728.jpg" "20170601_184147.jpg" "sdk-tools-linux-3859397.zip" "20170524_040656.jpg" "20170903_094813.jpg" "Chase3214_Activity_20180221.CSV" "20170601_184147 (1).jpg" "expressvpn_1.3.1_amd64.deb" "20170831_153301.jpg" "mendeleydesktop_1.17.12-stable_amd64.deb" "sbgc-snoop-dogg2.jpg" "20171225_093117.jpg" "20171031_171524.jpg" "20171019_121804.jpg" "janelia-application.pdf" "transcript-undergrad.pdf" "20171216_101859.jpg" "20170708_114759.jpg" "20170526_172337.jpg" "20170915_183748.jpg" "20170530_140745.jpg" "20170708_113842.jpg" "20170625_144103_Richtone(HDR).jpg" "sbgc-snoop-dogg.jpg" "20170524_043734.jpg" "2016 Other documents (ROTH, ZACHARY J & RACH).pdf" "tenorshare-android-data-recovery-trial.exe" "20171116_150757.jpg" "20170624_151346.jpg" "20171031_150527.jpg" "2018 HHMI Employment Application_ Janelia.pdf" "20170524_040333_LLS.jpg" "Chase3214_Activity_20171227.CSV" "20171115_120110 (1).jpg" "20170524_133456_Richtone(HDR).jpg" "Screenshot from 2017-12-15 18-48-23.png" "gfcsc-2017-12-17-1-Tim-3-4.mp3.crdownload" "20170601_182202 (1).jpg" "GCC 2018 Budget Draft 19Nov2017.xlsx" "20170728_151931.jpg" "20171116_150825.jpg" "Chase3214_Activity_20180127.CSV" "20170629_232454.jpg" "christmas-card.png" "2017-virginia-voucher-q4-payment.pdf" "20171031_144358.jpg" "20171017_142647.jpg" "20170602_120233 (1).jpg" "20170601_113711.jpg" "20171031_150633.jpg" "20170524_163926.jpg" "20170602_195426.jpg" "20170524_040645_LLS.jpg" "20171115_120110.jpg.crdownload" "t-david-gordon/" "20170526_172331.jpg" "20171019_121800.jpg" "20170620_160533.jpg" "20170620_160542.jpg" "family-photos-master-43b518826bbc63442d2d1b1e1dc87b863ee48269/" "20170619_110602.jpg" "20170619_214916_LLS.jpg" "20170701_001655.jpg" "20170831_212314.jpg" "emacs-icon.svg" "20171031_144838.jpg" "20170915_170852.jpg" "20170831_153339.jpg" "20170620_160559.jpg" "adr.exe" "20171116_150828.jpg" "20170914_161158.jpg" "sdk-tools-linux-3859397/" "20170620_160556.jpg" "20170602_131838 (1).jpg" "20170602_131838.jpg" "20171106_074310.jpg" "20170708_113839.jpg" "tjauch-bethel-cover-letter.pdf" "20170619_110511.jpg" "20170719_205415.jpg" "20171029_174659.jpg" "20171116_150827.jpg" "20171031_151438.jpg" "20170915_170854.jpg" "20170527_225553.jpg" "20170601_182202.jpg" "20171029_174703.jpg" "wine-mono-4.7.1.msi" "Resume201711111135.pdf" "megasync-xUbuntu_17.10_amd64.deb" "20171108_164706.jpg" "20170524_163923.jpg" "20170715_220054.jpg" "20170801_215251_LLS.jpg" "20171203_095746.jpg" "20170617_200737.jpg" "20170602_195426 (1).jpg" "20171031_150543.jpg" "20170619_110449.jpg" "20170903_094759.jpg" "20170831_153359.jpg" "20170629_232459.jpg" "20171225_131558.jpg" "20170629_232509.jpg" "transcript-gradschool.pdf" "20170715_215043.jpg" "20171031_150632.jpg" "20171107_144339.jpg" ".~lock.Chase3214_Activity_20180221.CSV#" "20170617_185549.jpg" "MEGA-RECOVERYKEY.txt" "vita.pdf" "VelizCuba et al 2014 BioArXIV.pdf" "20170525_233744.jpg" "20170620_160545.jpg" "20170602_120233.jpg" "20170601_120140.jpg" "20170629_232448.jpg" "20170702_165342_LLS.jpg" "hugo-master/" "janssen-calvin-cover-letter.pdf" "20170831_210014.jpg" "../" "./")
 
- ("/home/zroth/Dropbox/org/" (23100 25633 741325 355000) ".#work.org" "date-ideas.org" "manuscript-journal.org" "work.org" "./" "articles.org" "#inbox.org#" "someday.org" "projects.org" "../" "archived/" "non-org/" ".#articles.org" "inbox.org")
+ ("/home/zroth/Dropbox/org/" (23181 55539 539642 212000) "data/" "manuscript-journal.org" "projects.html" ".#lists.org" "./" "notes.org" "rachel.org" "#lists.org#" "someday.org" "lists.org" "projects.org" "../" "archived/" "non-org/" "inbox.org")
+
+ ("/home/zroth/Dropbox/job-related/applications/bethel-university/" (23146 18037 501429 233000) "coverletter.out" "auto/" "./" "coverletter.log" "coverletter.pdf" "../" "coverletter.tex" "coverletter.aux")
+
+ ("/home/zroth/.emacs.d/" (23127 32175 531793 16000) "url/" ".mc-lists.el" "backups/" "./" "other-packages/" "recentf" "site-lisp/" "settings/" "custom.el" ".org-id-locations" "auto-save-list/" ".trash/" "init.el" ".gitignore" "abbrev_defs" "defuns/" ".gitmodules" "smex-items" "bookmarks" "elpa/" "ido.last" ".places" "../" ".git/" "README.md")
+
+ ("/home/zroth/.emacs.d/settings/" (23123 56393 886998 800000) "use-org.el" "setup-matlab-mode.el" ".mc-lists.el" "setup-html-mode.el" "sane-defaults.el" "setup-clojure-mode.el" "./" "appearance.el" "mode-mappings.el" "setup-slime-js.el" "custom.el" "setup-org.el" "setup-js2-mode.el" "setup-hippie.el" "setup-yasnippet.el" "setup-package.el" "setup-rgrep.el" "setup-shell.el" "setup-julia-mode.el" "mac.el" "setup-dired.el" "key-bindings.el" "setup-mu4e.el" "my-misc.el" "setup-perspective.el" "setup-elfeed.el" "tmp.el" "setup-markdown-mode.el" "setup-magit.el" "setup-ido.el" "setup-elnode.el" "setup-paredit.el" "custom.el~HEAD" "../" "setup-ruby-mode.el" "setup-ffip.el" "#setup-eww.el#" "setup-use-package.el" "setup-eww.el")
 
  ("/home/zroth/Dropbox/org/archived/" (23100 16450 134393 885000) "./" "../" "jobsearch.org_archive")
-
- ("/home/zroth/" (23097 15860 437587 504000) ".ICEauthority" ".macromedia/" ".dropbox/" ".heroku/" ".julia/" "bin/" ".dropbox-dist-janelia/" ".QtWebEngineProcess/" ".offlineimap/" ".bashrc-anaconda3.bak" ".cinnamon/" ".bashrc.original" "examples.desktop" "programs/" "Music/" ".texmf-var/" ".icons/" ".compiz/" "./" ".python_history" ".netrc" ".gvfs/" ".wine/" ".continuum/" ".xsession-errors.old" ".config/" ".julia_history" "Pictures/" ".gnome2/" ".rpmdb/" "PlayOnLinux's virtual drives/" ".cache/" ".ipython/" ".taskrc" ".elfeed/" ".node_repl_history" ".themes/" ".m2/" ".PlayOnLinux/" ".thunderbird/" "Documents/" "Dropbox-janelia/" ".dmrc" ".pki/" ".dropbox-janelia/" ".nixnote/" ".sqlite_history" ".gconf/" ".Xauthority" ".lesshst" ".recently-used" ".remmina/" ".emacs.d/" ".texlive2017/" ".kde/" ".bashrc-anaconda2.bak" ".npm/" ".dbus/" ".aliases" ".mu/" ".newspaper_scraper/" "Dropbox/" "#.notes#" ".dropbox-dist/" ".local/" ".xsession-errors" ".psql_history" ".bashrc" ".xournal/" "Desktop/" ".lastpass/" ".xsel.log" ".beeline/" ".jupyter/" ".pip/" ".gimp-2.8/" ".profile" ".aqbanking/" "Downloads/" ".gstreamer-0.10/" ".hardinfo/" "#.offlineimaprc#" ".offlineimaprc" ".gourmet/" ".gitconfig" ".emacs.d.new/" ".bash_logout" ".audacity-data/" "mail/" ".sudo_as_admin_successful" ".purple/" ".bash_history" "projects/" ".ssh/" ".thumbnails/" "../" ".task/" ".scala_history" ".adobe/" ".gnome/" ".eteks/" ".lein/" ".gnupg/" "Public/" "#.taskrc#" ".mozilla/" "Videos/" ".mono/" "missfont.log" "Templates/" ".java/" ".wget-hsts" ".gnucash/")
 
  ("/home/zroth/Dropbox/job-related/applications/janelia/" (23097 15896 634173 584000) "./" "digital-signature.pdf" "coverletter.pdf" "../" "coverletter.tex")
 
  ("/home/zroth/Dropbox/personal/" (23092 29033 116684 100000) "liberty-first-close-account.tex" "townhouse-seller-disclosure/" "receipts/" "./" "schwab-simple-external-account.pdf" "digital-signature.pdf" "EligibilityNotice.pdf" "room-dimensions.png" "liberty-first-close-account.pdf" "meline-medical-guadianship.pdf" "2017-12-15-193959.webm" "2017-03-21--fidelity-401k-contributions.pdf" "resolutions/" "inova-annual-enrollment-2017.pdf" "taxes/" "honeymoon-details/" "PassportApplicationComplete.pdf" "inova-annual-enrollment-confirmation-2017.pdf" "finances/" "room-dimensions.pdf" "meline-medical-guadianship.tex" "../" "meline-medical-guadianship.org" "navient-electronic-payment-authorization-2016-10-31.pdf" "digital-signature.svg" "random-baby-name.png")
-
- ("/home/zroth/Downloads/" (23095 59464 548565 129000) "family-photos-master-43b518826bbc63442d2d1b1e1dc87b863ee48269.tar.bz2" "christmas-card-2.png" "kevin-resume.pdf" "./" "Screenshot from 2017-12-15 18-48-23.png" "GCC 2018 Budget Draft 19Nov2017.xlsx" "christmas-card.png" "t-david-gordon/" "family-photos-master-43b518826bbc63442d2d1b1e1dc87b863ee48269/" "Janssen-GVSULetter.pdf" "transcript-unl.pdf" "transcript-hc.pdf" "../" "vita.pdf" "hugo-master/")
 
  ("/home/zroth/Dropbox/job-related/" (23095 65202 727271 619000) "./" "vita/" "janelia-contract-romani-lab-2017-03-31.pdf" "janelia-intranet/" "applications/" "myidp/" "2017-janelia-holiday-calendar.pdf" "2017-janelia-payroll-calendar.pdf" "janelia-invoices/" "../" "coverletter.org")
 
@@ -325,8 +327,6 @@
  ("/home/zroth/projects/heroku-apps/painlessly-deploying-data-apps/finance/" (22406 47011 618199 481000) "templates/" "static/" "./" "../")
 
  ("/home/zroth/projects/heroku-apps/murmuring-cliffs-15916/" (22405 42182 420813 779000) "package.jl" "./" ".git/" "../" "index.jl")
-
- ("/home/zroth/projects/rank-pairs/" (22211 41546 203960 161000) "./" "../" "rank-pairs.jl")
 )
 
 ;; ----- ido-unc-hosts-cache -----

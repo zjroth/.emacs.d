@@ -3,8 +3,16 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        LaTeX-babel-insert-hyphen
+        LaTeX-insert-left-brace
+        TeX-insert-backslash
+        TeX-insert-dollar
+        TeX-insert-sub-or-superscript
+        ac-complete
+        back-to-indentation-or-beginning
         backward-sexp
         beginning-of-buffer
+        beginning-of-visual-line
         c-electric-backspace
         c-electric-delete-forward
         c-electric-paren
@@ -14,12 +22,17 @@
         change-number-at-point
         change-outer
         comment-dwim
+        counsel-yank-pop
+        cua-replace-region
+        cua-set-mark
+        delete-blank-lines
         delete-horizontal-space
         dired-back-to-start-of-files
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
         end-of-buffer
         end-of-visual-line
+        ess-indent-or-complete
         ess-smart-S-assign
         ess-smart-comma
         ess-yank
@@ -39,15 +52,30 @@
         js2-insert-and-indent
         js2r-inline-var
         js2r-var-to-this
+        julia-latexsub-or-indent
+        kill-and-retry-line
         kill-region-or-backward-word
         kill-sentence
         kill-visual-line
         kmacro-insert-counter
+        ledger-magic-tab
         magit-stage-item
         markdown-enter-key
         matlab-backward-sexp
+        matlab-comment
         matlab-electric-comment
+        matlab-fill-paragraph
         matlab-forward-sexp
+        matlab-linefeed
+        move-line-down
+        move-line-up
+        move-text-down
+        move-text-up
+        new-line-above
+        nxml-electric-slash
+        open-line-above
+        open-line-below
+        org-archive-to-archive-sibling
         org-beginning-of-line
         org-ctrl-c-ctrl-c
         org-ctrl-c-minus
@@ -58,10 +86,13 @@
         org-end-of-line
         org-fill-paragraph
         org-force-self-insert
+        org-forward-sentence
         org-insert-item
         org-kill-line
         org-metaleft
         org-metaright
+        org-next-visible-heading
+        org-open-at-point
         org-previous-visible-heading
         org-return-indent
         org-self-insert-command
@@ -85,6 +116,7 @@
         tex-insert-quote
         transpose-params
         transpose-words
+        wdired-downcase-word
         wrap-region-trigger
         yaml-electric-backspace
         yaml-electric-dash-and-dot
@@ -102,6 +134,7 @@
         delete-window
         ido-find-file
         ido-switch-buffer
+        ivy-switch-buffer
         js2r-extract-var
         js2r-rename-var
         matlab-comment-line-break-function

@@ -82,8 +82,8 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; Sentences do not need double spaces to end. Period.
-(set-default 'sentence-end-double-space nil)
+;; Sentences always need double spaces to end.  Period.
+(set-default 'sentence-end-double-space t)
 
 ;; Add parts of each file's directory to the buffer name if not unique
 (require 'uniquify)

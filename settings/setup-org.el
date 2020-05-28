@@ -52,7 +52,7 @@
     ;(julia . t)
     (python . t)
     (ipython . t)
-    ;(R . t)
+    (R . t)
     (clojure . t)
     ;(js . t)
     ;(matlab . t)
@@ -91,6 +91,15 @@
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 ;; Check out org-outline-path-complete-in-steps: https://stackoverflow.com/a/25089958
 
+;; Time budgeting
+(require 'org-clock-budget)
+(setq org-clock-budget-intervals
+      '(("BUDGET_WEEK"    org-clock-budget-interval-this-week)
+        ("BUDGET_MONTH"   org-clock-budget-interval-this-month)
+        ;; ("BUDGET_QUARTER" org-clock-budget-interval-this-quarter)
+        ;; ("BUDGET_YEAR"    org-clock-budget-interval-this-year)
+        ))
+
 ;; Don't ask me to confirm evaluation every time.
 (setq org-confirm-babel-evaluate nil)
 
@@ -109,5 +118,10 @@
 (advice-add 'org-agenda-goto :after
             (lambda (&rest args)
               (org-narrow-to-subtree)))
+
+(setq org-log-into-drawer t)
+
+;; Don't show mark-up characters for bold, italics, etc.
+(setq org-hide-emphasis-markers nil)
 
 (provide 'setup-org)

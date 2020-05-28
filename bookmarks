@@ -3,18 +3,18 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored-marker"
- (filename . "~/Dropbox/org/jobsearch.org")
- (front-context-string . "** [[https://www")
- (rear-context-string . "t an interview\n\n")
- (position . 8339))
+ (filename . "~/Dropbox/org/projects.org")
+ (front-context-string . "** [[http://www.")
+ (rear-context-string . "Wed 17:40\n:END:\n")
+ (position . 156563))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/org/projects.org")
- (front-context-string . "*** [[https://ca")
- (rear-context-string . "Scientist\n:END:\n")
- (position . 11565))
+ (front-context-string . "**** [[https://w")
+ (rear-context-string . "APPLY:  t\n:END:\n")
+ (position . 115907))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/org/projects.org")
- (front-context-string . "*** [[https://ww")
- (rear-context-string . "ngton, DC\n:END:\n")
- (position . 1639))
+ (front-context-string . "**** [[https://w")
+ (rear-context-string . "_APPLIED:\n:END:\n")
+ (position . 31056))
 )

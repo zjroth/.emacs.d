@@ -33,8 +33,11 @@
 ;;   (when (file-directory-p project)
 ;;     (add-to-list 'load-path project)))
 
+;; Some non-elpa packages.
 (add-to-list 'load-path
              "~/.emacs.d/other-packages/org-protocol-capture-html/")
+(add-to-list 'load-path
+             "~/.emacs.d/other-packages/org-clock-budget/")
 
 ;; Keep emacs Custom-settings in separate file
 (setq settings-dir "~/.emacs.d")
@@ -221,7 +224,7 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;; Diminish modeline clutter
-(require 'diminish)
+;; (require 'diminish)
 
 ;; Web browsing
 (require 'setup-eww)
@@ -234,13 +237,19 @@
       '(("t" "Todo" entry (file+headline "~/Dropbox/org/inbox.org")
          "* TODO %?\n  %i\n  %a")
         ("a" "Article" entry (file+olp "~/Dropbox/org/lists.org" "Reading" "Internet articles")
-         "
-* %c
-:PROPERTIES:
-  :CAPTURED: %U
-:END:
-%?
-%:initial")
+         "* %c\n:PROPERTIES:\n  :CAPTURED: %U\n:END:\n%?\n%:initial")
+;;         ("a" "Article" entry (file+olp "~/Dropbox/org/lists.org" "Reading" "Internet articles")
+;;          "
+;; * %c
+;; :PROPERTIES:
+;;   :CAPTURED: %U
+;; :END:
+;; %?
+        ;; %:initial")
+        ("b" "Book" entry (file+olp "~/Dropbox/org/lists.org" "Reading" "Books")
+         "* %c\n:PROPERTIES:\n  :CAPTURED: %U\n  :AUTHOR:   %^{Author}\n:END:\n%?\n%:initial")
+        ("v" "Video" entry (file+olp "~/Dropbox/org/lists.org" "Videos" "Internet videos")
+         "* %c\n:PROPERTIES:\n  :CAPTURED: %U\n  :DURATION: %^{Duration (HH:MM:SS)}\n:END:\n%?\n%:initial")
         ;; ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
         ;;  "* %?\nEntered on %U\n  %i\n  %a")
         ("p" "Job posting" entry (file+olp "~/Dropbox/org/projects.org"
@@ -248,6 +257,7 @@
          "
 * %?%c
 :PROPERTIES:
+  :ID:           %(org-id-new)
   :TITLE:        %^{Job title}
   :COMPANY:      %^{Company name}
   :LOCATION:     %^{Job location}
@@ -256,10 +266,48 @@
   :DATE_APPLIED:
 :END:
 %:initial
-** Information
-** Cover letter
-** Follow up about application
+")
+        ("h" "Housing" entry (file+olp "~/Dropbox/org/projects.org"
+                                       "House/apartment search" "Listings")
+         "
+* %?%c
+:PROPERTIES:
+  :ID:           %(org-id-new)
+  :ADDRESS:      %^{Street address}
+  :CITY:         %^{City}
+  :STATE:        %^{State}
+  :RENT:         %^{Rent per month}
+  :BEDROOMS:     %^{Number of bedrooms}
+  :BATHROOMS:    %^{Number of bathrooms}
+  :SQUARE_FEET:  %^{Square feet}
+  :CAPTURED:     %U
+:END:
+%:initial
+")
+        ("c" "Vehicle / Car" entry (file+olp "~/Dropbox/org/projects.org"
+                                             "Car search" "Postings")
+         "
+* %?%c
+:PROPERTIES:
+  :ID:         %(org-id-new)
+  :YEAR:       %^{Vehicle year}
+  :MAKE:       %^{Vehicle make}
+  :MODEL:      %^{Vehicle model}
+  :TRIM:       %^{Vehicle trim}
+  :PRICE:      %^{Asking price}
+  :ODOMETER:   %^{Miles on odometer}
+  :LOCATION:   %^{Location of the vehicle}
+  :SELLER:     %^{Name of the seller}
+  :KBB_VALUE:  %^{KBB value}
+  :KBB:        [[%^{Link to KBB value}][link]]
+  :CAPTURED:   %U
+:END:
+%:initial
 ")))
+;; :CUSTOM_ID:    %(org-id-get-create)
+;; ** Information
+;; ** Cover letter
+;; ** Follow up about application
 
 ;; ;; helm
 ;; (use-package helm
@@ -295,6 +343,9 @@
 (use-package ivy
   :ensure t
   :diminish (ivy-mode . "")
+
+  :init
+  (setq ivy-count-format "(%d/%d) ")
 
   :bind (:map ivy-mode-map
               ("C-'" . ivy-avy))
@@ -333,6 +384,14 @@
          ;("C-x c SPC" . helm-all-mark-rings)
          ))
 
+(use-package yasnippet
+  :config (yas-global-mode 1))
+
+(use-package yasnippet-snippets
+  :pin melpa)
+
+(use-package ivy-yasnippet)
+
 ;; god-mode
 (require 'god-mode)
 ;; (global-set-key (kbd "<escape>") 'god-local-mode)
@@ -349,3 +408,8 @@
 ;; (when (file-exists-p user-settings-dir)
 ;;   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; ;; emacs window manager
+;; (require 'exwm)
+;; (require 'exwm-config)
+;; (exwm-config-default)
