@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: source code block (src)
+# key: pv
+# --
+print(f"${1:var} = {$1}")
