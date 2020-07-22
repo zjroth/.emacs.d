@@ -20,11 +20,12 @@
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
-  (unwind-protect
-      (progn
-        (linum-mode 1)
-        (call-interactively 'goto-line))
-    (linum-mode -1)))
+  (let ((linum-state linum-mode))
+    (unwind-protect
+         (progn
+           (linum-mode 1)
+           (call-interactively 'goto-line))
+      (linum-mode (if linum-state 1 -1)))))
 
 ;; Add spaces and proper formatting to linum-mode. It uses more room than
 ;; necessary, but that's not a problem since it's only in use when going to
