@@ -6,7 +6,7 @@
   :bind (:map ivy-mode-map
               ("C-'" . ivy-avy))
 
-  :config
+  :init
   (progn
     (ivy-mode 1)
     (setq ivy-use-virtual-buffers t)
@@ -19,6 +19,7 @@
     (setq ivy-count-format "(%d of %d) ")
 
     ;; no regexp by default
+    ;; (setq-default ivy-initial-inputs-alist nil)  ; set when loading counsel
     (setq ivy-initial-inputs-alist nil)
 
     ;; configure regexp engine.
@@ -51,16 +52,12 @@
          ("M-x"       . counsel-M-x)
          ("C-s"       . swiper)
          ("C-x C-f"   . counsel-find-file)
-         ("C-c C-o"   . ivy-occur))
+         ("C-c C-o"   . ivy-occur)))
 
-  :bind (:map org-mode-map
-              ("C-c C-j"   . counsel-org-goto-all)
-              ;; ("C-h a"     . helm-apropos)
-              ;; ("C-x b"     . helm-buffers-list)
-              ;; ("C-x c o"   . helm-occur)
-              ;; ("C-x c SPC" . helm-all-mark-rings)
-              )
-  )
+(use-package counsel
+  :defer t
+  :config
+  (setq-default ivy-initial-inputs-alist nil))
 
 (use-package ivy-rich
   :after (:all ivy counsel)
@@ -71,7 +68,6 @@
   ;;                              'ivy-rich-switch-buffer-transformer)
 
   :config
-  (ivy-rich-mode 1)
-  )
+  (ivy-rich-mode 1))
 
 (provide 'use-ivy)

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: function
+# key: fun
+# group: definitions
+# --
+def ${1:name}($2):
+    \"\"\"
+    $3
+    ${2:$(python-args-to-docstring-numpy)}
+    \"\"\"
+    raise NotImplementedError()$0

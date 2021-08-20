@@ -74,6 +74,7 @@
 ;; Enable the package manager and use-package.
 (require 'setup-use-package)
 
+;; A modern list API.
 (use-package dash)
 
 ;; Functions (load all files in defuns-dir)
@@ -96,7 +97,7 @@
 (require 'use-god-mode)
 (require 'use-browse-kill-ring)
 (require 'setup-hippie)
-(require 'setup-eww)
+;; (require 'setup-eww)         ; eww is slow to load, and I don't really use it.
 
 (require 'use-dired)
 (require 'key-bindings)
@@ -114,8 +115,13 @@
 (require 'use-haskell)
 (require 'use-clojure)
 
-(use-package define-word)
 (require 'setup-system-interaction)
+
+(use-package define-word
+  :defer t)
+;; ;; Use the built-in dictionary on Macs.
+;; (use-package osx-dictionary
+;;   :defer t)
 
 (use-package which-key
   :config (which-key-mode))
@@ -136,7 +142,74 @@
   :config (atomic-chrome-start-server))
 
 ;; yaml files
-(use-package yaml-mode)
+(use-package yaml-mode
+  :defer t)
+
+;; Timing start-up time
+(use-package esup
+  :defer t)
+
+;; ack from emacs
+(use-package ack
+  :pin gnu
+
+  :init
+  (setq ack-defaults-function 'ack-legacy-defaults))
+
+;; Work with CSV files.
+(use-package csv-mode
+  :pin gnu
+  :defer t)
+
+;; ack from emacs
+(use-package plantuml-mode
+  :defer t
+  :init
+  (setq plantuml-server-url "http://localhost:8080"))
+(use-package flycheck-plantuml :defer t)
+
+;; Edit Jenkinsfile files
+(use-package jenkinsfile-mode
+  :defer t)
+
+;; Edit Dockerfile files
+(use-package dockerfile-mode
+  :defer t)
+
+;; ;; A pomodoro timer
+;; (use-package pomidor
+;;   :config
+;;   (setq pomidor-sound-tick nil
+;;         pomidor-sound-tack nil))
+
+;; Group buffers in the buffer list.  Or maybe not.  I'm not sold on this yet.
+(setq ibuffer-saved-filter-groups
+      (quote (("default"
+               ("coding" (or (mode . python-mode)
+                             (mode . julia-mode)))
+               ("org" (or (mode . org-mode)
+                          (mode . org-agenda-mode)))
+               ("dired-mode" (mode . dired-mode))
+               ("config files (elisp)" (mode . emacs-lisp-mode))
+               ("scratch buffers" (name . "^\\*scratch.*\\*$"))
+               ("helper buffers" (name . "^\\*.*\\*$"))))))
+(add-hook 'ibuffer-mode-hook
+          (lambda ()
+            (ibuffer-switch-to-saved-filter-groups "default")))
+
+;; ;; flycheck for syntax checking
+;; (use-package flycheck
+;;   :init
+;;   (add-hook 'after-init-hook #'global-flycheck-mode))
+;; ;; (use-package flycheck-julia
+;; ;;   :after flycheck
+;; ;;
+;; ;;   :init
+;; ;;   (add-to-list 'flycheck-global-modes 'julia-mode)
+;; ;;   (add-to-list 'flycheck-global-modes 'ess-julia-mode)
+;; ;;
+;; ;;   :config
+;; ;;   (flycheck-julia-setup))
 
 ;; ADDITIONAL PACKAGES (used in key-bindings.el)
 ;;     buf-move
@@ -189,7 +262,7 @@
 ;; (require 'wgrep)
 ;; (require 'smart-forward)
 ;; (require 'change-inner)
-;; (require 'multifiles)
+(use-package multifiles)
 
 ;; ;; Run at full power please
 ;; (put 'downcase-region 'disabled nil)

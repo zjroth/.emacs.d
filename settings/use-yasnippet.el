@@ -36,7 +36,51 @@
     (setq yas-prompt-functions '(yas-ido-prompt yas-completing-prompt))
 
     ;; Wrap around region
-    (setq yas-wrap-around-region t))
+    (setq yas-wrap-around-region t)
+
+    ;; Indentation was off with this function:
+    ;; file:~/.emacs.d/elpa/yasnippet-snippets-20200425.1210/snippets/python-mode/.yas-setup.el
+    (defun python-args-to-docstring-numpy ()
+      "return docstring format for the python arguments in yas-text"
+      (let* ((indent (concat "\n" (make-string (current-column) 32)))
+             (args (python-split-args yas-text))
+             (format-arg (lambda(arg)
+                           (concat (nth 0 arg) " : " (if (nth 1 arg) ", optional"))))
+             (formatted-params (mapconcat format-arg args indent))
+             (formatted-ret (mapconcat format-arg (list (list "out")) "\n")))
+        (unless (string= formatted-params "")
+          (mapconcat 'identity
+                     (list (concat indent "Parameters" indent "----------") formatted-params
+                           (concat indent "Returns" indent "-------") formatted-ret)
+                     indent)))))
+
+  :config
+  (progn
+    ;; (let ((arg-regexp "\\([a-zA-Z_][a-zA-Z0-9_]*\\)\\(?:: *\\([a-zA-Z_][a-zA-Z0-9_\\[\\]]*\\)\\)?\\(?: *= *\\([^,]*\\)\\)?")
+    ;;       (arg-list "a_1: Union[str, int] = \"54000\", b2: int, _c=None"))
+    ;;   (string-match arg-regexp arg-list)
+    ;;   (match-string 2 arg-list))
+    ;;
+    ;; (defun python-split-args (arg-string)
+    ;;   "Split a python argument string into ((name, default)..) tuples"
+    ;;   (mapcar (lambda (x)
+    ;;             (split-string x "[[:blank:]]*=[[:blank:]]*" t))
+    ;;           (split-string arg-string "[[:blank:]]*,[[:blank:]]*" t)))
+
+    ;; (defun python-args-to-docstring-numpy ()
+    ;;   "return docstring format for the python arguments in yas-text"
+    ;;   (let* ((indent (concat "\n" (make-string (current-column) 32)))
+    ;;          (args (python-split-args yas-text))
+    ;;          (format-arg (lambda(arg)
+    ;;                        (concat (nth 0 arg) " : " (if (nth 1 arg) ", optional"))))
+    ;;          (formatted-params (mapconcat format-arg args indent))
+    ;;          (formatted-ret (mapconcat format-arg (list (list "out")) "\n")))
+    ;;     (unless (string= formatted-params "")
+    ;;       (mapconcat 'identity
+    ;;                  (list (concat indent "Parameters" indent "----------") formatted-params
+    ;;                        (concat indent "Returns" indent "-------") formatted-ret)
+    ;;                  indent))))
+    )
 
   :bind (("C-c s" . ivy-yasnippet))
 

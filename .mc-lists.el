@@ -9,6 +9,7 @@
         TeX-insert-sub-or-superscript
         ac-complete
         back-to-indentation-or-beginning
+        backward-sentence
         backward-sexp
         beginning-of-visual-line
         c-electric-backspace
@@ -31,6 +32,8 @@
         dired-back-to-start-of-files
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
+        electric-pair-delete-pair
+        elpy-nav-indent-shift-right
         elpy-open-and-indent-line-above
         end-of-buffer
         end-of-visual-line
@@ -38,6 +41,7 @@
         ess-smart-S-assign
         ess-smart-comma
         ess-yank
+        eval-and-replace
         eval-last-sexp
         eval-print-last-sexp
         fill-paragraph
@@ -48,6 +52,7 @@
         haskell-indentation-common-electric-command
         hippie-expand-no-case-fold
         html-wrap-in-tag
+        ibuffer-mark-forward
         indent-for-tab-command
         inline-string-rectangle
         js2-beginning-of-line
@@ -79,24 +84,31 @@
         open-line-above
         open-line-below
         org-beginning-of-line
+        org-copy-link-at-point
         org-ctrl-c-ctrl-c
+        org-ctrl-c-star
         org-cycle
+        org-deadline
         org-delete-backward-char
         org-delete-char
         org-end-of-line
         org-force-self-insert
         org-forward-sentence
+        org-insert-todo-heading
         org-kill-line
         org-meta-return
         org-metaleft
         org-metaright
         org-next-visible-heading
+        org-previous-visible-heading
+        org-return-and-maybe-indent
         org-return-indent
         org-self-insert-command
         org-shiftmetaleft
         org-shiftmetaright
         org-shiftright
         org-todo
+        org-transpose-words
         org-yank
         orgtbl-hijacker-command-109
         orgtbl-self-insert-command
@@ -116,6 +128,7 @@
         wgrep-finish-edit
         wrap-region-trigger
         yaml-electric-backspace
+        yaml-electric-dash-and-dot
         yank-indented
         yank-unindented
         yas-expand
@@ -132,6 +145,7 @@
         handle-switch-frame
         ido-find-file
         ido-switch-buffer
+        ivy-switch-buffer
         js2r-extract-var
         js2r-rename-var
         magit-copy-buffer-revision
@@ -139,6 +153,7 @@
         matlab-comment-line-break-function
         org-edit-src-save
         org-export-dispatch
+        org-narrow-to-subtree
         org-shifttab
         overwrite-mode
         rename-current-buffer-file

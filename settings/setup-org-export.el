@@ -7,6 +7,24 @@
               (expand-file-name "org.css" settings-dir)
               "\"/>"))
 
+(use-package ox-reveal
+  :config
+  (setq org-reveal-root
+        "file:///Users/req95666/programs/reveal.js-3.9.2/js/reveal.js"))
+
+;; (use-package ox-impress-js)
+;; (use-package ox-spectacle)
+
+(use-package org-plus-contrib
+  :pin "org"
+  :defer t
+  :after org
+  :config
+  (require 'ox-extra)
+  (ox-extras-activate '(ignore-headlines)))
+
+(use-package ox-clip)
+
 (require 'ox-org)
 
 (require 'ox-latex)
@@ -18,7 +36,7 @@
       '("lualatex --shell-escape --interaction nonstopmode --output-directory %o %f"
         "lualatex --shell-escape --interaction nonstopmode --output-directory %o %f"
         "lualatex --shell-escape --interaction nonstopmode --output-directory %o %f"))
-;;
+
 ;; ;; Display inline images
 ;; (add-hook 'org-mode-hook 'org-display-inline-images)
 
@@ -27,6 +45,7 @@
 ;; (require 'ox-ipynb)
 
 (use-package ox-gfm)
+(use-package ox-rst)
 
 ;; ------------------------------------------------------------------------
 ;; Allow modification of how checkboxes are exported to latex
@@ -98,5 +117,21 @@ contextual information."
               "\\relax ")
              (t " "))
             (and contents (org-trim contents)))))
+
+;; ;; How to export time stamps.  See http://endlessparentheses.com/better-time-stamps-in-org-export.html.
+;; (setq-default org-display-custom-times nil)
+;; (setq org-time-stamp-custom-formats
+;;       '("%A, %B %e" . "%A, %B %e %a %H:%M"))
+;;
+;; (defun endless/filter-timestamp (trans back _comm)
+;;   "Remove <> around time-stamps."
+;;   (pcase back
+;;     ((or `jekyll `html)
+;;      (replace-regexp-in-string "&[lg]t;" "" trans))
+;;     (`latex
+;;      (replace-regexp-in-string "[<>]" "" trans))))
+;;
+;; (add-to-list 'org-export-filter-timestamp-functions
+;;              #'endless/filter-timestamp)
 
 (provide 'setup-org-export)

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: method
+# key: meth
+# group: object oriented
+# --
+def ${1:name}(self$2):
+    \"\"\"
+    $3
+    ${2:$(python-args-to-docstring-numpy)}
+    \"\"\"
+    raise NotImplementedError()$0

@@ -1,6 +1,6 @@
-
 ;; Style the headline bullets in org-mode
 (use-package org-bullets
+  :defer t
   :hook (org-mode . (lambda () (org-bullets-mode 1))))
 
 ;; Functions for creating journal entries.  Might be useful.
@@ -8,6 +8,7 @@
   :init
   (setq org-journal-dir "~/Documents/journal")
   (setq org-journal-file-format "%Y-%m-%d")
+
   (defun org-journal-find-location ()
     ;; Open today's journal, but specify a non-nil prefix argument in order to
     ;; inhibit inserting the heading; org-capture will insert the heading.
@@ -24,21 +25,36 @@
 
 ;; Track what I'm doing.
 (use-package org-doing
+  :defer t
+
   :config
   (setq org-doing-file "~/Documents/doing.org"))
 
 ;; Try to keep me on track.
-(use-package org-pomodoro)
+(use-package org-pomodoro
+  :defer t)
+
+;; Interaction with JIRA from org-mode.
+(use-package org-jira
+  :defer t
+
+  :init
+  (setq jiralib-url "https://jira.mutualofomaha.com/jiradc"))
+
+;; Create mermaid.js diagrams.
+(use-package ob-mermaid
+  :defer t
+  :init
+  (setq ob-mermaid-cli-path "/usr/local/bin/mmdc"))
 
 ;; org-mode
 (use-package org
-  :pin "gnu"
+  :pin gnu
   :defer t
   :after ivy
 
   :init
   (progn
-    (require 'setup-org-agenda)
     (require 'setup-org-protocol)
     (require 'setup-org-capture)
 
@@ -55,6 +71,9 @@
     (setq org-habit-today-glyph ?♡)
     (setq org-habit-completed-glyph ?✓)
 
+    ;; Get the old easy-template behavior (e.g., expanding "<s" to a source-code block).
+    (add-to-list 'org-modules 'org-tempo t)
+
     ;; Be explicit(-ish) about how org-mode should open files using external
     ;; programs.  This affects, for instance, how an exported PDF is opened.
     (setq org-file-apps '((auto-mode . emacs)
@@ -70,6 +89,15 @@
     ;; ...or, similarly, this: https://writequit.org/articles/emacs-org-mode-generate-ids.html
     (require 'org-id)
     (setq org-id-link-to-org-use-id t)
+
+    ;; (defun zjr/org-block-task (&optional id)
+    ;;   (let ((curr-blockers (org-entry-get (point) "BLOCKER"))
+    ;;         (new-blocker (or id
+    ;;                          ()))
+    ;;     (org-set-property "BLOCKER"
+    ;;                       (if curr-blockers
+    ;;                           (concat curr-blockers " " new-blocker)
+    ;;                         new-blocker))))
 
     (defun org-set-property-if-missing (prop value)
       "Set a property on the entry if the property does not already exist."
@@ -121,38 +149,45 @@
                                    (match-string-no-properties 1))))
               (t        (warn "Not currently at a link.")))))
 
-    ;; Create more "easy templates" that I use.
-    (add-to-list 'org-structure-template-alist
-                 '("N" "#+NAME: "))
+    ;; ;; Create more "easy templates" that I use.
+    ;; (add-to-list 'org-structure-template-alist
+    ;;              '("N" "#+NAME: "))
+    (setq org-structure-template-alist
+          (remove '("N" "#+NAME: ") org-structure-template-alist))
 
     ;; To-do states
     (setq org-todo-keywords
-          '(("TODO(t)" "NEXT(n)" "ACTIVE(a)" "|" "DONE(d)")
-            ("WAIT(w)" "MAYBE(m)" "|" "CANCELED(c)")
-            ("READ(r)" "READING(e)" "|" "FINISHED(f)")))
+          '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d@)")
+            ;;("TODO(t)" "NEXT(n)" "ACTIVE(a)" "|" "DONE(d)")
+            (sequence "WAIT(w@)" "MAYBE(m)" "HOLD(h@)" "|" "CANCELED(c@)")
+            (sequence "THOMAS" "EMILY" "BRANT" "BRIAN" "|" "DONE")
+            (sequence "READ(r)" "READING(e)" "|" "FINISHED(f)")))
+    (setq org-todo-keywords-for-agenda org-todo-keywords)
 
     ;; To-do label colors
-    (apropospriate-with-color-variables
-      'dark
-      (setq org-todo-keyword-faces
-            `(("TODO" . (:foreground ,base00+3))
-              ("NEXT" . (:foreground ,yellow-1))
-              ("ACTIVE" . (:foreground ,green :weight bold))
-              ("STARTED" . (:foreground ,orange))
+    (when (fboundp 'apropospriate-with-color-variables)
+      (apropospriate-with-color-variables
+        'dark
+        (setq org-todo-keyword-faces
+              `(("TODO" . (:foreground ,base00+3))
+                ("NEXT" . (:foreground ,yellow-1))
+                ;;("ACTIVE" . (:foreground ,green :weight bold))
+                ("STARTED" . (:foreground ,orange))
 
-              ("WAIT" . (:foreground ,orange))
-              ("MAYBE" . (:foreground ,base00+3))
+                ("WAIT" . (:foreground ,orange))
+                ("MAYBE" . (:foreground ,base00+3))
+                ("HOLD" . (:foreground ,orange))
 
-              ;; ("READ" . (:foreground ,(color-match-lightness brown base00+3)))
-              ;; ("READING" . (:foreground ,(color-match-lightness teal green) :weight bold))
-              ;; ("FINISHED" . (:foreground ,light-emphasis :strike-through t))
-              ("READ" . (:foreground ,(color-set-lightness brown 0.31)))
-              ("READING" . (:foreground ,(color-set-lightness brown 0.5) :weight bold))
-              ("FINISHED" . (:foreground ,light-emphasis :strike-through t))
-              ;; ("FINISHED" . (:foreground ,(color-set-lightness brown 0.15) :strike-through t))
+                ;; ("READ" . (:foreground ,(color-match-lightness brown base00+3)))
+                ;; ("READING" . (:foreground ,(color-match-lightness teal green) :weight bold))
+                ;; ("FINISHED" . (:foreground ,light-emphasis :strike-through t))
+                ("READ" . (:foreground ,(color-set-lightness brown 0.31)))
+                ("READING" . (:foreground ,(color-set-lightness brown 0.5) :weight bold))
+                ("FINISHED" . (:foreground ,light-emphasis :strike-through t))
+                ;; ("FINISHED" . (:foreground ,(color-set-lightness brown 0.15) :strike-through t))
 
-              ("DONE" . (:foreground ,light-emphasis :strike-through t))
-              ("CANCELED" . (:foreground ,light-emphasis :strike-through t)))))
+                ("DONE" . (:foreground ,light-emphasis :strike-through t))
+                ("CANCELED" . (:foreground ,light-emphasis :strike-through t))))))
 
     )
 
@@ -207,10 +242,10 @@
                                                (match-end 1)
                                                "•"))))))
 
-    ;; ;; Always separate entries by a blank line.
-    ;; (setq org-blank-before-new-entry
-    ;;       '((heading . t)
-    ;;         (plain-list-item . auto)))
+    ;; Always separate entries by a blank line.
+    (setq org-blank-before-new-entry
+          '((heading . t)
+            (plain-list-item . auto)))
 
     ;; Fontify org-mode code blocks
     (setq org-src-fontify-natively t)
@@ -220,15 +255,16 @@
 
     (org-babel-do-load-languages
      'org-babel-load-languages
-     '( (emacs-lisp . t)
-        (shell . t)
-        ;; (julia . t)
-        (python . t)
+     '( ;; (clojure . t)
+        (emacs-lisp . t)
         ;; (ipython . t)
-        ;; (R . t)
-        ;; (clojure . t)
         ;; (js . t)
+        ;; (julia . t)
         ;; (matlab . t)
+        (python . t)
+        ;; (R . t)
+        (shell . t)
+        (sql . t)
         ))
 
     ;; Show only hours and minutes in time durations.  (Days are confusing:

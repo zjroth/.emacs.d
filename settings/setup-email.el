@@ -5,7 +5,9 @@
 
 ;; Access Exchange calendars
 (use-package excorporate
+  :pin gnu
+
   :config
   (setq excorporate-configuration
-        (cons "zachary.j.roth@erdc.dren.mil"
-              "https://webmail.erdc.dren.mil/owa/")))
+        (cons "zach.roth@mutualofomaha.com"
+              "https://outlook.office365.com/EWS/Exchange.asmx")))

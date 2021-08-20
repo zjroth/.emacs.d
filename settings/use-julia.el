@@ -1,5 +1,4 @@
-(use-package julia-mode
-  :defer t)
+(use-package julia-mode)
 
 ;; (use-package julia-repl
 ;;   :hook julia-mode

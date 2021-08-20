@@ -118,3 +118,9 @@
 [submodule "other-packages/emacs-web-server"]
 	path = other-packages/emacs-web-server
 	url = https://github.com/eschulte/emacs-web-server.git
+[submodule "other-packages/taskwarrior-mode"]
+	path = other-packages/taskwarrior-mode
+	url = https://github.com/greenrd/taskwarrior-mode.git
+[submodule "other-packages/taskwarrior"]
+	path = other-packages/taskwarrior
+	url = https://github.com/avli/taskwarrior.git

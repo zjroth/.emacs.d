@@ -29,6 +29,7 @@
 
 ;; Transpose stuff with M-t
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
+(global-unset-key (kbd "C-x C-t")) ;; which used to be transpose-lines
 (global-set-key (kbd "M-t l") 'transpose-lines)
 (global-set-key (kbd "M-t w") 'transpose-words)
 (global-set-key (kbd "M-t s") 'transpose-sexps)
@@ -96,7 +97,7 @@
 (setq framemove-hook-into-windmove t)
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
-(global-unset-key (kbd "C-x C-+")) ;; don't zoom like this
+;; (global-unset-key (kbd "C-x C-+")) ;; don't zoom like this
 
 ;; Add region to *multifile*
 (global-set-key (kbd "C-!") 'mf/mirror-region-in-multifile)

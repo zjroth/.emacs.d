@@ -274,3 +274,13 @@ region-end is used. Adds the duplicated text to the kill ring."
   (while (not (looking-at "}"))
     (join-line -1))
   (back-to-indentation))
+
+;;
+;; zjr
+;;
+
+(defun insert-up-to-fill-column (char)
+  (interactive "cCharacter to insert: ")
+  (let ((len (- fill-column (current-column))))
+    (when (< 0 len)
+      (insert (make-string len char)))))

@@ -10,16 +10,10 @@
  '(ido-use-filename-at-point nil)
  '(org-agenda-files
    (quote
-    ("/home/zjr/Documents/org/events.org" "/home/zjr/Documents/org/inbox.org" "/home/zjr/Documents/org/learning.org" "/home/zjr/Documents/org/lists.org" "/home/zjr/Documents/org/misc.org" "/home/zjr/Documents/org/notes.org" "/home/zjr/Documents/org/productivity.org" "/home/zjr/Documents/org/tensors.org" "/home/zjr/Documents/org/vast.org")))
- '(org-file-apps
-   (quote
-    ((auto-mode . emacs)
-     ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . default)
-     ("\\.pdf\\'" . "evince %s"))))
+    ("/Users/req95666/Documents/org/habits.org" "/Users/req95666/Documents/org/inbox.org" "/Users/req95666/Documents/org/journal.org" "/Users/req95666/Documents/org/lists.org" "/Users/req95666/Documents/org/notes.org" "/Users/req95666/Documents/org/projects.org" "/Users/req95666/Documents/org/work.org")))
  '(package-selected-packages
    (quote
-    (ivy-bibtex auctex ox-gfm markdown-mode counsel ivy swiper persp-mode e2wm excorporate htmlize pretty-mode nxhtml ein-mumamo slack ein transpose-frame exwm-surf exwm which-key define-word adaptive-wrap eldoro pomidor org-pomodoro org-variable-pitch smart-mode-line apropospriate-theme org-reveal ox-reveal calfw calfw-org org-doing org-super-agenda aproprospriate aproprospriate-theme badger-theme org-journal buffer-move move-text realgud elpy julia-repl ob-async org-ehtml shell-command helpful magit inline-string-rectangle multiple-cursors mark-more-like-this expand-region ess ob-sh julia-mode org use-package)))
+    (ack dockerfile-mode jenkinsfile-mode spacemacs-light-theme spacemacs-theme realgud-ipdb isortify blacken flycheck-plantuml plantuml-mode ox-rst elpy fill-column-indicator mermaid-mode ob-mermaid osx-dictionary darkroom company dash csv-mode poet-theme language-detection org-plus-contrib ox-extra python-mode ox-clip sql-indent cider python-docstring org-alert alert org-jira esup flycheck yaml-mode ivy-yasnippet yasnippet-snippets yasnippet flyspell-correct-ivy docker-tramp atomic-chrome dired-details ivy-bibtex ox-gfm markdown-mode counsel ivy swiper persp-mode e2wm excorporate htmlize pretty-mode nxhtml ein-mumamo slack ein transpose-frame exwm-surf exwm which-key define-word adaptive-wrap eldoro pomidor org-pomodoro org-variable-pitch smart-mode-line apropospriate-theme org-reveal ox-reveal calfw calfw-org org-doing org-super-agenda aproprospriate aproprospriate-theme badger-theme buffer-move move-text realgud julia-repl ob-async org-ehtml shell-command helpful magit inline-string-rectangle multiple-cursors mark-more-like-this expand-region ess ob-sh julia-mode use-package)))
  '(safe-local-variable-values
    (quote
     ((eval font-lock-add-keywords nil

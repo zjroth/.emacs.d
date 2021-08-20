@@ -98,6 +98,9 @@
     ;; Do not show archived items.
     (setq org-agenda-archives-mode 'trees)
 
+    ;; Set the tags that we don't want to be inherited by children.
+    (setq org-tags-exclude-from-inheritance '("today"))
+
     ;; The default view that I use (a "block agenda").
     ;; - https://orgmode.org/manual/Agenda-views.html
     ;; - https://orgmode.org/manual/Block-agenda.html#Block-agenda
@@ -114,20 +117,25 @@
                     ((org-agenda-overriding-header "Generic / daily...")
                      (org-agenda-prefix-format "  ")
                      (org-agenda-remove-tags t)))
+              (tags "today"
+                    ((org-agenda-overriding-header "Selected for today...")
+                     (org-agenda-remove-tags t)))
+              ;; (tags-todo "file={projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-todo=\"HOLD\"-someday-ARCHIVE-today"
+              ;;            ((org-agenda-overriding-header "Project items...")))
+              (tags-todo "-scheduled<>\"\"-todo=\"WAIT\"-todo=\"HOLD\"-someday-ARCHIVE-today"
+                         ((org-agenda-overriding-header "Unscheduled items...")))
+              ;; ;; (tags-todo "file<>{projects\\.org$}-BLOCKED=\"t\"-scheduled<>\"\"-todo=\"WAIT\""
+              ;; ;;            ((org-agenda-overriding-header "Other items...")))
+              ;; (tags-todo "file<>{projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-todo=\"HOLD\"-someday-ARCHIVE-today"
+              ;;            ((org-agenda-overriding-header "Other items...")))
               (agenda "" ((org-agenda-span 1)
                           (org-agenda-overriding-header "Scheduled items...")))  ; show today's agenda
               ;; (todo ""
               ;;       ((org-agenda-overriding-header "Unscheduled items...")))
-              (tags-todo "file={projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-someday-ARCHIVE"
-                         ((org-agenda-overriding-header "Project items...")))
-              ;; (tags-todo "file<>{projects\\.org$}-BLOCKED=\"t\"-scheduled<>\"\"-todo=\"WAIT\""
-              ;;            ((org-agenda-overriding-header "Other items...")))
-              (tags-todo "file<>{projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-someday-ARCHIVE"
-                         ((org-agenda-overriding-header "Other items...")))
-              (todo "WAIT"
-                    ((org-agenda-overriding-header "Waiting...")))
-              (tags "+someday"
-                    ((org-agenda-overriding-header "Someday...")))
+              (tags-todo "todo=\"WAIT\"-today-scheduled<>\"\"" ; "WAIT-CATEGORY=\"learn\""
+                         ((org-agenda-overriding-header "Waiting...")))
+              ;; (tags-todo "+someday"
+              ;;       ((org-agenda-overriding-header "Someday...")))
               ;; (todo "TODO|READ|STARTED|NEXT|ACTIVE")
               ;; (tags-todo "-TODO=\"NEXT\"-TODO=\"WAIT\"")       ; all to-do states except NEXT & WAIT
               ;; (alltodo "")                      ; show all to-do items in any state
@@ -135,6 +143,8 @@
               ))
             ("f" "Items closed within the past week"
              ((tags "+CLOSED>=\"<-7d>\"")))
+            ("y" "Items closed yesterday"
+             ((tags "+CLOSED>=\"<-1d>\"+CLOSED<=\"<today>\"")))
             ("." "Items tagged with \"today\""
              ((tags "today")))
             ))
@@ -177,7 +187,9 @@
     ;; Format of the time grid lines (hours) and the current time.
     (setq org-agenda-time-grid
           `((daily today remove-match)
-            (0800 0900 1000 1100 1200 1300 1400 1500 1600 1700)
+            ;; (0800 0900 1000 1100 1200 1300 1400 1500 1600 1700)
+            (0800 0830 0900 0930 1000 1030 1100 1130 1200 1230
+             1300 1330 1400 1430 1500 1530 1600)
             " ———————————" "                "))
     ;; " ⟵——————⟶" "                "))
     ;; " ————————" "                "))
@@ -195,12 +207,9 @@
       "Convert `TIME' from a string like \"13:45\" to an AM/PM style time string."
       (let* ((hour-number (string-to-number (substring time 0 -3)))
              (minute (substring time -2))
-             (ampm " AM"))
+             (ampm (if (< hour-number 12) " AM" " PM")))
         (cond
-         ((equal hour-number 12)
-          (setq ampm " PM"))
          ((> hour-number 12)
-          (setq ampm " PM")
           (setq hour-number (- hour-number 12))))
         (concat
          (if org-agenda-time-leading-zero

@@ -20,7 +20,7 @@
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
-  (let ((linum-state linum-mode))
+  (let ((linum-state (if (boundp 'linum-mode) linum-mode nil)))
     (unwind-protect
          (progn
            (linum-mode 1)

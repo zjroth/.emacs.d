@@ -2,11 +2,16 @@
 
 ;; ;; Width of text in characters.
 ;; ;(setq shr-width 80)
-(setq shr-width -1)
+;; (setq shr-width nil)
 (add-hook 'eww-mode-hook 'visual-line-mode)
 (add-hook 'eww-mode-hook 'visual-fill-column-mode)
 
-
+;; (setq shr-stylesheet (shr-parse-style "code { background-color: red; }"))
+(setq shr-indentation 0)
+(setq shr-table-depth 0)
+(setq shr-table-corner ?+)
+(setq shr-table-horizontal-line ?-)
+(setq shr-table-vertical-line ?|)
 
 ;; ;; Use variable width font faces in current buffer
 ;; ;; Set default font faces for Info and ERC modes
@@ -46,6 +51,9 @@
 ;; Syntax highlighting in eww (doesn't seem to be working)
 ;; - found at https://github.com/andreasjansson/language-detection.el
 ;; ----------------------------------------------------------------------
+
+(use-package language-detection)
+
 (require 'cl-lib)
 
 (defun eww-tag-pre (dom)

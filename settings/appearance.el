@@ -10,6 +10,7 @@
 ;; - Set the base00 dark variant to #3C3C3C (in the theme file).
 ;; - https://github.com/waymondo/apropospriate-theme
 ;; - org-mode colors: ~/.emacs.d/elpa/org-9.1.13/org-faces.el
+(require 'color)
 (use-package apropospriate-theme
   :init (progn
           (defun color-match-lightness (of-color to-color)
@@ -53,6 +54,9 @@
       (custom-theme-set-faces
        'apropospriate-dark
        `(default ((,class (:background ,base00 :foreground ,base03))))
+       `(highlight ((,class (:background ,base00+2)))) ; default: base00+1
+       ;; `(hl-line ((,class (:background ,(color-darken-name cyan 50)))))
+       `(hl-line ((,class (:background ,base00+2))))
 
        ;; `(font-lock-string-face ((,class (:foreground ,base02))))
        `(font-lock-string-face ((,class (:foreground ,green))))
@@ -95,6 +99,7 @@
        `(org-block-begin-line ((,class (:inherit font-lock-comment-face :background ,base00-1))))
        `(org-block-end-line ((,class (:inherit font-lock-comment-face :background ,base00-1))))
        `(org-date ((,class (:foreground ,teal))))
+       `(org-list-dt ((,class (:weight bold :foreground ,base02))))
        `(org-level-1 ((,class (:inherit header-line :foreground ,purple))))
        `(org-level-2 ((,class (:inherit header-line :foreground ,(color-darken-name purple 7)))))
        `(org-level-3 ((,class (:inherit header-line :foreground ,(color-darken-name purple 14)))))
@@ -105,16 +110,24 @@
        `(org-level-8 ((,class (:inherit header-line :foreground ,(color-darken-name purple 49)))))
 
        ;; org-agenda
+       `(org-upcoming-deadline ((,class (:foreground ,red-1)))) ;previously ,orange
        `(org-habit-alert-face ((,class (:background "DarkRed" :foreground "white"))))
        `(org-habit-ready-face ((,class (:background "ForestGreen" :foreground "white"))))
        `(org-habit-clear-future-face ((,class (:background ,base00+1))))
        `(org-agenda-dimmed-todo-face ((,class (:foreground ,base00+3))))
-       `(org-agenda-clocking ((,class (:background ,light-emphasis))))
+       `(org-agenda-clocking ((,class (:foreground ,purple-1 :background ,light-emphasis-2))))
        `(org-agenda-current-time ((,class (:foreground ,red))))
+       ;; `(org-agenda-calendar-event ((,class (:foreground ,brown))))
+       ;; `(org-agenda-calendar-sexp ((,class (:foreground ,brown))))
        `(org-time-grid ((,class (:foreground ,base02))))
        `(org-agenda-date-weekend ((,class (:inherit org-agenda-date :foreground ,base01))))
        `(org-agenda-structure ((,class (:foreground ,purple :weight bold))))
        `(org-agenda-date-weekend ((,class (:foreground ,base00+3 :slant italic))))
+       `(org-agenda-calendar-event ((,class (:foreground ,blue))))
+       `(org-scheduled ((,class (:foreground ,green))))
+       `(org-scheduled-previously ((,class (:foreground ,teal-1))))
+       `(org-scheduled-today ((,class (:foreground ,green))))
+       `(org-agenda-done ((,class (:foreground ,base00+2 :background ,light-emphasis-2 :strike-through nil))))
 
        `(mode-line ((,class (:box (:line-width 4 :color ,light-emphasis :style nil)
                                   :background ,base00-2 :foreground ,base03
@@ -135,6 +148,7 @@
        ;; `(magit-diff-added-highlight ((,class (:foreground (color-darken-name "#C5E1A5" 15) :background ,base00-1))))
        `(magit-diff-removed-highlight ((,class (:foreground "#723939" :background ,base00-1))))
        `(magit-diff-added-highlight ((,class (:foreground "#647253" :background ,base00-1))))
+       `(magit-blame-heading ((,class (:foreground ,base00 :background ,yellow-1))))
        `(diff-refine-removed ((,class (:foreground ,red :weight bold))))
        `(diff-refine-added ((,class (:foreground ,green :weight bold))))
 
@@ -160,6 +174,13 @@
        ;; `(ediff-odd-diff-B ((,class (:background ,base01))))
        ;; `(ediff-odd-diff-C ((,class (:background ,base01))))
 
+       ;; python
+       `(highlight-indentation-face ((,class (:background ,base00))))
+       ;;`(highlight-indentation-face ((,class (:background ,base00-1))))
+
+       ;; yasnippets
+       `(yas-field-highlight-face ((,class (:background ,(color-darken-name purple 60)))))
+
        `(region ((,class (:background ,base02))))
        ))
     ))
@@ -181,6 +202,10 @@
 ;;   ;;    ))
 ;;   )
 
+;; (use-package anti-zenburn-theme)
+
+;; (use-package labburn-theme)
+
 ;; (use-package badger-theme
 ;;   :config (load-theme 'badger t))
 
@@ -192,13 +217,30 @@
 ;; (use-package atom-one-dark-theme
 ;;   :config (load-theme 'atom-one-dark t))
 
+;; (use-package solarized-theme
+;;   :config (load-theme 'solarized-dark t))
+
+;; (use-package base16-theme
+;;   :ensure t
+;;   :config (load-theme 'base16-eighties t))
+;; (load-theme 'base16-atelier-savanna t )
+;; (load-theme 'base16-bespin t          )
+;; (load-theme 'base16-onedark t         )
+;; (load-theme 'base16-ocean t           )
+;; (load-theme 'base16-atelier-estuary t )
+
 ;; ;; Org headlines have been resized.  Hrumph...
-;; (require 'spacemacs-dark-theme)
-;; (load-theme 'spacemacs-dark t)
+;; (use-package spacemacs-common
+;;   :ensure spacemacs-theme
+;;   :config (load-theme 'spacemacs-light t))
 
 ;; ;; Some good ideas, but it just seems like too much.
 ;; (use-package material-theme
 ;;   :config (load-theme 'material t))
+
+;; (use-package poet-theme
+;;   :config
+;;   (load-theme 'poet t))
 
 ;; -----------------------------------------------------------------------------
 
@@ -236,6 +278,12 @@
 (use-package visual-fill-column
   :demand t
   ;; :hook (visual-line-mode . visual-fill-column-mode)
+
+  :init
+  (progn
+    ;; Let's set the visual fill column to be a bit bigger than the fill column.
+    (setq visual-fill-column-width (+ fill-column 20)))
+
   :config
   (progn
     ;; The default function for window splitting (`split-window-sensibly`) does
@@ -246,8 +294,7 @@
           #'visual-fill-column-split-window-sensibly)
 
     ;; Enable this everywhere.
-    (global-visual-fill-column-mode nil)
-    ))
+    (global-visual-fill-column-mode)))
 
 ;; Indent to a reasonable level when wrapping lines.
 (use-package adaptive-wrap

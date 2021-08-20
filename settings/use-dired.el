@@ -66,6 +66,38 @@
                 (setq dired-listing-switches "-alh"))))
   )
 
+;; This is an attempt to change the default face in dired mode.
+;;
+;; (progn
+;;   ;; First create new face which is a copy of hl-line-face
+;;   (copy-face 'default 'dired-default-face)
+;;
+;;   ;; Change what you want in this new face
+;;   (apropospriate-with-color-variables
+;;     'dark
+;;     (set-face-attribute 'dired-default-face nil
+;;                         :foreground base02))
+;;
+;;   ;; The function to use the new face
+;;   (defun my-dired-default-face ()
+;;     (interactive)
+;;     (set (make-local-variable 'default-face) ; This is how to make it local
+;;          'dired-default-face))
+;;
+;;   ;; Finally, the hook
+;;   (add-hook 'dired-mode-hook 'my-dired-default-face))
+
+(font-lock-add-keywords
+ 'dired-mode '((" \\(NTMASTER\\\\\\\\Domain Users\\) "
+                (0 (prog1 ()
+                     (put-text-property (match-beginning 1)
+                                        (match-end 1)
+                                        'display
+                                        "ntmaster-domain-users "))))))
+
+;; (font-lock-add-keywords
+;;  'dired-mode '((" \\(NTMASTER\\\\\\\\Domain Users\\) " . 'dired-flagged)))
+
 ;; This is no longer available.  The implementation in emacs 24.4+ does not allow
 ;; me to set `dired-details-hidden-string`, and it sets "(" to toggle the mode
 ;; (instead of using "(" and ")" to hide and show details, respectively.

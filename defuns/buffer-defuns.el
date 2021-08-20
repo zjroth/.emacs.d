@@ -196,3 +196,11 @@ Including indent-buffer, which should not be called automatically on save."
          (files (mapcar 'car recent-files))
          (file (completing-read "Choose recent file: " files)))
     (find-file (cdr (assoc file recent-files)))))
+
+(defun copy-buffer-file-name ()
+  "Add the current buffer-file name to the kill ring"
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (if filename
+        (kill-new filename)
+      (message "Copy failed: buffer is not visiting any file."))))

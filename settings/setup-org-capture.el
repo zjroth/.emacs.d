@@ -8,9 +8,10 @@
 * TODO %?
 :PROPERTIES:
 :CAPTURED: %U
+:SOURCE:   %a
 :END:
-%i
-%a"
+
+%i"
          :clock-in t :clock-resume t :empty-lines 1 :kill-buffer t)
 
         ;; ("a" "Article" entry (file+olp "~/Documents/org/lists.org" "Reading" "Internet articles")
@@ -26,21 +27,45 @@
 %:initial"
          :clock-in t :clock-resume t :empty-lines 1 :kill-buffer t)
 
-        ;; ("j" "Journal" entry (file+olp+datetree "~/Documents/org/journal.org")
-        ;;  "* %?\nEntered on %U\n  %i\n  %a"
-        ;;  :empty-lines 1)
         ("j" "Journal" entry (file+olp+datetree "~/Documents/org/journal.org")
          "
-* %?
+* %<%R> :: %?
 :PROPERTIES:
 :CAPTURED: %U
+:SOURCE:   %a
 :END:
-%i
-%a"
+
+%i"
          :clock-in t :clock-resume t :empty-lines 1 :kill-buffer t)
+
+        ("k" "Journal (unclocked)" entry (file+olp+datetree "~/Documents/org/journal.org")
+         ;"* %<%R> %?\n\n%a\n\n"
+         "
+* %<%R> :: %?
+:PROPERTIES:
+:CAPTURED: %U
+:SOURCE:   %a
+:END:
+
+%i"
+         :empty-lines 1 :kill-buffer t)
 
         ;; ("l" "Log" entry (function org-journal-find-location)
         ;;  "* %(format-time-string org-journal-time-format)%a\n:PROPERTIES:\n  :ORIGIN:   %l\n:END:\n\n%?\n\n")
+
+;;         ("l" "Link" plain (function (lambda ()))
+;;          "
+;; * %c
+;; :PROPERTIES:
+;; :CAPTURED: %U
+;; :END:
+;; %?
+;; %:initial"
+;;          :clock-in t :clock-resume t :empty-lines 1 :kill-buffer t)
+;;
+;;         ("w" "Web site" plain (file "")
+;;          "* %a :website:\n\n%U %?\n\n%:initial")
+
         ))
 
 (provide 'setup-org-capture)

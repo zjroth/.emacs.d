@@ -8,7 +8,7 @@
 (setq org-clock-in-resume t)
 
 ;; Change tasks to NEXT when clocking in
-(setq org-clock-in-switch-to-state 'bh/clock-in-to-next)
+(setq org-clock-in-switch-to-state nil)    ; 'bh/clock-in-to-next
 
 ;; Separate drawers for clocking and logs
 (setq org-drawers (quote ("PROPERTIES" "LOGBOOK")))
@@ -131,18 +131,21 @@ as the default task."
 
 (defun bh/clock-in-parent-task ()
   "Move point to the parent (project) task if any and clock in"
-  (let ((parent-task))
-    (save-excursion
-      (save-restriction
-        (widen)
-        (while (and (not parent-task) (org-up-heading-safe))
-          (when (member (nth 2 (org-heading-components)) org-todo-keywords-1)
-            (setq parent-task (point))))
-        (if parent-task
-            (org-with-point-at parent-task
-              (org-clock-in))
-          (when bh/keep-clock-running
-            (bh/clock-in-default-task)))))))
+  (when bh/keep-clock-running
+    (bh/clock-in-default-task))
+  ;; (let ((parent-task))
+  ;;   (save-excursion
+  ;;     (save-restriction
+  ;;       (widen)
+  ;;       (while (and (not parent-task) (org-up-heading-safe))
+  ;;         (when (member (nth 2 (org-heading-components)) org-todo-keywords-1)
+  ;;           (setq parent-task (point))))
+  ;;       (if parent-task
+  ;;           (org-with-point-at parent-task
+  ;;             (org-clock-in))
+  ;;         (when bh/keep-clock-running
+  ;;           (bh/clock-in-default-task))))))
+  )
 
 (defvar zjr/punch-in-default-id "801F3BD3-D2E8-4C4A-82E7-5C74EA515658")
 
