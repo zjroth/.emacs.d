@@ -37,4 +37,7 @@
   :init
   (setq blacken-line-length 88))
 
+(use-package pip-requirements
+  :defer t)
+
 (provide 'use-python)

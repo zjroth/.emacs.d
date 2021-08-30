@@ -60,6 +60,7 @@
 
        ;; `(font-lock-string-face ((,class (:foreground ,base02))))
        `(font-lock-string-face ((,class (:foreground ,green))))
+       `(font-lock-builtin-face ((,class (:foreground ,indigo-1))))
        `(mode-line-inactive ((,class (:box (:line-width 4 :color ,base00+1 :style nil)
                                            :background ,base00-2 :foreground ,base02
                                            :height ,(or apropospriate-mode-line-height 1.0)))))
