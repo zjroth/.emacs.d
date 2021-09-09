@@ -1,17 +1,12 @@
 (use-package magit
   :defer t
 
-  :bind (("C-c g" . magit-status-fullscreen))
+  :bind (("C-c g" . magit-status))
 
   :config
   ;; full screen magit-status
-  (defun magit-status-fullscreen (prefix)
-    (interactive "P")
-    (magit-status)
-    (unless prefix
-      (delete-other-windows)))
-
-  (autoload 'magit-status-fullscreen "magit")
+  (setq magit-bury-buffer-function 'magit-restore-window-configuration)
+  (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 
   ;; don't prompt me
   (set-default 'magit-unstage-all-confirm nil)
