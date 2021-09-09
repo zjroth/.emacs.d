@@ -4,33 +4,34 @@
   :bind (("C-c g" . magit-status))
 
   :config
-  ;; full screen magit-status
-  (setq magit-bury-buffer-function 'magit-restore-window-configuration)
-  (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+  (progn
+    ;; full screen magit-status
+    (setq magit-bury-buffer-function 'magit-restore-window-configuration)
+    (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 
-  ;; don't prompt me
-  (set-default 'magit-unstage-all-confirm nil)
-  (set-default 'magit-stage-all-confirm nil)
-  (set-default 'magit-revert-buffers 'silent)
+    ;; don't prompt me
+    (set-default 'magit-unstage-all-confirm nil)
+    (set-default 'magit-stage-all-confirm nil)
+    (set-default 'magit-revert-buffers 'silent)
 
-  ;; full screen vc-annotate
-  (defun vc-annotate-quit ()
-    "Restores the previous window configuration and kills the vc-annotate buffer"
-    (interactive)
-    (kill-buffer)
-    (jump-to-register :vc-annotate-fullscreen))
+    ;; full screen vc-annotate
+    (defun vc-annotate-quit ()
+      "Restores the previous window configuration and kills the vc-annotate buffer"
+      (interactive)
+      (kill-buffer)
+      (jump-to-register :vc-annotate-fullscreen))
 
-  (eval-after-load "vc-annotate"
-    '(progn
-       (defadvice vc-annotate (around fullscreen activate)
-         (window-configuration-to-register :vc-annotate-fullscreen)
-         ad-do-it
-         (delete-other-windows))
+    (eval-after-load "vc-annotate"
+      '(progn
+        (defadvice vc-annotate (around fullscreen activate)
+          (window-configuration-to-register :vc-annotate-fullscreen)
+          ad-do-it
+          (delete-other-windows))
 
-       (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
+        (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
 
-  ;; Highlight fine-grained differences on a selected hunk.
-  (setq magit-diff-refine-hunk t))
+    ;; Highlight fine-grained differences on a selected hunk.
+    (setq magit-diff-refine-hunk t)))
 
 (provide 'use-magit)
 
