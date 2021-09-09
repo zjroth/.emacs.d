@@ -77,6 +77,9 @@
 ;; A modern list API.
 (use-package dash)
 
+;; The long lost Emacs string manipulation library.
+(use-package s)
+
 ;; Functions (load all files in defuns-dir)
 (require 'cl)
 (setq defuns-dir
