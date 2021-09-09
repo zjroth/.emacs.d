@@ -1,3 +1,7 @@
+;; Ivy looks for smex and integrates with it.
+(use-package smex
+  :demand t)
+
 (use-package ivy
   :demand t
 
