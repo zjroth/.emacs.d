@@ -2,7 +2,7 @@
 (use-package realgud)
 
 (add-hook 'python-mode-hook (lambda () (set-fill-column 79)))
-(add-hook 'python-mode-hook 'fci-mode)
+(add-hook 'python-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'python-mode-hook 'blacken-mode)
 
 ;; An IDE-like experience
