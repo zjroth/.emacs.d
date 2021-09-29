@@ -13,6 +13,9 @@
 ;; right control key.  Bah!
 (setq ns-right-option-modifier 'control)
 
+;; Use zsh for the shell since this is the mac default now.
+(setq shell-file-name "/bin/zsh")
+
 ;; mac friendly font
 ;;(set-face-attribute 'default nil :font "Monaco-16")
 
