@@ -7,6 +7,7 @@
 (use-package org-journal
   :init
   (setq org-journal-dir "~/Documents/journal")
+  (setq org-journal-file-type 'weekly)
   (setq org-journal-file-format "%Y-%m-%d")
 
   (defun org-journal-find-location ()

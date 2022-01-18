@@ -12,7 +12,8 @@
 :END:
 
 %i"
-         :clock-in t :clock-resume t :empty-lines 1 :kill-buffer t)
+         ;; :clock-in t :clock-resume t
+         :empty-lines 1 :kill-buffer t)
 
         ;; ("a" "Article" entry (file+olp "~/Documents/org/lists.org" "Reading" "Internet articles")
         ;;  "* %c\n:PROPERTIES:\n:CAPTURED: %U\n:END:\n%?\n%:initial"
@@ -39,16 +40,16 @@
          :clock-in t :clock-resume t :empty-lines 1 :kill-buffer t)
 
         ("k" "Journal (unclocked)" entry (file+olp+datetree "~/Documents/org/journal.org")
-         ;"* %<%R> %?\n\n%a\n\n"
+         ;; "* %<%R> %?\n\n%a\n\n"
+         ;; :SOURCE:   %a
          "
-* %<%R> :: %?
+* %<%I:%M %p>
 :PROPERTIES:
 :CAPTURED: %U
-:SOURCE:   %a
 :END:
 
-%i"
-         :empty-lines 1 :kill-buffer t)
+%?%i"
+         :empty-lines 1 :kill-buffer t :tree-type week)
 
         ;; ("l" "Log" entry (function org-journal-find-location)
         ;;  "* %(format-time-string org-journal-time-format)%a\n:PROPERTIES:\n  :ORIGIN:   %l\n:END:\n\n%?\n\n")

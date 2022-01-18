@@ -1,4 +1,3 @@
-
 (use-package realgud)
 
 (add-hook 'python-mode-hook (lambda () (set-fill-column 79)))
@@ -7,17 +6,19 @@
 
 ;; An IDE-like experience
 (use-package elpy
+  :ensure t
+  :defer t
   :init
   (progn
+    (advice-add 'python-mode :before 'elpy-enable)
     (setenv "WORKON_HOME" "/usr/local/anaconda3/envs"))
 
   :config
   (progn
-    (elpy-enable)
-
-    (setq python-shell-interpreter "python"
+    (setq python-shell-interpreter "/usr/local/anaconda3/bin/python"
           python-shell-interpreter-args "-i")
     (setq elpy-test-runner 'elpy-test-pytest-runner)
+    (setq elpy-rpc-python-command "/usr/local/anaconda3/bin/python")
 
     ;; (setq python-shell-interpreter "jupyter"
     ;;       python-shell-interpreter-args "console --simple-prompt --kernel python3"
