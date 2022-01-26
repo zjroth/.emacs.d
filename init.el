@@ -204,7 +204,8 @@
 (setq ibuffer-saved-filter-groups
       (quote (("default"
                ("coding" (or (mode . python-mode)
-                             (mode . julia-mode)))
+                             (mode . julia-mode)
+                             (mode . clojure-mode)))
                ("org" (or (mode . org-mode)
                           (mode . org-agenda-mode)))
                ("dired-mode" (mode . dired-mode))
