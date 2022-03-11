@@ -301,4 +301,21 @@
 (use-package adaptive-wrap
   :pin gnu)
 
+;; Deal with ANSI color codes when they show up: https://emacs.stackexchange.com/a/7144
+(require 'ansi-color)
+
+(defun zjr/ansi-colorize-region ()
+  (interactive)
+  (let ((read-only? buffer-read-only))
+    (read-only-mode -1)
+    (ansi-color-apply-on-region (region-beginning) (region-end))
+    (when read-only?
+      (read-only-mode 1))))
+
+(defun zjr/ansi-colorize-buffer ()
+  (interactive)
+  (save-mark-and-excursion
+    (mark-whole-buffer)
+    (zjr/ansi-colorize-region)))
+
 (provide 'appearance)

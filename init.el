@@ -194,6 +194,20 @@
         ;; where we copy the content of web-resource-dir into
         :web-test-port 9876))))
 
+(use-package hydra
+  :init
+  (defcustom hydra-select-by-mode-list
+    '()
+    "Specify a default hydra to use in each given mode.")
+
+  (defun hydra-autoselect ()
+    (interactive)
+    (let ((hydra-func (alist-get major-mode hydra-select-by-mode-list)))
+      (when hydra-func
+        (funcall hydra-func))))
+
+  :bind (("M-h" . hydra-autoselect)))
+
 ;; ;; A pomodoro timer
 ;; (use-package pomidor
 ;;   :config
