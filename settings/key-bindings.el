@@ -27,7 +27,7 @@
 ;;   (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "<f1>") 'help-command)
 
-;; Transpose stuff with M-t
+;; Transpose and toggle stuff with M-t
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
 (global-unset-key (kbd "C-x C-t")) ;; which used to be transpose-lines
 (global-set-key (kbd "M-t l") 'transpose-lines)
@@ -35,6 +35,7 @@
 (global-set-key (kbd "M-t s") 'transpose-sexps)
 (global-set-key (kbd "M-t p") 'transpose-params)
 ;; (global-set-key (kbd "M-t f") 'transpose-frame) ; set elsewhere
+(global-set-key (kbd "M-t t") 'toggle-truncate-lines)
 
 ;; ;; Change next underscore with a camel case
 ;; (global-set-key (kbd "C-c C--") 'replace-next-underscore-with-camel)
@@ -61,9 +62,11 @@
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-Z") 'zap-to-char)
 
-;; iy-go-to-char - like f in Vim
-(global-set-key (kbd "M-m") 'jump-char-forward)
-(global-set-key (kbd "M-M") 'jump-char-backward)
+;; ;; iy-go-to-char - like f in Vim
+;; (global-set-key (kbd "M-m") 'jump-char-forward)
+;; (global-set-key (kbd "M-M") 'jump-char-backward)
+(global-unset-key (kbd "M-m"))
+(global-unset-key (kbd "M-M"))
 
 ;; vim's ci and co commands
 (global-set-key (kbd "M-I") 'change-inner)
@@ -187,7 +190,8 @@
 (global-set-key (kbd "<C-S-down>") 'move-text-down)
 (global-set-key (kbd "<C-S-up>") 'move-text-up)
 
-;; Fold the active region
+;; Code folding
+(global-set-key (kbd "M-t M-f") 'hs-toggle-hiding)
 (global-set-key (kbd "C-c C-f") 'fold-this-all)
 (global-set-key (kbd "C-c C-F") 'fold-this)
 (global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
@@ -262,5 +266,24 @@
          ("<M-S-down>"  . buf-move-down)
          ("<M-S-left>"  . buf-move-left)
          ("<M-S-right>" . buf-move-right)))
+
+;; I need to standardize how certain functions are accessed.  Here are some
+;; notes.
+;;
+;; Less-used keys that may be used with meta prefix:
+;; t
+;; g
+;; z
+;; h
+;; m
+;; k
+;; o
+;;
+;; Less-used keys that may be used with control prefix:
+;; r
+;; z
+;; i?
+;; o
+;; ;
 
 (provide 'key-bindings)

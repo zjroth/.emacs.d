@@ -61,10 +61,36 @@
 (use-package counsel
   :defer t
   :config
-  (setq-default ivy-initial-inputs-alist nil))
+  (setq-default ivy-initial-inputs-alist nil)
+
+  :bind (("M-s s" . counsel-ag)))
+
+(use-package counsel-ag-popup
+  :init
+  (progn
+    (defun counsel-ag-popup-search-git-root (&optional string)
+      (interactive)
+      (counsel-ag-popup-search nil string))
+
+    (defun counsel-ag-popup-search-git-src (&optional string)
+      (interactive)
+      (counsel-ag-popup-search (expand-file-name "src" (counsel--git-root)) string)))
+
+  :bind (("M-s M-s" . counsel-ag-popup))
+
+  :config
+  (progn
+    (transient-replace-suffix 'counsel-ag-popup "s"
+      '("r" "in git root" counsel-ag-popup-search-git-root))
+    (transient-append-suffix 'counsel-ag-popup "r"
+      '("s" "in git src directory" counsel-ag-popup-search-git-src))
+    (transient-insert-suffix 'counsel-ag-popup "o"
+      '("h" "in current directory" counsel-ag-popup-search-here))))
 
 (use-package ivy-rich
-  :after (:all ivy counsel)
+  ;; From readme for all-the-icons-ivy-rich: "For better performance, enable
+  ;; all-the-icons-ivy-rich-mode before ivy-rich-mode."
+  :after (:all ivy counsel all-the-icons-ivy-rich)
 
   :init
   (setq ivy-rich-parse-remote-file-path t)

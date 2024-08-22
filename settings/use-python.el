@@ -15,10 +15,10 @@
 
   :config
   (progn
-    (setq python-shell-interpreter "/usr/local/anaconda3/bin/python"
+    (setq python-shell-interpreter "/opt/homebrew/bin/python3"
           python-shell-interpreter-args "-i")
     (setq elpy-test-runner 'elpy-test-pytest-runner)
-    (setq elpy-rpc-python-command "/usr/local/anaconda3/bin/python")
+    (setq elpy-rpc-python-command "/opt/homebrew/bin/python3")
 
     ;; (setq python-shell-interpreter "jupyter"
     ;;       python-shell-interpreter-args "console --simple-prompt --kernel python3"

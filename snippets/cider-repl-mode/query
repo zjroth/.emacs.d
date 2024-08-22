@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: query
+# key: dq
+# group: definitions
+# --
+(d/q '[:find $2
+       :where
+       [${2:?e} ${3::attribute/name} ${4:?v}]]
+     ${1:(get-db)})

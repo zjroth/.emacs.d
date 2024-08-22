@@ -12,8 +12,7 @@
 :END:
 
 %i"
-         ;; :clock-in t :clock-resume t
-         :empty-lines 1 :kill-buffer t)
+         :clock-in t :clock-resume t :empty-lines 1 :kill-buffer t)
 
         ;; ("a" "Article" entry (file+olp "~/Documents/org/lists.org" "Reading" "Internet articles")
         ;;  "* %c\n:PROPERTIES:\n:CAPTURED: %U\n:END:\n%?\n%:initial"
@@ -68,5 +67,56 @@
 ;;          "* %a :website:\n\n%U %?\n\n%:initial")
 
         ))
+
+(setq org-roam-capture-templates
+      '(("d" "default" plain "#+title: ${title}\n#+category: misc\n\n%?"
+         :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "")
+         :unnarrowed t
+         :clock-in t :clock-resume t)
+        ("i" "Crescent issue" plain "
+#+title: Linear Issue ${title}
+#+url: https://linear.app/crescent-financial-inc/issue/${title}
+#+category: ${title}
+
+* NEXT Complete issue ${title}
+:PROPERTIES:
+:CREATED:  %U
+:ORDERED:  t
+:END:
+
+** TODO %?
+:PROPERTIES:
+:CREATED:  %U
+:TRIGGER:  chain-siblings(NEXT)
+:END:
+"
+;; Description:
+;; - Linear title :: %?
+;; - Goal ::
+;; - Motivation ::
+;; - Outcome ::
+
+         :target (file+head "%<%Y%m%d%H%M%S>-linear-issue-${slug}.org" "")
+         :unnarrowed t
+         :clock-in t :clock-resume t)))
+
+(setq org-roam-dailies-capture-templates
+      '(("d" "default" entry
+         "\n* %?"
+         :target (file+head "%<%Y-%m-%d>.org"
+                            "#+title: %<%Y-%m-%d>\n"))))
+
+(defun org-capture-journal ()
+  (org-capture nil "j")
+  (zoom-in/out 6)
+  (writeroom-mode))
+
+;; (defun org-capture-journal-in-new-frame ()
+;;   (interactive)
+;;   (let ((new-frame (make-frame-command)))
+;;     (select-frame-set-input-focus new-frame)
+;;     (toggle-frame-maximized new-frame)
+;;     (org-capture nil "k")
+;;     (delete-other-windows)))
 
 (provide 'setup-org-capture)

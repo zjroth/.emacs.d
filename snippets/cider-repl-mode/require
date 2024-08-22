@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: require-ns
+# key: rq
+# group: definitions
+# --
+(require '[${1:_$(yas-choose-value (cider-sync-request:ns-list))} :as ${2:${1:$(cider-last-ns-segment yas-text)}}])

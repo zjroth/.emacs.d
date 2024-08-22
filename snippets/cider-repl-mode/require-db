@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: require-db
+# key: reqdb
+# group: definitions
+# --
+(require '[datomic.client.api :as d] '[io.crescentinvest.db :as db])

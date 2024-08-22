@@ -284,3 +284,14 @@ region-end is used. Adds the duplicated text to the kill ring."
   (let ((len (- fill-column (current-column))))
     (when (< 0 len)
       (insert (make-string len char)))))
+
+;; Automatically create a unique buffer when narrowing if multiple windows are
+;; displaying the same buffer.
+;;
+;; TODO: Make this work without sleeping.
+;;
+;; (progn
+;;   (if (< 1 (length (get-buffer-window-list nil nil t)))
+;;       (display-buffer-same-window (clone-indirect-buffer nil nil) nil))
+;;   (sleep-for 1)
+;;   (narrow-to-defun))

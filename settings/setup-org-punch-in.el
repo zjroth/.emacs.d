@@ -34,7 +34,7 @@
 ;; Include current clocking task in clock reports
 (setq org-clock-report-include-clocking-task t)
 
-(setq bh/keep-clock-running nil)
+(setq bh/keep-clock-running t)
 
 (defun bh/is-task-p ()
   "Any task with a todo keyword and no subtask"
@@ -147,7 +147,8 @@ as the default task."
   ;;           (bh/clock-in-default-task))))))
   )
 
-(defvar zjr/punch-in-default-id "801F3BD3-D2E8-4C4A-82E7-5C74EA515658")
+(defvar zjr/punch-in-default-id
+  "7192AEBF-DC22-487E-A867-D69B0641AEC1")
 
 (defun zjr/punch-in-clock-default-task ()
   (interactive)

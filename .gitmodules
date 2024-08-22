@@ -124,3 +124,6 @@
 [submodule "other-packages/taskwarrior"]
 	path = other-packages/taskwarrior
 	url = https://github.com/avli/taskwarrior.git
+[submodule "other-packages/find-on-github"]
+	path = other-packages/find-on-github
+	url = https://github.com/stuartsierra/find-on-github.git

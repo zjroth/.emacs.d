@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: require-ns
+# key: rq
+# group: definitions
+#
+#(require '[${1:_$(yas-choose-value (cider-sync-request:ns-list))} :as ${2:${1:$(cider-last-ns-segment yas-text)}}])
+# --
+(require '[${1:_$(yas-choose-value (cider-sync-request:ns-list))} :as ${2:${1:$(s-replace-all '(("io.crescentinvest.api.domain.util" . "domain.util") ("io.crescentinvest.api.domain." . "") ("io.crescentinvest.integrations." . "")) yas-text)}}])

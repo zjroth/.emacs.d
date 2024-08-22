@@ -107,9 +107,59 @@
 (setq uniquify-buffer-name-style 'forward)
 
 ;; A saner ediff
-(setq ediff-diff-options "-w")
-(setq ediff-split-window-function 'split-window-horizontally)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(progn
+  (setq ediff-diff-options "-w")
+  (setq ediff-split-window-function 'split-window-horizontally)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+  ;; Restore the previous window configuration when quitting ediff.
+
+  ;; NOTE: This does not work for ediffing regions because of where
+  ;; `ediff-before-setup-hook' is called.  This issue may be able to be solved
+  ;; using `defadvice', but the sample code commented below does not fully work.
+  (defun my/store-pre-ediff-windows ()
+    (window-configuration-to-register :my-pre-ediff-windows))
+
+  (defun my/restore-pre-ediff-windows ()
+    (jump-to-register :my-pre-ediff-windows))
+
+  (add-hook 'ediff-before-setup-hook #'my/store-pre-ediff-windows)
+  (add-hook 'ediff-quit-hook #'my/restore-pre-ediff-windows)
+
+  ;; (defun my/restore-pre-ediff-windows ()
+  ;;   (jump-to-register :my-pre-ediff-windows))
+  ;;
+  ;; (add-hook 'ediff-quit-hook #'my/restore-pre-ediff-windows)
+  ;;
+  ;; (defadvice ediff-files (around restore-windows activate)
+  ;;   (window-configuration-to-register :my-pre-ediff-windows)
+  ;;   ad-do-it)
+  ;; (defadvice ediff-buffers (around restore-windows activate)
+  ;;   (window-configuration-to-register :my-pre-ediff-windows)
+  ;;   ad-do-it)
+  ;; (defadvice ediff-regions-linewise (around restore-windows activate)
+  ;;   (window-configuration-to-register :my-pre-ediff-windows)
+  ;;   ad-do-it)
+  ;;
+  ;; ;; (ad-remove-advice 'ediff-files 'around 'restore-windows)
+  ;; ;; (ad-remove-advice 'ediff-buffers 'around 'restore-windows)
+  ;; ;; (ad-remove-advice 'ediff-regions-linewise 'around 'restore-windows)
+  )
+
+(progn
+  (setq ediff-diff-options "-w")
+  (setq ediff-split-window-function 'split-window-horizontally)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+  ;; Restore the previous window configuration when quitting ediff.
+  (defun my/store-pre-ediff-windows ()
+    (window-configuration-to-register :my-pre-ediff-windows))
+
+  (defun my/restore-pre-ediff-windows ()
+    (jump-to-register :my-pre-ediff-windows))
+
+  (add-hook 'ediff-before-setup-hook #'my/store-pre-ediff-windows)
+  (add-hook 'ediff-quit-hook #'my/restore-pre-ediff-windows))
 
 ;; Nic says eval-expression-print-level needs to be set to nil (turned off) so
 ;; that you can always see what's happening.
@@ -134,20 +184,20 @@
 (setq-default fill-column 80)
 
 ;; Lisp indentation
-(setq lisp-indent-function 'common-lisp-indent-function)
+(setq lisp-indent-function 'lisp-indent-function)  ; or 'common-lisp-indent-function
 
 ;; Use "f" and "b" instead of "r" and "l" for navigation in help-mode.
 (use-package help-mode
-    :ensure nil
-    :pin manual
+  :ensure nil
+  :pin manual
 
-    :config
-    (progn
-      (define-key help-mode-map (kbd "l") nil)
-      (define-key help-mode-map (kbd "r") nil))
+  :config
+  (progn
+    (define-key help-mode-map (kbd "l") nil)
+    (define-key help-mode-map (kbd "r") nil))
 
-    :bind (:map help-mode-map
-                ("f" . help-go-forward)
-                ("b" . help-go-back)))
+  :bind (:map help-mode-map
+              ("f" . help-go-forward)
+              ("b" . help-go-back)))
 
 (provide 'sane-defaults)

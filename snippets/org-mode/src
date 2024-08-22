@@ -3,5 +3,5 @@
 # key: <s
 # --
 #+BEGIN_SRC ${1:$$(let ((langs (sort (-map (lambda (x) (symbol-name (car x))) (if (-contains? org-babel-load-languages '(js . t)) (-snoc org-babel-load-languages '(javascript . t)) org-babel-load-languages)) 'string<))) (yas-choose-value (if (-contains? langs "shell") (-snoc langs "sh") langs)))} ${2:<options>$(if (and yas-moving-away-p (s-equals? yas-text "<options>")) "" yas-text)}
-  $0
+$0
 #+END_SRC

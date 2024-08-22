@@ -30,6 +30,13 @@
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
 
+(defun zjr/copy-buffer-file-name-nondirectory ()
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (let ((root-dir (expand-file-name (vc-root-dir)))
+          (filename (buffer-file-name)))
+      (kill-new (s-chop-prefix root-dir filename)))))
+
 (defun copy-current-file-path ()
   "Add current file path to kill ring. Limits the filename to project root if possible."
   (interactive)

@@ -21,7 +21,15 @@
         change-inner
         change-number-at-point
         change-outer
+        cider-eval-defun-at-point
+        cider-eval-last-sexp
+        cider-eval-print-last-sexp
+        cider-repl-newline-and-indent
+        cider-repl-tab
+        cljr-slash
+        clojure-align
         comment-dwim
+        complete-symbol
         completion-at-point
         counsel-yank-pop
         cua-replace-region
@@ -52,9 +60,38 @@
         haskell-indentation-common-electric-command
         hippie-expand-no-case-fold
         html-wrap-in-tag
+        hydra-autoselect
+        hydra-paredit/sp-backward-sexp
+        hydra-paredit/sp-backward-up-sexp
+        hydra-paredit/sp-forward-sexp
+        hydra-paredit/sp-forward-slurp-sexp
+        hydra-paredit/sp-wrap-round
+        hydra-smartparens/body
+        hydra-smartparens/nil
+        hydra-smartparens/sp-backward-barf-sexp
+        hydra-smartparens/sp-backward-sexp
+        hydra-smartparens/sp-backward-slurp-sexp
+        hydra-smartparens/sp-backward-up-sexp
+        hydra-smartparens/sp-down-sexp
+        hydra-smartparens/sp-end-of-sexp
+        hydra-smartparens/sp-forward-barf-sexp
+        hydra-smartparens/sp-forward-sexp
+        hydra-smartparens/sp-forward-slurp-sexp
+        hydra-smartparens/sp-raise-sexp
+        hydra-smartparens/sp-rewrap-sexp
+        hydra-smartparens/sp-splice-sexp
+        hydra-smartparens/sp-transpose-sexp
+        hydra-smartparens/sp-unwrap-sexp
+        hydra-smartparens/sp-up-sexp
+        hydra-smartparens/sp-wrap-curly
+        hydra-smartparens/sp-wrap-round
+        hydra-smartparens/sp-wrap-square
         ibuffer-mark-forward
         indent-for-tab-command
         inline-string-rectangle
+        insert-parentheses
+        ivy-backward-delete-char
+        ivy-delete-char
         js2-beginning-of-line
         js2-end-of-line
         js2-insert-and-indent
@@ -65,8 +102,15 @@
         kill-region-or-backward-word
         kill-visual-line
         kmacro-insert-counter
+        lispy-braces
+        lispy-brackets
+        lispy-delete
+        lispy-kill
+        lispy-parens
+        lispy-quotes
         magit-stage-item
         mark-sexp
+        markdown-cycle
         markdown-enter-key
         markdown-outdent-or-delete
         matlab-backward-sexp
@@ -75,6 +119,7 @@
         matlab-fill-paragraph
         matlab-forward-sexp
         matlab-linefeed
+        mf/save-original-buffers
         move-line-down
         move-line-up
         move-text-down
@@ -84,6 +129,7 @@
         open-line-above
         open-line-below
         org-beginning-of-line
+        org-comment-dwim
         org-copy-link-at-point
         org-ctrl-c-ctrl-c
         org-ctrl-c-star
@@ -113,6 +159,14 @@
         orgtbl-hijacker-command-109
         orgtbl-self-insert-command
         outline-forward-same-level
+        paredit-backward
+        paredit-close-round
+        paredit-doublequote
+        paredit-forward
+        paredit-forward-delete
+        paredit-newline
+        paredit-open-curly
+        paredit-open-round
         quoted-insert
         reindent-then-newline-and-indent
         save-region-or-current-line
@@ -120,11 +174,86 @@
         sgml-slash
         sh-assignment
         slime-space
+        special-digit-argument
+        special-lh-knight/body
+        special-lispy-ace-char
+        special-lispy-ace-paren
+        special-lispy-ace-subword
+        special-lispy-ace-symbol
+        special-lispy-ace-symbol-replace
+        special-lispy-alt-multiline
+        special-lispy-back
+        special-lispy-barf
+        special-lispy-beginning-of-defun
+        special-lispy-clone
+        special-lispy-convolute
+        special-lispy-convolute-left
+        special-lispy-different
+        special-lispy-down
+        special-lispy-down-slurp
+        special-lispy-edebug-stop
+        special-lispy-ediff-regions
+        special-lispy-eval
+        special-lispy-eval-and-insert
+        special-lispy-eval-other-window
+        special-lispy-flow
+        special-lispy-follow
+        special-lispy-goto
+        special-lispy-goto-def-ace
+        special-lispy-goto-def-down
+        special-lispy-goto-elisp-commands
+        special-lispy-goto-local
+        special-lispy-goto-mode
+        special-lispy-goto-projectile
+        special-lispy-goto-recursive
+        special-lispy-join
+        special-lispy-left
+        special-lispy-mark-list
+        special-lispy-move-down
+        special-lispy-move-left
+        special-lispy-move-right
+        special-lispy-move-up
+        special-lispy-narrow
+        special-lispy-new-copy
+        special-lispy-occur
+        special-lispy-oneline
+        special-lispy-other-mode
+        special-lispy-other-space
+        special-lispy-outline-goto-child
+        special-lispy-outline-next
+        special-lispy-outline-prev
+        special-lispy-paste
+        special-lispy-quit
+        special-lispy-raise
+        special-lispy-raise-some
+        special-lispy-repeat
+        special-lispy-right
+        special-lispy-shifttab
+        special-lispy-slurp
+        special-lispy-splice
+        special-lispy-stringify
+        special-lispy-tab
+        special-lispy-teleport
+        special-lispy-tilde
+        special-lispy-underscore
+        special-lispy-undo
+        special-lispy-up
+        special-lispy-up-slurp
+        special-lispy-view
+        special-lispy-visit
+        special-lispy-widen
+        special-lispy-x
+        special-pop-tag-mark
         subword-right
+        tex-handle-newline
         tex-insert-quote
         transpose-params
+        transpose-sexps
         transpose-words
         universal-argument-minus
+        wdired--self-insert
+        wdired-next-line
+        wdired-previous-line
         wgrep-finish-edit
         wrap-region-trigger
         yaml-electric-backspace
@@ -140,15 +269,25 @@
         TeX-command-master
         TeX-next-error
         atomic-chrome-send-buffer-text
+        balance-windows
+        buf-move-right
+        cider-debug-mode-send-reply
+        cider-load-buffer
         counsel-M-x
         delete-window
         handle-switch-frame
         ido-find-file
         ido-switch-buffer
+        iedit-switch-to-mc-mode
+        ivy-next-line
         ivy-switch-buffer
         js2r-extract-var
         js2r-rename-var
+        kmacro-end-and-call-macro
+        lispy-cursor-down
+        lsp-ui-doc--handle-mouse-movement
         magit-copy-buffer-revision
+        magit-status
         make-frame-command
         matlab-comment-line-break-function
         org-edit-src-save
@@ -161,4 +300,7 @@
         smex
         swiper
         wgrep-change-to-wgrep-mode
+        xref-find-definitions
+        yank-rectangle
+        yas-goto-start-of-active-field
         ))

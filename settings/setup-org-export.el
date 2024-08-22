@@ -7,6 +7,8 @@
               (expand-file-name "org.css" settings-dir)
               "\"/>"))
 
+(setq org-html-checkbox-type 'unicode)
+
 (use-package ox-reveal
   :config
   (setq org-reveal-root
@@ -15,8 +17,8 @@
 ;; (use-package ox-impress-js)
 ;; (use-package ox-spectacle)
 
-(use-package org-plus-contrib
-  :pin "org"
+(use-package org-contrib
+  :pin nongnu
   :defer t
   :after org
   :config
@@ -133,5 +135,7 @@ contextual information."
 ;;
 ;; (add-to-list 'org-export-filter-timestamp-functions
 ;;              #'endless/filter-timestamp)
+
+(use-package ox-slack)
 
 (provide 'setup-org-export)

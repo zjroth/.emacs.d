@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: db
+# key: db
+# group: definitions
+# --
+(d/db (db/get-conn))

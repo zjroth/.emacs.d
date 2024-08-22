@@ -56,7 +56,7 @@
 
   :init
   (progn
-    (require 'setup-org-protocol)
+    ;; (require 'setup-org-protocol)
     (require 'setup-org-capture)
 
     ;; Set up (non-local) to-do dependencies.
@@ -92,13 +92,51 @@
     (setq org-id-link-to-org-use-id t)
 
     ;; (defun zjr/org-block-task (&optional id)
+    ;;   (interactive (list (ivy-read "Select blocking task: "
+    ;;                                (list "dev" "prod")
+    ;;                                :require-match t)))
     ;;   (let ((curr-blockers (org-entry-get (point) "BLOCKER"))
     ;;         (new-blocker (or id
     ;;                          ()))
     ;;     (org-set-property "BLOCKER"
     ;;                       (if curr-blockers
     ;;                           (concat curr-blockers " " new-blocker)
-    ;;                         new-blocker))))
+    ;;                         new-blocker)))))
+
+    (defun zjr/list-org-agenda-headlines ()
+      "Return a list of completion candidates for `counsel-org-agenda-headlines'."
+      (-non-nil
+       (org-map-entries (lambda ()
+                          (if (nth 2 (org-heading-components))
+                              (list (org-display-outline-path 'filename 'current
+                                                              " ▶ " 'just-return-string)
+                                    buffer-file-name
+                                    (point))))
+                        "-todo=\"DONE\"-todo=\"CANCELED\"-todo=\"FINISHED\""
+                        'agenda
+                        'archive 'comment)))
+
+    (defun zjr/org-block-task ()
+      (interactive)
+      (ivy-read "Select blocking task: "
+                (zjr/list-org-agenda-headlines)
+                :require-match t
+                :action (lambda (match)
+                          (message (nth 1 id))))
+      ;; (let ((curr-blockers (org-entry-get (point) "BLOCKER"))
+      ;;       (new-blocker (or id
+      ;;                        ()))
+      ;;   (org-set-property "BLOCKER"
+      ;;                     (if curr-blockers
+      ;;                         (concat curr-blockers " " new-blocker)
+      ;;                       new-blocker))))
+      )
+
+    (setq counsel-outline-path-separator " ▶ ")
+    (setq counsel-org-headline-display-todo nil)
+    ;; (car (counsel-org-agenda-headlines--candidates))
+    ;; (org-display-outline-path
+    ;;  'filename 'current " ▶ " 'just-return-string)
 
     (defun org-set-property-if-missing (prop value)
       "Set a property on the entry if the property does not already exist."
@@ -156,13 +194,18 @@
     (setq org-structure-template-alist
           (remove '("N" "#+NAME: ") org-structure-template-alist))
 
+    ;; Effort
+    (add-to-list 'org-global-properties
+                 '("Effort_ALL" . "0 0:10 0:30 1:00 2:00 4:00 8:00"))
+
     ;; To-do states
     (setq org-todo-keywords
           '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d@)")
             ;;("TODO(t)" "NEXT(n)" "ACTIVE(a)" "|" "DONE(d)")
             (sequence "WAIT(w@)" "MAYBE(m)" "HOLD(h@)" "|" "CANCELED(c@)")
-            (sequence "THOMAS" "EMILY" "BRANT" "BRIAN" "|" "DONE")
+            ;; (sequence "THOMAS" "EMILY" "BRANT" "BRIAN" "|" "DONE")
             (sequence "READ(r)" "READING(e)" "|" "FINISHED(f)")))
+    (setq org-use-fast-todo-selection t)
     (setq org-todo-keywords-for-agenda org-todo-keywords)
 
     ;; To-do label colors
@@ -188,9 +231,7 @@
                 ;; ("FINISHED" . (:foreground ,(color-set-lightness brown 0.15) :strike-through t))
 
                 ("DONE" . (:foreground ,light-emphasis :strike-through t))
-                ("CANCELED" . (:foreground ,light-emphasis :strike-through t))))))
-
-    )
+                ("CANCELED" . (:foreground ,light-emphasis :strike-through t)))))))
 
   :bind (("C-c c" . org-capture)
          ("C-c C-a" . org-agenda)
@@ -233,7 +274,9 @@
     ;; Indent headlines and content.
     (setq org-startup-indented t)
     (setq org-tags-column
-          (- 3 visual-fill-column-width)) ; leave room for 3 dots when folded
+          ;; (- 3 visual-fill-column-width)
+          72 ; adjust for zoomed, half-screen display at Crescent
+          )  ; leave room for 3 dots when folded
 
     ;; Make lists look like use bullets (in place of the actual hyphen (or
     ;; asterisk) that's really there.
@@ -256,16 +299,16 @@
 
     (org-babel-do-load-languages
      'org-babel-load-languages
-     '( ;; (clojure . t)
+     '( (clojure . t)
         (emacs-lisp . t)
         ;; (ipython . t)
         ;; (js . t)
-        ;; (julia . t)
+        (julia . t)
         ;; (matlab . t)
         (python . t)
         ;; (R . t)
         (shell . t)
-        (sql . t)
+        ;; (sql . t)
         ))
 
     ;; Show only hours and minutes in time durations.  (Days are confusing:
@@ -277,6 +320,36 @@
     ;; Export settings
     (require 'setup-org-export)
     ))
+
+(use-package org-roam
+  :custom
+  (org-roam-directory (expand-file-name "Documents/org/org-roam/" home-dir))
+  (org-roam-dailies-directory "daily/")
+  ;; (org-roam-capture-templates '(("d" "default" plain "%?"
+  ;;                                :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+  ;;                                                   "#+title: ${title}\n\n")
+  ;;                                :unnarrowed t)
+  ;;                               ("i" "Crescent issue" plain "%?"
+  ;;                                :target (file+head "%<%Y%m%d%H%M%S>-linear-issue-${slug}.org"
+  ;;                                                   "#+title: Linear Issue ${title}\n#+url: https://linear.app/crescent-financial-inc/issue/${title}\n\n\nDescription:\n- Linear title :: \n- Goal :: \n- Motivation :: \n- Outcome :: \n\nNotes:\n- ")
+  ;;                                :unnarrowed t)))
+  :bind (("M-m b t" . org-roam-buffer-toggle)
+         ("M-m M-m" . org-roam-node-find)
+         ("M-m d" . org-roam-dailies-goto-today)
+         ("M-m i" . org-roam-node-insert)
+         ("M-m e" . org-roam-extract-subtree)))
+(use-package org-roam-timestamps)
+(use-package org-roam-ui)
+(use-package org-transclusion)
+
+(use-package org-modern
+  :defer t)
+;; (use-package olivetti
+;;   :defer t)
+(use-package writeroom-mode
+  :defer t)
+;; (use-package org-hyperscheduler
+;;   :defer t)
 
 (require 'setup-org-agenda)
 

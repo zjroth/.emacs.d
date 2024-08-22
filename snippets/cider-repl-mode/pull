@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pull
+# key: p
+# group: definitions
+# --
+(d/pull ${1:(get-db)} '[${2:*}] ${3:eid})

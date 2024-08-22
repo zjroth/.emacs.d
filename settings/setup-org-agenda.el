@@ -1,17 +1,23 @@
 (use-package org-agenda
-  :after org
+  :after (:all org fullframe)
   :ensure org
   :pin "gnu"
   :defer t
 
   :init
   (progn
+    (defun zjr/init-org-agenda-files ()
+      (setq org-agenda-files
+            (cons (expand-file-name "org-roam" org-directory)
+                  (directory-files org-directory t "^[^.].*\.org$"))))
+
     ;; Agenda files and refiling targets
     (setq org-directory "~/Documents/org")
-    (setq org-agenda-files
-          (directory-files org-directory t ".*\.org$"))
+    (zjr/init-org-agenda-files)
     (setq org-refile-targets
           '((org-agenda-files :maxlevel . 100)))
+    (setq org-agenda-restore-windows-after-quit t)
+    (fullframe org-agenda org-agenda-quit)
 
     ;; Toggle visibility of blocked entries.
     (defun org-agenda-cycle-blocked-task-visibility ()
@@ -24,10 +30,27 @@
                (cond ((eq org-agenda-dim-blocked-tasks t)           "dimmed")
                      ((eq org-agenda-dim-blocked-tasks 'invisible)  "hidden"))))
 
-    ;; We want to use the diary for some recurring tasks.
-    (setq org-agenda-include-diary t))
+    ;; We don't need the diary.
+    (setq org-agenda-include-diary nil)
+
+    (defun zjr/org-agenda-redo-all (&optional exhaustive)
+      (interactive "P")
+      (zjr/init-org-agenda-files)
+      ;;(org-agenda-redo-all exhaustive)
+      ;;
+      ;; NOTE: This is replicated from `org-agenda-redo-all' because that
+      ;; function calls `org-agenda-redo' in a non-interactive way.  That
+      ;; behavior leads to the agenda buffer scrolling, which I quite dislike.
+      (if exhaustive
+          (dolist (buffer (buffer-list))
+            (with-current-buffer buffer
+              (when (derived-mode-p 'org-agenda-mode)
+                (org-agenda-redo t))))
+        (funcall-interactively 'org-agenda-redo t))))
 
   :bind (:map org-agenda-mode-map
+              ("M-m" . nil)
+              ("g" . zjr/org-agenda-redo-all)
               ("V" . org-agenda-cycle-blocked-task-visibility)
               ("M-p" . org-agenda-backward-block)
               ("M-n" . org-agenda-forward-block))
@@ -40,7 +63,7 @@
 
     ;; Hanging indent in the agenda buffer.
     (defun set-agenda-adaptive-wrap-extra-indent ()
-      (setq adaptive-wrap-extra-indent 12))
+      (setq-local adaptive-wrap-extra-indent 12))
     (add-hook 'org-agenda-mode-hook 'adaptive-wrap-prefix-mode)
     (add-hook 'org-agenda-mode-hook 'set-agenda-adaptive-wrap-extra-indent)
 
@@ -117,13 +140,11 @@
                     ((org-agenda-overriding-header "Generic / daily...")
                      (org-agenda-prefix-format "  ")
                      (org-agenda-remove-tags t)))
-              (tags "today"
+              (tags "today|todo=\"NEXT\""
                     ((org-agenda-overriding-header "Selected for today...")
                      (org-agenda-remove-tags t)))
               ;; (tags-todo "file={projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-todo=\"HOLD\"-someday-ARCHIVE-today"
               ;;            ((org-agenda-overriding-header "Project items...")))
-              (tags-todo "-scheduled<>\"\"-todo=\"WAIT\"-todo=\"HOLD\"-someday-ARCHIVE-today"
-                         ((org-agenda-overriding-header "Unscheduled items...")))
               ;; ;; (tags-todo "file<>{projects\\.org$}-BLOCKED=\"t\"-scheduled<>\"\"-todo=\"WAIT\""
               ;; ;;            ((org-agenda-overriding-header "Other items...")))
               ;; (tags-todo "file<>{projects\\.org$}-scheduled<>\"\"-todo=\"WAIT\"-todo=\"HOLD\"-someday-ARCHIVE-today"
@@ -134,6 +155,8 @@
               ;;       ((org-agenda-overriding-header "Unscheduled items...")))
               (tags-todo "todo=\"WAIT\"-today-scheduled<>\"\"" ; "WAIT-CATEGORY=\"learn\""
                          ((org-agenda-overriding-header "Waiting...")))
+              (tags-todo "-scheduled<>\"\"-todo=\"NEXT\"-todo=\"WAIT\"-todo=\"HOLD\"-someday-ARCHIVE-today"
+                         ((org-agenda-overriding-header "Unscheduled items...")))
               ;; (tags-todo "+someday"
               ;;       ((org-agenda-overriding-header "Someday...")))
               ;; (todo "TODO|READ|STARTED|NEXT|ACTIVE")

@@ -14,6 +14,11 @@
     (set-default 'magit-stage-all-confirm nil)
     (set-default 'magit-revert-buffers 'silent)
 
+    ;; Diffing
+    (setq magit-diff-paint-whitespace t)
+    (setq magit-diff-highlight-trailing t)
+    (setq magit-diff-paint-whitespace-lines t)
+
     ;; full screen vc-annotate
     (defun vc-annotate-quit ()
       "Restores the previous window configuration and kills the vc-annotate buffer"
@@ -32,6 +37,20 @@
 
     ;; Highlight fine-grained differences on a selected hunk.
     (setq magit-diff-refine-hunk t)))
+
+;; (use-package magit-delta
+;;   :defer t
+;;   :hook (magit-mode . magit-delta-mode)
+;;   :after magit)
+
+(use-package forge
+  :defer t
+  :after magit)
+
+(use-package code-review)
+(use-package pr-review)
+
+(load-file "~/.emacs.d/other-packages/find-on-github/find-on-github.el")
 
 (provide 'use-magit)
 
