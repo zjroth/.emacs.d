@@ -1,6 +1,8 @@
-(use-package julia-mode)
+(use-package julia-mode
+  :defer t)
 
 (use-package julia-repl
+  :defer t
   :hook julia-mode
   ;; :config (julia-repl-set-executable
   ;;          (expand-file-name "~/bin/julia"))
@@ -31,10 +33,12 @@
 ;;     (makunbound 'eat--prevent-use-package-config-recursion)))
 
 (use-package vterm
+  :defer t
   :ensure t)
 
 (use-package julia-snail
   :ensure t
+  :defer t
   :hook (julia-mode . julia-snail-mode))
 
 (provide 'use-julia)

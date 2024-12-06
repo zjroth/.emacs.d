@@ -106,6 +106,7 @@
 
 
 (use-package smartparens
+  :ensure t
   :after hydra
   :init
   (progn

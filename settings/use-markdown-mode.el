@@ -1,4 +1,5 @@
 (use-package markdown-mode
+  :defer t
   :init
   (setq markdown-command "pandoc --to HTML")
 
@@ -14,6 +15,7 @@
   )
 
 (use-package impatient-showdown
+  :defer t
   :config
   (setq impatient-showdown-flavor 'github)
   (setq impatient-showdown-markdown-background-color "#EEEEEE"

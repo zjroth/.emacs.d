@@ -110,7 +110,7 @@
 
 (require 'use-dired)
 (require 'key-bindings)
-(require 'use-ess)
+;; (require 'use-ess)
 (require 'use-julia)
 (require 'use-org)
 (require 'use-ivy)
@@ -119,33 +119,37 @@
 ;; (require 'use-exwm)
 ;; (require 'use-slack)
 (require 'use-markdown-mode)
-(require 'use-ein)
+;; (require 'use-ein)
 (require 'use-yasnippet)
 (require 'use-python)
-(require 'use-haskell)
+;; (require 'use-haskell)
 (require 'use-clojure)
-(require 'use-paredit)
+;; (require 'use-paredit)
 ;; (require 'use-meow)
+;; (use-package boon)
+;; (require 'use-boon)
 
 (require 'setup-system-interaction)
 
-(use-package define-word
-  :defer t)
+;; (use-package define-word
+;;   :defer t)
+
 ;; ;; Use the built-in dictionary on Macs.
 ;; (use-package osx-dictionary
 ;;   :defer t)
 
 (use-package which-key
   :config (which-key-mode))
+
 (use-package transpose-frame
   :bind ("M-t f" . transpose-frame))
 ;; (use-package nxhtml)
 
-(use-package pretty-mode
-  :defer t
-  :config
-  (pretty-add-keywords 'org-mode
-                       '(("^ *\\(#\\+begin_src\\) " . ?λ))))
+;; (use-package pretty-mode
+;;   :defer t
+;;   :config
+;;   (pretty-add-keywords 'org-mode
+;;                        '(("^ *\\(#\\+begin_src\\) " . ?λ))))
 
 ;; Support for editing text areas in Chrome.  This requires a Chrome extension
 ;; to be installed.  The two options that I found are GhostText and Atomic
@@ -182,14 +186,16 @@
               ("F" . next-error-follow-minor-mode)))
 
 (use-package ag)
-(use-package transient)
+(use-package transient
+  :defer t)
 
 ;; Auto-completion
 (use-package company
   :config (global-company-mode))
 
 ;; Keep expresssions aligned (especially in lisp-like modes).
-(use-package aggressive-indent)
+(use-package aggressive-indent
+  :defer t)
 
 ;; Work with CSV files.
 (use-package csv-mode
@@ -201,6 +207,7 @@
   :defer t
   :init
   (setq plantuml-server-url "http://localhost:8080"))
+
 (use-package flycheck-plantuml :defer t)
 
 ;; Edit Jenkinsfile files
@@ -229,11 +236,13 @@
       :web-test-port 9876))))
 
 (use-package avy
+  :defer t
   :bind (("M-g c" . avy-goto-char)
          ("M-g M-c" . avy-goto-char-2)
          ("M-g M-g" . avy-goto-char-timer)))
 
 (use-package hydra
+  :defer t
   :init
   (defcustom hydra-select-by-mode-list
     '()
@@ -248,24 +257,31 @@
   :bind (("M-h" . hydra-autoselect)))
 
 (use-package projectile
+  :defer t
   :bind (("C-c f" . projectile-find-file)))
-(use-package counsel-projectile)
 
-(use-package elfeed
-  :init
-  (setq elfeed-feeds
-        '("https://www.reddit.com/r/CryptoCurrency/.rss"
-          "https://www.reddit.com/r/USDC/.rss")))
-(use-package elfeed-web)
+(use-package counsel-projectile
+  :defer t)
+
+;; (use-package elfeed
+;;   :defer t
+;;   :init
+;;   (setq elfeed-feeds
+;;         '("https://www.reddit.com/r/CryptoCurrency/.rss"
+;;           "https://www.reddit.com/r/USDC/.rss")))
+;; (use-package elfeed-web :defer t)
 
 (require 'zoom-frm)
 
 (use-package fullframe)
 
 (use-package fold-this
+  :defer t
   ;; :init (setq fold-this-overlay-text "[[..]]")
   )
+
 (use-package origami
+  :defer t
   :init (global-origami-mode 1)
   :bind (("M-o" . origami-recursively-toggle-node)
          ("M-O" . origami-toggle-all-nodes)
@@ -288,15 +304,17 @@
   (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
   (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
 
-(use-package symbol-overlay)
+(use-package symbol-overlay
+  :defer t)
 
 (use-package alert
+  :defer t
   :config
   (setq alert-default-style 'osx-notifier))
 
-(use-package wc-mode)
+(use-package wc-mode :defer t)
 
-(use-package mermaid-mode)
+(use-package mermaid-mode :defer t)
 
 (use-package obsidian
   :ensure t
@@ -331,22 +349,33 @@
 ;;   (popper-mode +1)
 ;;   (popper-echo-mode +1))
 
-(use-package shackle
-  :config
-  (setq shackle-default-rule nil
-        ;; '(:other t :select t :inhibit-window-quit t)
-        )
-  (setq shackle-rules ;; nil
-        '(;; (help-mode :select t)
-          ;; ("^\\*Help\\*$" :regexp t)
-          ;; ("*Help*" :select t)
-          (clojure-mode :other t)
-          )
-        )
-  ;; (setq shackle-default-rule '(:same t))
-  ;; (setq shackle-rules '((clojure-mode :other t :select t)))
-  ;; (setq shackle-rules '((clojure-mode :other t)))
-  )
+;; (use-package shackle
+;;   :config
+;;   (setq shackle-default-rule nil
+;;         ;; '(:other t :select t :inhibit-window-quit t)
+;;         )
+;;   (setq shackle-rules ;; nil
+;;         '(;; (help-mode :select t)
+;;           ;; ("^\\*Help\\*$" :regexp t)
+;;           ;; ("*Help*" :select t)
+;;           (clojure-mode :other t)
+;;           )
+;;         )
+;;   ;; (setq shackle-default-rule '(:same t))
+;;   ;; (setq shackle-rules '((clojure-mode :other t :select t)))
+;;   ;; (setq shackle-rules '((clojure-mode :other t)))
+;;   )
+
+(use-package easysession
+  :ensure t
+  :custom
+  ;; Interval between automatic session saves
+  (easysession-save-interval (* 10 60))
+  ;; Make the current session name appear in the mode-line
+  (easysession-mode-line-misc-info t)
+  :init
+  (add-hook 'emacs-startup-hook #'easysession-load-including-geometry 102)
+  (add-hook 'emacs-startup-hook #'easysession-save-mode 102))
 
 ;; (use-package kotlin-mode)
 
@@ -362,6 +391,7 @@
                ("coding" (or (mode . python-mode)
                              (mode . julia-mode)
                              (mode . clojure-mode)
+                             (mode . clojure-ts-mode)
                              (mode . sh-mode)
                              (mode . terraform-mode)))
                ("org" (or (mode . org-mode)

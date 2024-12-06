@@ -32,6 +32,17 @@
   (setq clojure-align-binding-forms (append clojure-align-binding-forms
                                             '("alet" "elet" "mlet" "rlet"))))
 
+;; (use-package clojure-ts-mode
+;;   :hook ((clojure-ts-mode . cider-mode)
+;;          ;; (clojure-ts-mode . enable-paredit-mode)
+;;          (clojure-ts-mode . clj-refactor-mode)
+;;          (clojure-mode . (lambda () (setq fill-column 100)))
+;;          (clojure-mode . display-fill-column-indicator-mode)
+;;          (clojure-ts-mode . rainbow-delimiters-mode)
+;;          (clojure-ts-mode . electric-pair-mode))
+;;   :bind (:map clojure-ts-mode-map
+;;               ("C-c SPC" . clojure-align)))
+
 (use-package cider
   :hook ((cider-repl-mode . electric-pair-mode))
   :init
@@ -88,6 +99,8 @@
 PARAMS and DUP-OK are as in `nrepl-make-buffer-name'."
     (nrepl-make-buffer-name (concat "*cider-repl (" (getenv "CRESCENT_ENV") ") %s(%r:%S)*")
                             params dup-ok))
+
+  (setq nrepl-use-ssh-fallback-for-remote-hosts t)
 
   ;; If I'm highlighting something, I want to be able to overwrite it.
   (put 'paredit-backward-delete 'delete-selection 'supersede)

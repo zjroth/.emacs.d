@@ -72,6 +72,7 @@
         hydra-smartparens/sp-backward-sexp
         hydra-smartparens/sp-backward-slurp-sexp
         hydra-smartparens/sp-backward-up-sexp
+        hydra-smartparens/sp-beginning-of-sexp
         hydra-smartparens/sp-down-sexp
         hydra-smartparens/sp-end-of-sexp
         hydra-smartparens/sp-forward-barf-sexp
